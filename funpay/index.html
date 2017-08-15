@@ -1,0 +1,236 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>FUNPAY | money</title>
+    <meta name="description" content="Funpay description">
+    <meta name="author" content="Funpay">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
+
+    <script src="js/rellax.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+<div class="top-bar">
+    <div class="top-bar__inner">
+        <div class="top-bar__text">
+            Ваш город <span class="top-bar__current">&mdash; Архангельск?</span>
+        </div>
+        <div class="top-bar__agree">
+            <button class="btn btn_topbar">
+                Да
+            </button>
+        </div>
+        <div class="top-bar__change-link">
+        <a href="#">Нет, изменить город</a>
+    </div>
+    </div>
+</div>
+<div class="header">
+    <div class="header__inner">
+        <div class="header__logo">
+            <a href="#"><i></i></a>
+        </div>
+        <div class="header__city-user">
+            <div class="header__city city">
+                <div class="city__btn js-city-select-open">
+                    <span class="city__name">Архангельск</span>
+                    <i></i>
+                </div>
+
+                <div class="city__select select js-city-select">
+                    <div class="select__input">
+                        <input class="input" type="text">
+                    </div>
+                    <div class="select__list">
+                        <div class="select__item">
+                            <span>Москва</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Архангельск</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Сочи</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Екатеринбург</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Ленинград</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Ярославль</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Астрахань</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="header__user user">
+                <div class="user__btn js-user-menu-open">
+                    <div class="user__image" style="background-image: url('img/temp/ivan.jpg')"></div>
+                    <i></i></div>
+
+                <div class="user__menu user-menu js-user-menu">
+                    <div class="user-menu__list">
+                        <div class="user-menu__item">
+                            <a href="profile.html">Мой профиль</a>
+                        </div>
+                        <div class="user-menu__item">
+                            <a href="transactions.html">Транзакции</a>
+                        </div>
+                        <div class="user-menu__item">
+                            <a href="places.html">Заведения</a>
+                        </div>
+                    </div>
+                    <div class="user-menu__exit">
+                        <a href="#">Выйти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu">
+    <div class="menu__inner">
+        <div class="menu__list">
+            <div class="menu__item menu__item_active">
+                <a href="profile.html">Мой профиль</a>
+            </div>
+            <div class="menu__item">
+                <a href="transactions.html">Транзакции</a>
+            </div>
+            <div class="menu__item">
+                <a href="places.html">Заведения</a>
+            </div>
+        </div>
+        <div class="menu__btn">
+            <a href="#" class="btn btn_exit">
+                <i></i>
+                <span>Выйти</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+            <div class="popup-404 js-popup-404">
+
+                    <div class="popup-404__overlay js-popup-404-close"></div>
+                    <div class="popup-404__inner">
+                        <div class="popup-404__wrap">
+                            <div class="popup-404__close js-popup-404-close"></div>
+                            <div class="popup-404__heading">
+                                404
+                            </div>
+                            <div class="popup-404__text popup-404__text_rosa">
+                                К сожалению, ничего не найдено
+                            </div>
+                            <div class="popup-404__text">
+                                В вашем городе нет заведений с бонусной программой «Funpay money».<br>
+                                Посмотрите список всех городов для оплаты лайками.
+                            </div>
+                            <div class="popup-404__cities cities">
+                                <div class="cities__block">
+                                    <a href="#" class="cities__item">
+                                        <span>Москва</span>
+                                    </a>
+                                    <a href="#" class="cities__item">
+                                        <span>Екатеринбург</span>
+                                    </a>
+                                </div>
+                                <div class="cities__block">
+                                    <a href="#" class="cities__item">
+                                        <span>Москва</span>
+                                    </a>
+                                    <a href="#" class="cities__item">
+                                        <span>Екатеринбург</span>
+                                    </a>
+                                </div>
+                                <div class="cities__block">
+                                    <a href="#" class="cities__item">
+                                        <span>Москва</span>
+                                    </a>
+                                    <a href="#" class="cities__item">
+                                        <span>Екатеринбург</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="promo-popup js-promo">
+                <div class="promo-popup__overlay js-promo-close"></div>
+                <div class="promo-popup__inner promo">
+                    <div class="promo__header">
+                        <div class="promo__heading">
+                            Назовите промо-код
+                        </div>
+                        <div class="promo__digits">
+                            0085 3102
+                        </div>
+                        <div class="promo__close js-promo-close"></div>
+                    </div>
+                    <div class="promo__code">
+                        <div class="promo__text promo__text_rosa">
+                            или
+                        </div>
+                        <div class="promo__text">
+                            отсканируйте штрих-код
+                        </div>
+                        <div class="promo__image">
+                            <img src="img/temp/code.png" alt="">
+                        </div>
+                        <div class="promo__btn">
+                            <button class="btn btn_promo-popup">
+                                <i></i>
+                                <span>Распечатать</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer__inner">
+                    <div class="footer__logo">
+                        <i></i>
+                        <span>
+                            &copy; 2016 ООО &laquo;ТрендКом&raquo;
+                        </span>
+                    </div>
+                    <div class="footer__social social">
+                        <div class="social__list">
+                            <a href="#" class="social__item">
+                                <img src="img/svg/vk_gradient.svg" alt="VK">
+                            </a>
+                            <a href="#" class="social__item">
+                                <img src="img/instagram_colored.png" alt="VK">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

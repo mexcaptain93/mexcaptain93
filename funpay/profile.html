@@ -1,0 +1,686 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>FUNPAY | money</title>
+    <meta name="description" content="Funpay description">
+    <meta name="author" content="Funpay">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+
+
+    <script src="js/rellax.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+<div class="top-bar">
+    <div class="top-bar__inner">
+        <div class="top-bar__text">
+            Ваш город <span class="top-bar__current">&mdash; Архангельск?</span>
+        </div>
+        <div class="top-bar__agree">
+            <button class="btn btn_topbar">
+                Да
+            </button>
+        </div>
+        <div class="top-bar__change-link">
+        <a href="#">Нет, изменить город</a>
+    </div>
+    </div>
+</div>
+<div class="header">
+    <div class="header__inner">
+        <div class="header__logo">
+            <a href="#"><i></i></a>
+        </div>
+        <div class="header__city-user">
+            <div class="header__city city">
+                <div class="city__btn js-city-select-open">
+                    <span class="city__name">Архангельск</span>
+                    <i></i>
+                </div>
+
+                <div class="city__select select js-city-select">
+                    <div class="select__input">
+                        <input class="input" type="text">
+                    </div>
+                    <div class="select__list">
+                        <div class="select__item">
+                            <span>Москва</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Архангельск</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Сочи</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Екатеринбург</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Ленинград</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Ярославль</span>
+                        </div>
+                        <div class="select__item">
+                            <span>Астрахань</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="header__user user">
+                <div class="user__btn js-user-menu-open">
+                    <div class="user__image" style="background-image: url('img/temp/ivan.jpg')"></div>
+                    <i></i></div>
+
+                <div class="user__menu user-menu js-user-menu">
+                    <div class="user-menu__list">
+                        <div class="user-menu__item">
+                            <a href="profile.html">Мой профиль</a>
+                        </div>
+                        <div class="user-menu__item">
+                            <a href="transactions.html">Транзакции</a>
+                        </div>
+                        <div class="user-menu__item">
+                            <a href="places.html">Заведения</a>
+                        </div>
+                    </div>
+                    <div class="user-menu__exit">
+                        <a href="#">Выйти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu">
+    <div class="menu__inner">
+        <div class="menu__list">
+            <div class="menu__item menu__item_active">
+                <a href="profile.html">Мой профиль</a>
+            </div>
+            <div class="menu__item">
+                <a href="transactions.html">Транзакции</a>
+            </div>
+            <div class="menu__item">
+                <a href="places.html">Заведения</a>
+            </div>
+        </div>
+        <div class="menu__btn">
+            <a href="#" class="btn btn_exit">
+                <i></i>
+                <span>Выйти</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+<div class="profile">
+    <div class="profile__stat stat">
+        <div class="stat__inner">
+            <div class="stat__heading heading">
+                <div class="heading__item heading__item_rosa">
+                    Оплатите свои покупки
+                </div>
+                <div class="heading__item heading__item_bebas">
+                    Бесплатными лайками
+                </div>
+                <div class="heading__item">
+                    в любом терминале или с помощью штрих-кода
+                </div>
+            </div>
+            <div class="stat__data data">
+                <div class="data__inner">
+                    <div class="data__username">
+                        <span>iamivankokorin</span>
+                    </div>
+                    <div class="data__digits digits">
+                        <div class="digits__item">
+                            <div class="digits__val">8 100</div>
+                            <div class="digits__text">публикаций</div>
+                        </div>
+                        <div class="digits__item">
+                            <div class="digits__val">4 200</div>
+                            <div class="digits__text">лайков</div>
+                        </div>
+                    </div>
+                    <div class="data__btn">
+                        <button class="btn btn_connected">
+                            <span class="start">Подключено</span>
+                            <span class="hover">
+                                <i></i>
+                                <span>Отключить</span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="data__social data__social_vk social">
+                        <div class="social__icon" style="background-image: url('img/svg/vk.svg')"></div>
+                        <div class="social__img"
+                             style="background-image: url('https://pp.userapi.com/c837527/v837527568/45523/QQeOqt4WUok.jpg')"></div>
+                    </div>
+                    <div class="data__social data__social_active data__social_instagram social">
+                        <div class="social__icon" style="background-image: url('img/svg/instagram.svg')"></div>
+                        <div class="social__img" style="background-image: url('img/temp/ivan.jpg')"></div>
+                    </div>
+                    <div class="data__social data__social_empty data__social_twitter social">
+                        <div class="social__icon" style="background-image: url('img/svg/twitter.svg')"></div>
+                        <div class="social__img"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="profile__slider slider">
+        <img src="img/hearts/heart2.png" alt="" data-rellax-speed="2" class="rellax"
+             style="top: 0; left: 15%; z-index:4;">
+        <img src="img/hearts/heart.png" alt="" data-rellax-speed="6" class="rellax"
+             style="top: 150px; left: 70%; z-index: 1;">
+        <img src="img/hearts/heart.png" alt="" data-rellax-speed="4" class="rellax"
+             style="top: 450px; left: 60%; z-index:2;">
+        <div class="slider__inner">
+            <div class="slider__slides js-profile-slider">
+                <div class="slider__item slider__item_first slide"
+                     style="background-image: url('img/temp/profile-slider.jpg');">
+                    <div class="slide__inner">
+                        <div class="slide__icon"></div>
+                        <div class="slide__text text">
+                            <div class="text__heading">
+                                Получите умножение лайков
+                            </div>
+                            <div class="text__subheading">
+                                <span>x<span>2</span></span> при подключении всех социальных сетей
+                            </div>
+                            <div class="text__content">
+                                За лайки на публикациях участнику программы «Funpay money»
+                                начисляются Бонусы, которыми он может оплатить до 30%
+                                покупки в определённых <a href="#">заведениях</a>. 1 Бонус=1 рубль.
+                            </div>
+                            <div class="text__btn">
+                                <button class="btn btn_balance">
+                                    Увеличить баланс
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__item slider__item_first slide"
+                     style="background-image: url('img/temp/profile-slider.jpg');">
+                    <div class="slide__inner">
+                        <div class="slide__icon"></div>
+                        <div class="slide__text text">
+                            <div class="text__heading">
+                                Получите умножение лайков
+                            </div>
+                            <div class="text__subheading">
+                                <span>x<span>2</span></span> при подключении всех социальных сетей
+                            </div>
+                            <div class="text__content">
+                                За лайки на публикациях участнику программы «Funpay money»
+                                начисляются Бонусы, которыми он может оплатить до 30%
+                                покупки в определённых <a href="#">заведениях</a>. 1 Бонус=1 рубль.
+                            </div>
+                            <div class="text__btn">
+                                <button class="btn btn_balance">
+                                    Увеличить баланс
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__item slider__item_first slide"
+                     style="background-image: url('img/temp/profile-slider.jpg');">
+                    <div class="slide__inner">
+                        <div class="slide__icon"></div>
+                        <div class="slide__text text">
+                            <div class="text__heading">
+                                Получите умножение лайков
+                            </div>
+                            <div class="text__subheading">
+                                <span>x<span>2</span></span> при подключении всех социальных сетей
+                            </div>
+                            <div class="text__content">
+                                За лайки на публикациях участнику программы «Funpay money»
+                                начисляются Бонусы, которыми он может оплатить до 30%
+                                покупки в определённых <a href="#">заведениях</a>. 1 Бонус=1 рубль.
+                            </div>
+                            <div class="text__btn">
+                                <button class="btn btn_balance">
+                                    Увеличить баланс
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider__item slider__item_first slide"
+                     style="background-image: url('img/temp/profile-slider.jpg');">
+                    <div class="slide__inner">
+                        <div class="slide__icon"></div>
+                        <div class="slide__text text">
+                            <div class="text__heading">
+                                Получите умножение лайков
+                            </div>
+                            <div class="text__subheading">
+                                <span>x<span>2</span></span> при подключении всех социальных сетей
+                            </div>
+                            <div class="text__content">
+                                За лайки на публикациях участнику программы «Funpay money»
+                                начисляются Бонусы, которыми он может оплатить до 30%
+                                покупки в определённых <a href="#">заведениях</a>. 1 Бонус=1 рубль.
+                            </div>
+                            <div class="text__btn">
+                                <button class="btn btn_balance">
+                                    Увеличить баланс
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="profile__bonus bonus js-bonus">
+        <div class="bonus__inner">
+            <div class="bonus__heading heading">
+                <div class="heading__item heading__item_rosa">
+                    Баланс бонусной карты
+                </div>
+                <div class="heading__item heading__item_bebas">
+                    Баллы с ваших публикаций
+                </div>
+                <div class="heading__item">
+                    по найденным хештегам заведений
+                </div>
+            </div>
+            <div class="bonus__table table">
+                <div class="table__border"></div>
+                <div class="table__row">
+                    <div class="table__td table__td_name">
+                        <i class="hashtag">#</i>
+                        <span>миндаль_арх <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" viewBox="0 0 19.7 18.5" style="enable-background:new 0 0 19.7 18.5;" xml:space="preserve">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: none;
+                                        stroke: #BFBFBF;
+                                        stroke-miterlimit: 10;
+                                    }
+
+                                    .st1 {
+                                        enable-background: new;
+                                    }
+                                </style>
+                                <circle class="st0" cx="10.2" cy="9.5" r="8.5"/>
+                                <g class="st1">
+                                    <path d="M9,8.2V7.9c0.1,0,0.3-0.1,0.4-0.2C9.6,7.7,9.8,7.6,10,7.6c0.2,0,0.3-0.1,0.5-0.1c0.1,0,0.3,0,0.4,0l0.2,0.2l-1.2,5.5h0.9   v0.3c-0.2,0.1-0.4,0.2-0.6,0.3s-0.5,0.1-0.7,0.1c-0.2,0-0.4-0.1-0.5-0.2c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.2,0-0.3,0-0.5   c0-0.2,0.1-0.3,0.1-0.5l0.9-4L9,8.2z M10,5.4c0-0.2,0.1-0.4,0.2-0.5c0.1-0.1,0.3-0.2,0.5-0.2c0.2,0,0.4,0.1,0.5,0.2   s0.2,0.3,0.2,0.5c0,0.2-0.1,0.4-0.2,0.5C11.2,6,11,6.1,10.8,6.1c-0.2,0-0.4-0.1-0.5-0.2C10.1,5.8,10,5.6,10,5.4z"/>
+                                </g>
+                            </svg>
+                        </a></span>
+                        <span>Кафе &laquo;Миндаль&raquo;</span>
+                    </div>
+                    <div class="table__td table__td_social">
+                        <div class="social__list">
+                            <div class="social__item">
+                                <img src="img/svg/vk_outline.svg" alt="">
+                            </div>
+                            <div class="social__item">
+                                <img src="img/svg/instagram_outline.svg" alt="">
+                            </div>
+                            <div class="social__item">
+                                <img src="img/svg/twitter_outline.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__td table__td_value">
+                        <span>200</span>
+                    </div>
+                    <div class="table__td table__td_btn">
+                        <button class="btn btn_promo js-promo-show">
+                            Промо-код
+                        </button>
+                    </div>
+                </div>
+                <div class="table__row">
+                    <div class="table__td table__td_name">
+                        <i class="hashtag">#</i>
+                        <span>пеликан <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" viewBox="0 0 19.7 18.5" style="enable-background:new 0 0 19.7 18.5;" xml:space="preserve">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: none;
+                                        stroke: #BFBFBF;
+                                        stroke-miterlimit: 10;
+                                    }
+
+                                    .st1 {
+                                        enable-background: new;
+                                    }
+                                </style>
+                                <circle class="st0" cx="10.2" cy="9.5" r="8.5"/>
+                                <g class="st1">
+                                    <path d="M9,8.2V7.9c0.1,0,0.3-0.1,0.4-0.2C9.6,7.7,9.8,7.6,10,7.6c0.2,0,0.3-0.1,0.5-0.1c0.1,0,0.3,0,0.4,0l0.2,0.2l-1.2,5.5h0.9   v0.3c-0.2,0.1-0.4,0.2-0.6,0.3s-0.5,0.1-0.7,0.1c-0.2,0-0.4-0.1-0.5-0.2c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.2,0-0.3,0-0.5   c0-0.2,0.1-0.3,0.1-0.5l0.9-4L9,8.2z M10,5.4c0-0.2,0.1-0.4,0.2-0.5c0.1-0.1,0.3-0.2,0.5-0.2c0.2,0,0.4,0.1,0.5,0.2   s0.2,0.3,0.2,0.5c0,0.2-0.1,0.4-0.2,0.5C11.2,6,11,6.1,10.8,6.1c-0.2,0-0.4-0.1-0.5-0.2C10.1,5.8,10,5.6,10,5.4z"/>
+                                </g>
+                            </svg>
+                        </a></span>
+                        <span>Ночной клуб &laquo;Пеликан&raquo;</span>
+                    </div>
+                    <div class="table__td table__td_social">
+                        <div class="social__list">
+                            <div class="social__item">
+                                <img src="img/svg/instagram_outline.svg" alt="">
+                            </div>
+                            <div class="social__item">
+                                <img src="img/svg/twitter_outline.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__td table__td_value">
+                        <span>4000</span>
+                    </div>
+                    <div class="table__td table__td_btn">
+                        <button class="btn btn_promo js-promo-show">
+                            Промо-код
+                        </button>
+                    </div>
+                </div>
+                <div class="table__row">
+                    <div class="table__td table__td_name">
+                        <i class="hashtag">#</i>
+                        <span>эдисон <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" viewBox="0 0 19.7 18.5" style="enable-background:new 0 0 19.7 18.5;" xml:space="preserve">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: none;
+                                        stroke: #BFBFBF;
+                                        stroke-miterlimit: 10;
+                                    }
+
+                                    .st1 {
+                                        enable-background: new;
+                                    }
+                                </style>
+                                <circle class="st0" cx="10.2" cy="9.5" r="8.5"/>
+                                <g class="st1">
+                                    <path d="M9,8.2V7.9c0.1,0,0.3-0.1,0.4-0.2C9.6,7.7,9.8,7.6,10,7.6c0.2,0,0.3-0.1,0.5-0.1c0.1,0,0.3,0,0.4,0l0.2,0.2l-1.2,5.5h0.9   v0.3c-0.2,0.1-0.4,0.2-0.6,0.3s-0.5,0.1-0.7,0.1c-0.2,0-0.4-0.1-0.5-0.2c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.2,0-0.3,0-0.5   c0-0.2,0.1-0.3,0.1-0.5l0.9-4L9,8.2z M10,5.4c0-0.2,0.1-0.4,0.2-0.5c0.1-0.1,0.3-0.2,0.5-0.2c0.2,0,0.4,0.1,0.5,0.2   s0.2,0.3,0.2,0.5c0,0.2-0.1,0.4-0.2,0.5C11.2,6,11,6.1,10.8,6.1c-0.2,0-0.4-0.1-0.5-0.2C10.1,5.8,10,5.6,10,5.4z"/>
+                                </g>
+                            </svg>
+                        </a></span>
+                        <span>Бар &laquo;Эдисон&raquo;</span>
+                    </div>
+                    <div class="table__td table__td_social">
+                        <div class="social__list">
+                            <div class="social__item">
+                                <img src="img/svg/instagram_outline.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__td table__td_value">
+                        <span>1700</span>
+                    </div>
+                    <div class="table__td table__td_btn">
+                        <button class="btn btn_promo js-promo-show">
+                            Промо-код
+                        </button>
+                    </div>
+                </div>
+                <div class="table__row">
+                    <div class="table__td table__td_name">
+                        <i class="hashtag">#</i>
+                        <span>аквамарин <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" viewBox="0 0 19.7 18.5" style="enable-background:new 0 0 19.7 18.5;" xml:space="preserve">
+                                <style type="text/css">
+                                    .st0 {
+                                        fill: none;
+                                        stroke: #BFBFBF;
+                                        stroke-miterlimit: 10;
+                                    }
+
+                                    .st1 {
+                                        enable-background: new;
+                                    }
+                                </style>
+                                <circle class="st0" cx="10.2" cy="9.5" r="8.5"/>
+                                <g class="st1">
+                                    <path d="M9,8.2V7.9c0.1,0,0.3-0.1,0.4-0.2C9.6,7.7,9.8,7.6,10,7.6c0.2,0,0.3-0.1,0.5-0.1c0.1,0,0.3,0,0.4,0l0.2,0.2l-1.2,5.5h0.9   v0.3c-0.2,0.1-0.4,0.2-0.6,0.3s-0.5,0.1-0.7,0.1c-0.2,0-0.4-0.1-0.5-0.2c-0.1-0.1-0.2-0.2-0.2-0.4c0-0.2,0-0.3,0-0.5   c0-0.2,0.1-0.3,0.1-0.5l0.9-4L9,8.2z M10,5.4c0-0.2,0.1-0.4,0.2-0.5c0.1-0.1,0.3-0.2,0.5-0.2c0.2,0,0.4,0.1,0.5,0.2   s0.2,0.3,0.2,0.5c0,0.2-0.1,0.4-0.2,0.5C11.2,6,11,6.1,10.8,6.1c-0.2,0-0.4-0.1-0.5-0.2C10.1,5.8,10,5.6,10,5.4z"/>
+                                </g>
+                            </svg>
+                        </a></span>
+                        <span>Ресторан на воде &laquo;Аквамарин&raquo;</span>
+                    </div>
+                    <div class="table__td table__td_social">
+                        <div class="social__list">
+                            <div class="social__item">
+                                <img src="img/svg/instagram_outline.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__td table__td_value">
+                        <span>300</span>
+                    </div>
+                    <div class="table__td table__td_btn">
+                        <button class="btn btn_promo js-promo-show">
+                            Промо-код
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="bonus__btn">
+                <button class="btn btn_popular js-btn-popular">
+                    Популярные хештеги
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <div class="profile__popular popular js-popular">
+        <div class="popular__inner">
+            <div class="popular__heading heading">
+                <div class="heading__item heading__item_rosa">
+                    Готовый список
+                </div>
+                <div class="heading__item heading__item_bebas">
+                    Самые популярные хештеги
+                </div>
+                <div class="heading__item">
+                    для получения баллов в вашем городе
+                </div>
+            </div>
+            <div class="popular__table table">
+                <div class="table__border"></div>
+                <div class="table__block hashtags">
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                </div>
+                <div class="table__block hashtags">
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_архпаратовъ_архпаратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                </div>
+                <div class="table__block hashtags">
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_архпаратовъ_архпаратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                    <div class="hashtags__item hashtag">
+                        <div class="hashtag__icon">#</div>
+                        <div class="hashtag__name">паратовъ_арх</div>
+                        <div class="hashtag__count">19 456 публикаций</div>
+                    </div>
+                </div>
+            </div>
+            <div class="popular__btn">
+                <button class="btn btn_popular js-btn-bonus">
+                    Бонусные баллы
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+            <div class="popup-404 js-popup-404">
+
+                    <div class="popup-404__overlay js-popup-404-close"></div>
+                    <div class="popup-404__inner">
+                        <div class="popup-404__wrap">
+                            <div class="popup-404__close js-popup-404-close"></div>
+                            <div class="popup-404__heading">
+                                404
+                            </div>
+                            <div class="popup-404__text popup-404__text_rosa">
+                                К сожалению, ничего не найдено
+                            </div>
+                            <div class="popup-404__text">
+                                В вашем городе нет заведений с бонусной программой «Funpay money».<br>
+                                Посмотрите список всех городов для оплаты лайками.
+                            </div>
+                            <div class="popup-404__cities cities">
+                                <div class="cities__block">
+                                    <a href="#" class="cities__item">
+                                        <span>Москва</span>
+                                    </a>
+                                    <a href="#" class="cities__item">
+                                        <span>Екатеринбург</span>
+                                    </a>
+                                </div>
+                                <div class="cities__block">
+                                    <a href="#" class="cities__item">
+                                        <span>Москва</span>
+                                    </a>
+                                    <a href="#" class="cities__item">
+                                        <span>Екатеринбург</span>
+                                    </a>
+                                </div>
+                                <div class="cities__block">
+                                    <a href="#" class="cities__item">
+                                        <span>Москва</span>
+                                    </a>
+                                    <a href="#" class="cities__item">
+                                        <span>Екатеринбург</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="promo-popup js-promo">
+                <div class="promo-popup__overlay js-promo-close"></div>
+                <div class="promo-popup__inner promo">
+                    <div class="promo__header">
+                        <div class="promo__heading">
+                            Назовите промо-код
+                        </div>
+                        <div class="promo__digits">
+                            0085 3102
+                        </div>
+                        <div class="promo__close js-promo-close"></div>
+                    </div>
+                    <div class="promo__code">
+                        <div class="promo__text promo__text_rosa">
+                            или
+                        </div>
+                        <div class="promo__text">
+                            отсканируйте штрих-код
+                        </div>
+                        <div class="promo__image">
+                            <img src="img/temp/code.png" alt="">
+                        </div>
+                        <div class="promo__btn">
+                            <button class="btn btn_promo-popup">
+                                <i></i>
+                                <span>Распечатать</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer__inner">
+                    <div class="footer__logo">
+                        <i></i>
+                        <span>
+                            &copy; 2016 ООО &laquo;ТрендКом&raquo;
+                        </span>
+                    </div>
+                    <div class="footer__social social">
+                        <div class="social__list">
+                            <a href="#" class="social__item">
+                                <img src="img/svg/vk_gradient.svg" alt="VK">
+                            </a>
+                            <a href="#" class="social__item">
+                                <img src="img/instagram_colored.png" alt="VK">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
