@@ -39,15 +39,17 @@ function equalHeightHot() {
 	if ($(window).width() < 980) {
 		return;
 	}
+	var max = 0;
 	$('.js-hot-table-row').each(function() {
-		var max = 0;
+
 		$(this).find('.category-small').each(function() {
 			if ($(this).innerHeight() > max) {
 				max = $(this).innerHeight();
 			}
 		});
-		$(this).find('.category-small').innerHeight(max);
 	});
+
+	$('.js-hot-table-row .category-small').innerHeight(max);
 }
 
 function equalHeightBottom() {

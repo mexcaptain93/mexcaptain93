@@ -462,9 +462,11 @@ a {
   display: block;
   font-size: 14px;
   line-height: 20px;
+  margin-bottom: 20px;
 }
 @media screen and (min-width: 640px) {
   .category-small__price {
+    margin-bottom: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -500,13 +502,15 @@ a {
   }
 }
 .category-small__text {
-  display: none;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000;
 }
 @media screen and (min-width: 640px) {
   .category-small__text {
     display: block;
+    font-size: 18px;
+    line-height: 26px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -614,6 +618,9 @@ a {
     line-height: 19px;
   }
 }
+.footer span a {
+  color: #000;
+}
 .footer__address {
   padding-right: 30px;
 }
@@ -694,6 +701,9 @@ a {
     font-size: 20px;
     line-height: 80px;
   }
+}
+.call-us__text a {
+  color: #fff;
 }
 .call-us__icon {
   position: absolute;
