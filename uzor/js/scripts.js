@@ -34,49 +34,25 @@ function menuSidebar() {
 }
 
 function equalHeightHot() {
-
-	$('.js-hot-table-row').find('.category-small').removeAttr('style');
 	if ($(window).width() < 980) {
 		return;
 	}
-	var max = 0;
-	$('.js-hot-table-row').each(function() {
-
-		$(this).find('.category-small').each(function() {
-			if ($(this).innerHeight() > max) {
-				max = $(this).innerHeight();
-			}
-		});
-	});
-
-	$('.js-hot-table-row .category-small').innerHeight(max);
+	$('.js-hot-table-row .category-small').matchHeight({});
 }
 
 function equalHeightBottom() {
-	$('.js-equal-bottom').removeAttr('style');
-	if ($(window).width() < 980 && $(window).width() >=1440) {
+	if ($(window).width() < 980 && $(window).width() >= 1440) {
 		return;
 	}
-	var maxHeight = 0;
-	$('.js-equal-bottom').each(function() {
-		if ($(this).innerHeight() > maxHeight) {
-			maxHeight = $(this).innerHeight();
-		}
-	});
-	$('.js-equal-bottom').innerHeight(maxHeight);
+	$('.js-equal-bottom').matchHeight({});
 }
+
 function equalHeightBottom3() {
-	$('.js-equal-bottom-3').removeAttr('style');
-	if ($(window).width() < 1440) {
+	if ($(window).width() < 1399) {
 		return;
 	}
-	var maxHeight = 0;
-	$('.js-equal-bottom-3').each(function() {
-		if ($(this).innerHeight() > maxHeight) {
-			maxHeight = $(this).innerHeight();
-		}
-	});
-	$('.js-equal-bottom-3').innerHeight(maxHeight);
+	$('.js-equal-bottom-3').matchHeight({});
+	console.log(123)
 }
 
 
