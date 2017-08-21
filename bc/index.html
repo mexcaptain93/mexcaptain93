@@ -21,11 +21,37 @@
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-6">
                 <div class="header__user user">
-                    <div class="user__name">
-                        <span>Анна Юрьевна Тополева (ООО "АВТ")</span>
+                    <div class="user__info">
+                        <span class="user__name">Анна Юрьевна Тополева</span> <span class="user__company">(ООО "АВТ")</span>
                     </div>
-                    <div class="user__link">
-                        <a href="#">Выйти / Изменить профиль</a>
+                    <div class="user__links">
+                        <a href="#" data-toggle="modal" data-target="#authForm">Выйти</a> / <a href="#">Изменить профиль</a>
+                        <!-- Auth form popup -->
+                        <div class="modal fade bs-example-modal-sm auth-form" id="authForm" tabindex="-1" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <form role="form">
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label for="authForm__email">Логин</label>
+                                                <input type="text" class="form-control" id="authForm__email" placeholder="Введите имя пользователя">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="authForm__password">Пароль</label>
+                                                <input type="password" class="form-control" id="authForm__password" placeholder="Пароль">
+                                            </div>
+                                            <div class="auth-form__btns">
+                                                <button type="button" class="btn btn-primary btn-success">Войти</button>
+                                                <button type="button" class="btn btn-primary btn-link auth-form__forget pull-right">Забыли пароль?</button>
+                                            </div>
+                                            <div class="alert alert-danger">
+                                                <strong>Внимание!</strong> Неверный логин или пароль
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
