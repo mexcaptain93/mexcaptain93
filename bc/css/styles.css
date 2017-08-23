@@ -1,5 +1,46 @@
+.form-group.required .control-label:after {
+  content: " *";
+  color: red;
+}
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("../fonts/RobotoRegular/RobotoRegular.eot");
+  src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "RobotoLight";
+  src: url("../fonts/RobotoLight/RobotoLight.eot");
+  src: url("../fonts/RobotoLight/RobotoLight.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoLight/RobotoLight.woff") format("woff"), url("../fonts/RobotoLight/RobotoLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: url("../fonts/RobotoMedium/RobotoMedium.eot");
+  src: url("../fonts/RobotoMedium/RobotoMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoMedium/RobotoMedium.woff") format("woff"), url("../fonts/RobotoMedium/RobotoMedium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url("../fonts/RobotoBold/RobotoBold.eot");
+  src: url("../fonts/RobotoBold/RobotoBold.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoBold/RobotoBold.woff") format("woff"), url("../fonts/RobotoBold/RobotoBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+body {
+  font-family: 'RobotoRegular';
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-rendering: optimizeLegibility;
+}
 .header {
-  padding-top: 20px;
+  padding: 20px 0;
 }
 .header__user {
   margin-bottom: 20px;
@@ -19,22 +60,75 @@
     margin-bottom: 0;
   }
 }
-.auth-form .modal-content {
-  background-color: #393939;
+.left-menu__cat .cat__name a {
+  display: block;
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 10px 10px 30px;
+}
+.left-menu__cat .cat__list {
+  border-left: 1px solid #646464;
+  padding: 15px;
+  margin-left: 15px;
+}
+.left-menu__cat .cat__list:empty {
+  border-left: none;
+}
+.left-menu__cat .cat__item {
+  display: block;
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 12px;
+  color: #000;
+  font-weight: 600;
+  border: 1px solid #000;
+}
+.left-menu__cat .cat__item:last-child {
+  margin-bottom: 0;
+}
+.auth {
+  padding: 20px;
 }
 @media screen and (min-width: 768px) {
-  .auth-form .modal-dialog {
+  .auth {
+    padding: 50px;
+  }
+}
+.auth .auth-form {
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .auth .auth-form {
     width: 350px;
   }
 }
-.auth-form label {
+.auth .auth-form .auth-form__content {
+  background-color: #393939;
+  padding: 15px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+.auth .auth-form label {
   color: #fff;
 }
-.auth-form__forget {
+.auth .auth-form__forget {
   color: #fff;
   font-weight: bold;
 }
-.auth-form__btns {
+.auth .auth-form__btns {
   margin-bottom: 15px;
   text-align: left;
+}
+.form h3 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.form input[type="time"] {
+  -webkit-border-radius: ;
+     -moz-border-radius: ;
+          border-radius: ;
 }

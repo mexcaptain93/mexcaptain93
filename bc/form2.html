@@ -101,9 +101,71 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-9">
-            <a href="auth.html">Страница авторизации (auth.html)</a><br>
-            <a href="form1.html">Заказать разовый пропуск на посетителя (form1.html)</a><br>
-            <a href="form2.html">Заказать разовый пропуск на парковку для посетителя (form2.html)</a><br>
+           <div class="form form_2">
+               <h3>Заказать разовый пропуск на парковку для посетителя</h3>
+               <form role="form" class="form-horizontal">
+                   <h4>Внесите данные водителя</h4>
+                   <div class="form-group required">
+                       <label for="form1_field1" class="col-sm-3 control-label">Фамилия</label>
+                       <div class="col-sm-9">
+                           <input type="text" class="form-control" id="form1_field1">
+                       </div>
+                   </div>
+                   <div class="form-group required">
+                       <label for="form1_field2" class="col-sm-3 control-label">Имя</label>
+                       <div class="col-sm-9">
+                           <input type="text" class="form-control" id="form1_field2">
+                       </div>
+                   </div>
+                   <div class="form-group required">
+                       <label for="form1_field3" class="col-sm-3 control-label">Отчество</label>
+                       <div class="col-sm-9">
+                           <input type="text" class="form-control" id="form1_field3">
+                       </div>
+                   </div>
+                   <h4>Внесите данные автомобиля</h4>
+                   <div class="form-group required">
+                       <label for="form1_field4" class="col-sm-3 control-label">Номер автомобиля и регион</label>
+                       <div class="col-sm-9">
+                           <input type="text" class="form-control" id="form1_field4">
+                       </div>
+                   </div>
+                   <div class="form-group required">
+                       <label for="form1_field5" class="col-sm-3 control-label">Марка автомобиля</label>
+                       <div class="col-sm-9">
+                           <input type="text" class="form-control" id="form1_field5">
+                       </div>
+                   </div>
+                   <h4>Внесите данные о дате и времени визита</h4>
+                   <div class="form-group">
+                       <label for="form1_field6" class="col-sm-3 control-label">Дата визита</label>
+                       <div class="col-sm-9">
+                           <div class="input-group date">
+                               <input type="text" id="form1_field6" class="form-control datepicker"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="form-group">
+                       <label class="col-sm-3 control-label">Время парковки</label>
+                       <div class="col-sm-9">
+                           <div class="input-group date">
+                               <input type="time" min="08:00" max="20:00" id="form1_field7" class="form-control">
+                           </div>
+                       </div>
+                   </div>
+                   <div class="form-group">
+                       <label for="form1_field4" class="col-sm-3 control-label">Комментарий к заявке</label>
+                       <div class="col-sm-9">
+                           <textarea class="form-control" rows="3"></textarea>
+                       </div>
+                   </div>
+                   <div class="form-group">
+                       <div class="col-sm-9 col-sm-offset-3">
+                           <button type="button" class="btn btn-primary btn-success">Отправить <span class="glyphicon glyphicon-send"></span></button>
+                       </div>
+                   </div>
+               </form>
+           </div>
         </div>
     </div>
 </div>
