@@ -162,6 +162,40 @@ body {
 .form .passport__item input {
   text-align: center;
 }
+.form .loaders {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .form .loaders {
+    margin-bottom: 40px;
+  }
+}
+.form .loaders__add-link {
+  text-align: right;
+}
+.form .loaders__add-link span {
+  display: inline-block;
+  background-color: #0ca816;
+  color: #fff;
+  padding: 5px;
+  margin-left: 5px;
+  -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+          border-radius: 20px;
+  text-align: center;
+  line-height: 15px;
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+}
+.form .loaders__item {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .form .loaders__item {
+    margin-bottom: 40px;
+  }
+}
 /*!
  * Timepicker Component for Twitter Bootstrap
  *

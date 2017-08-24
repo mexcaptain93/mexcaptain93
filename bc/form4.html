@@ -102,75 +102,114 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-9">
-            <div class="form form_2">
-                <h3>Заказать разовый пропуск на парковку для посетителя</h3>
+            <div class="form form_4">
+                <h3>Добавить машину для отгрузки/погрузки на территории</h3>
                 <form role="form" class="form-horizontal">
                     <div class="form-group required">
-                        <label for="form2_field1" class="col-sm-3 control-label">Фамилия</label>
+                        <label for="form4_field1" class="col-sm-3 control-label">Фамилия</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="form2_field1">
+                            <input type="text" class="form-control" id="form4_field1">
                         </div>
                     </div>
                     <div class="form-group required">
-                        <label for="form2_field2" class="col-sm-3 control-label">Имя</label>
+                        <label for="form4_field2" class="col-sm-3 control-label">Имя</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="form2_field2">
+                            <input type="text" class="form-control" id="form4_field2">
                         </div>
                     </div>
                     <div class="form-group required">
-                        <label for="form2_field3" class="col-sm-3 control-label">Отчество</label>
+                        <label for="form4_field3" class="col-sm-3 control-label">Отчество</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="form2_field3">
-                        </div>
-                    </div>
-                    <div class="form-group required">
-                        <label for="form2_field4" class="col-sm-3 control-label">Госномер автомобиля</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="form2_field4">
-                        </div>
-                    </div>
-                    <div class="form-group required">
-                        <label for="form2_field5" class="col-sm-3 control-label">Марка автомобиля</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="form2_field5">
+                            <input type="text" class="form-control" id="form4_field3">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="form2_field6" class="col-sm-3 control-label">Дата визита</label>
+                        <label for="form4_field4" class="col-sm-3 control-label">Госномер автомобиля</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="form4_field4">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form4_field5" class="col-sm-3 control-label">Марка автомобиля</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="form4_field5">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form4_field6" class="col-sm-3 control-label">Наименование юридического лица</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="form4_field6">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="form4_field7" class="col-sm-3 control-label">Что привезут?</label>
+                        <div class="col-sm-9">
+                            <select id="form4_field7" class="form-control">
+                                <option value="aquakrat">Мебель</option>
+                                <option value="aquakrat2">Оружие</option>
+                                <option value="aquakrat3">Еда</option>
+                                <option value="aquakrat4">Дискеты</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form4_field8" class="col-sm-3 control-label">Дата визита</label>
                         <div class="col-sm-9">
                             <div class="input-group date">
-                                <input type="text" id="form2_field6" class="form-control datepicker"><span
+                                <input type="text" id="form4_field8" class="form-control datepicker"><span
                                     class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Время парковки</label>
+                        <label for="form4_field9" class="col-sm-3 control-label">Время</label>
                         <div class="col-sm-9">
-                            <div class="visit-time">
-                                <div class="visit-time__item">
-                                    <input type="text" id="form2_field7" class="form-control timepicker-limited">
-                                    <span>От</span>
-                                </div>
-                                <div class="visit-time__item">
-                                    <input type="text" id="form2_field8" class="form-control timepicker-limited">
-                                    <span>До</span>
-                                </div>
-                            </div>
+                            <input type="text" id="form4_field9" class="form-control timepicker">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-9 col-sm-offset-3">
                             <div class="alert alert-info">
-                                Заказ парковки возможен только с 08:00 до 20:00
+                                Заезд на территорию для отгрузки возможен только с 07:00 до 08:00, с 12:00 до 16:00, с
+                                20:00 до 22:00
                             </div>
                         </div>
                     </div>
+                    <div class="loaders">
+                        <div class="loaders__add-link form-group">
+                            <div class=" col-sm-3">
+                                <a href="#" class="js-add-loader">Добавить грузчика<span
+                                        class="glyphicon glyphicon-plus"></span></a>
+                            </div>
+                        </div>
+                        <div class="loaders__list js-loaders-list">
+                            <div class="loaders__item js-loaders-item">
+                                <div class="form-group required">
+                                    <label for="form4_field10" class="col-sm-3 control-label">Фамилия</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="form4_field10">
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="form4_field11" class="col-sm-3 control-label">Имя</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="form4_field11">
+                                    </div>
+                                </div>
+                                <div class="form-group required">
+                                    <label for="form4_field12" class="col-sm-3 control-label">Отчество</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="form4_field12">
+                                    </div>
+                                </div>
+                            </div>
 
+                        </div>
+                    </div>
                     <div class="form-group">
-                        <label for="form2_field9" class="col-sm-3 control-label">Комментарий к заявке</label>
+                        <label for="form4_field13" class="col-sm-3 control-label">Комментарий к заявке</label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" rows="3" id="form2_field9"></textarea>
+                            <textarea class="form-control" rows="3" id="form4_field13"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
