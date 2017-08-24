@@ -8,6 +8,12 @@ function datePickerInit() {
 		format: "dd.mm.yyyy",
 		language: "ru"
 	});
+	$('.datepicker-multi').datepicker({
+		format: "dd.mm.yyyy",
+		language: "ru",
+		multidate: true,
+		multidateSeparator: ', '
+	});
 }
 
 function timePickerInit() {
