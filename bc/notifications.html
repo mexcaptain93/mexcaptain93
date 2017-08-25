@@ -103,24 +103,97 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-9">
-            <a href="auth.html">Страница авторизации (auth.html)</a><br>
-            <a href="form1.html">Заказать разовый пропуск на посетителя (form1.html)</a><br>
-            <a href="form2.html">Заказать разовый пропуск на парковку для посетителя (form2.html)</a><br>
-            <a href="form3.html">Заказать пропуск для постоянного гостя (form3.html)</a><br>
-            <a href="form4.html">Добавить машину для отгрузки/погрузки на территории (form4.html)</a><br>
-            <a href="form5.html">Заказать постоянный пропуск для сотрудника (form5.html)</a><br>
-            <a href="form6.html">Заблокировать пропуск (form6.html)</a><br>
-            <a href="form7.html">Заявка в службу эксплуатации (form7.html)</a><br>
-            <a href="form8.html">Сообщение для управляющего (form8.html)</a><br>
-            <a href="form9.html">Отправить уведомление о корреспонденции (form9.html)</a><br>
-            <a href="form10.html">Регистрация нового гостя без предварительной заявки (form10.html)</a><br>
-            <a href="form11.html">Запросить бухгалтерские документы (form11.html)</a><br>
-            <a href="form12.html">Редактирование данных профиля (form12.html)</a><br><br>
-            <a href="requests.html">Страница заявок (requests.html)</a><br>
-            <a href="requests-parking.html">Страница заявок (Парковка) (requests-parking.html)</a><br>
-            <a href="notifications.html">Уведомления (notifications.html)</a><br>
+            <div class="notifications">
+                <ul class="notifications__types row nav nav-pills">
+                    <li class="active col-xs-12 col-sm-4">
+                        <a href="#send" data-toggle="tab"><span>Отправить уведомление</span></a>
+                    </li>
+                    <li class="col-xs-12 col-sm-4">
+                        <a href="#list" data-toggle="tab"><span>Список уведомлений</span></a>
+                    </li>
+                    <li class="col-xs-12 col-sm-4">
+                        <a href="#archive" data-toggle="tab"><span>Архив уведомлений</span></a>
+                    </li>
+                </ul>
+
+
+                <div class="notifications__content content tab-content clearfix">
+                    <div class="content__pass tab-pane active" id="send">
+                        Отправить уведомление
+                    </div>
+                    <div class="content__parking tab-pane" id="list">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <th>Дата уведомления</th>
+                                    <th>От кого</th>
+                                </thead>
+                                <tr>
+                                    <td>23.08.2017</td>
+                                    <td>Компания "Аэрофлот"</td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017</td>
+                                    <td>Компания "Аэрофлот"</td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017</td>
+                                    <td>Компания "Аэрофлот"</td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017</td>
+                                    <td>Компания "Аэрофлот"</td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017</td>
+                                    <td>Компания "Аэрофлот"</td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017</td>
+                                    <td>Компания "Аэрофлот"</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content__parking tab-pane" id="archive">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <th>Дата отправки</th>
+                                    <th>В компанию</th>
+                                    <th>Когда забрали</th>
+                                    <th>Кто забрал</th>
+                                </thead>
+                                <tr>
+                                    <td>23.08.2017</td>
+                                    <td>Компания "Аэрофлот"</td>
+                                    <td>24.08.2017</td>
+                                    <td>Заберушин Павел Сергеевич</td>
+                                </tr>
+                                <tr>
+                                    <td>24.08.2017</td>
+                                    <td>Компания "Аэрофлот"</td>
+                                    <td>24.08.2017</td>
+                                    <td>Заберушин Павел Сергеевич</td>
+                                </tr>
+                                <tr>
+                                    <td>24.08.2017</td>
+                                    <td>Компания "Аэрофлот"</td>
+                                    <td>24.08.2017</td>
+                                    <td>Заберушин Павел Сергеевич</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
         </div>
     </div>
+</div>
 </div>
 
 </body>

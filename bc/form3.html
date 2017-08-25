@@ -16,6 +16,7 @@
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/bootstrap-datepicker.ru.min.js"></script>
     <script src="js/bootstrap-timepicker.min.js"></script>
+    <script src="js/typeahead.bundle.js"></script>
     <script src="js/scripts.js"></script>
 
 </head>
@@ -39,7 +40,7 @@
                 <div class="header__btns">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6">
-                            <button type="button" class="btn btn-default btn-block">
+                            <button type="button" class="btn btn-default btn-block btn_notified">
                                 <span class="glyphicon glyphicon-envelope"></span> Корреспонденция
                             </button>
                         </div>
@@ -108,7 +109,7 @@
                     <div class="form-group required">
                         <label for="form3_field1" class="col-sm-3 control-label">Фамилия</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="form3_field1">
+                            <input type="text" class="form-control typeahead js-typeahead-firstname" id="form3_field1">
                         </div>
                     </div>
                     <div class="form-group required">
@@ -121,6 +122,23 @@
                         <label for="form3_field3" class="col-sm-3 control-label">Отчество</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="form3_field3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Предоставить гостю доступ к пожарной лестнице?</label>
+                        <div class="col-sm-9">
+                            <div class="radio radio_inline">
+                                <label>
+                                    <input type="radio" name="fireStairs" id="fireStairs1" value="true" checked>
+                                    Да
+                                </label>
+                            </div>
+                            <div class="radio radio_inline">
+                                <label>
+                                    <input type="radio" name="fireStairs" id="fireStairs1" value="false">
+                                    Нет
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group required">
@@ -156,8 +174,8 @@
                     <div class="form-group required">
                         <label for="form3_field8" class="col-sm-3 control-label">Дни посещений</label>
                         <div class="col-sm-9">
-                            <div class="input-group date">
-                                <input type="text" id="form3_field8" class="form-control datepicker-multi"><span
+                            <div class="input-group date datepicker-multi">
+                                <input type="text" id="form3_field8" class="form-control"><span
                                     class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                             </div>
                         </div>

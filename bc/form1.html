@@ -16,6 +16,7 @@
     <script src="js/bootstrap-datepicker.min.js"></script>
     <script src="js/bootstrap-datepicker.ru.min.js"></script>
     <script src="js/bootstrap-timepicker.min.js"></script>
+    <script src="js/typeahead.bundle.js"></script>
     <script src="js/scripts.js"></script>
 
 </head>
@@ -39,7 +40,7 @@
                 <div class="header__btns">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6">
-                            <button type="button" class="btn btn-default btn-block">
+                            <button type="button" class="btn btn-default btn-block btn_notified">
                                 <span class="glyphicon glyphicon-envelope"></span> Корреспонденция
                             </button>
                         </div>
@@ -108,7 +109,10 @@
                    <div class="form-group required">
                        <label for="form1_field1" class="col-sm-3 control-label">Фамилия</label>
                        <div class="col-sm-9">
-                           <input type="text" class="form-control" id="form1_field1">
+                           <div class="dropdown">
+                               <input type="text" class="form-control typeahead js-typeahead-firstname" id="form1_field1">
+                           </div>
+
                        </div>
                    </div>
                    <div class="form-group required">

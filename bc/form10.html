@@ -103,80 +103,104 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-9">
-            <div class="form form_2">
-                <h3>Заказать разовый пропуск на парковку для посетителя</h3>
+            <div class="form form_10">
+                <h3>Регистрация нового гостя без предварительной заявки</h3>
                 <form role="form" class="form-horizontal">
-                    <h4 class="col-sm-9 col-sm-offset-3">Внесите данные водителя</h4>
                     <div class="form-group required">
-                        <label for="form2_field1" class="col-sm-3 control-label">Фамилия</label>
+                        <label for="form10_field1" class="col-sm-3 control-label">Фамилия</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control typeahead js-typeahead-firstname" id="form2_field1">
+                            <input type="text" class="form-control typeahead js-typeahead-firstname" id="form10_field1">
                         </div>
                     </div>
                     <div class="form-group required">
-                        <label for="form2_field2" class="col-sm-3 control-label">Имя</label>
+                        <label for="form10_field2" class="col-sm-3 control-label">Имя</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="form2_field2">
+                            <input type="text" class="form-control" id="form10_field2">
                         </div>
                     </div>
                     <div class="form-group required">
-                        <label for="form2_field3" class="col-sm-3 control-label">Отчество</label>
+                        <label for="form10_field3" class="col-sm-3 control-label">Отчество</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="form2_field3">
-                        </div>
-                    </div>
-                    <h4 class="col-sm-9 col-sm-offset-3">Внесите данные автомобиля</h4>
-                    <div class="form-group required">
-                        <label for="form2_field4" class="col-sm-3 control-label">Госномер автомобиля</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control typeahead js-typeahead-number" id="form2_field4">
+                            <input type="text" class="form-control" id="form10_field3">
                         </div>
                     </div>
                     <div class="form-group required">
-                        <label for="form2_field5" class="col-sm-3 control-label">Марка автомобиля</label>
+                        <label for="form10_field4" class="col-sm-3 control-label">В организацию</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="form2_field5">
+                            <select id="form10_field4" class="form-control">
+                                <option value="aquakrat">Аквакрат</option>
+                                <option value="aquakrat2">Аквакрат2</option>
+                                <option value="aquakrat3">Аквакрат3</option>
+                                <option value="aquakrat4">Аквакрат4</option>
+                            </select>
                         </div>
                     </div>
-                    <h4 class="col-sm-9 col-sm-offset-3">Внесите данные о дате и времени визита</h4>
+
                     <div class="form-group">
-                        <label for="form2_field6" class="col-sm-3 control-label">Дата визита</label>
+                        <label class="col-sm-3 control-label">Тип документа</label>
                         <div class="col-sm-9">
-                            <div class="input-group date datepicker">
-                                <input type="text" id="form2_field6" class="form-control "><span
-                                    class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            <div class="radio radio_inline">
+                                <label>
+                                    <input type="radio" name="docType" id="docType1" value="passport">
+                                    Паспорт
+                                </label>
+                            </div>
+                            <div class="radio radio_inline">
+                                <label>
+                                    <input type="radio" name="docType" id="docType2" value="driver">
+                                    Водительское удостоверение
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Время парковки</label>
+
+                    <div class="form-group js-docparams docparams">
+                        <label class="col-sm-3 control-label">Серия и номер</label>
                         <div class="col-sm-9">
-                            <div class="visit-time">
-                                <div class="visit-time__item">
-                                    <input type="text" id="form2_field7" class="form-control timepicker-limited">
-                                    <span>От</span>
+                            <div class="passport">
+                                <div class="passport__item">
+                                    <input type="text" id="form10_field6" class="form-control">
                                 </div>
-                                <div class="visit-time__item">
-                                    <input type="text" id="form2_field8" class="form-control timepicker-limited">
-                                    <span>До</span>
+                                <div class="passport__item">
+                                    <input type="text" id="form10_field7" class="form-control">
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-9 col-sm-offset-3">
-                            <div class="alert alert-info">
-                                Заказ парковки возможен только с 08:00 до 20:00
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="form2_field9" class="col-sm-3 control-label">Комментарий к заявке</label>
+                        <label for="form10_field8" class="col-sm-3 control-label">Остальные данные</label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" rows="3" id="form2_field9"></textarea>
+                            <textarea class="form-control" rows="3" id="form10_field8"></textarea>
                         </div>
                     </div>
+
+
+                    <div class="form-group">
+                        <label for="form10_field9" class="col-sm-3 control-label">ФИО встречающего сотрудника</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="form10_field9">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-9 col-sm-offset-3">
+                            <div class="alert alert-info">
+                                C 20:00 до 9:00 для регистрации обязательно указывать данные встречающего сотрудника
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="form10_field10" class="col-sm-3 control-label">Дата посещения</label>
+                        <div class="col-sm-9">
+                            <div class="input-group date datepicker">
+                                <input type="text" id="form10_field10" class="form-control"><span
+                                    class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="form-group">
                         <div class="col-sm-9 col-sm-offset-3">
                             <button type="button" class="btn btn-primary btn-success">Отправить <span

@@ -2,6 +2,40 @@
   content: " *";
   color: red;
 }
+.twitter-typeahead {
+  display: block !important;
+}
+.typeahead {
+  background-color: #FFFFFF;
+}
+.tt-hint {
+  color: #999999;
+}
+.tt-menu {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 3px;
+  padding: 8px 0;
+}
+.tt-suggestion {
+  font-size: 14px;
+  /* Set suggestion dropdown font size */
+  padding: 3px 12px;
+}
+.tt-suggestion:hover {
+  cursor: pointer;
+  background-color: #0097CF;
+  color: #FFFFFF;
+}
+.tt-suggestion p {
+  margin: 0;
+}
 @font-face {
   font-family: "RobotoRegular";
   src: url("../fonts/RobotoRegular/RobotoRegular.eot");
@@ -60,6 +94,9 @@ body {
     margin-bottom: 0;
   }
 }
+.header__btns .btn_notified > span {
+  color: #a20000;
+}
 .left-menu__cat .cat__name a {
   display: block;
   background-color: #000;
@@ -69,7 +106,7 @@ body {
   padding: 10px 10px 10px 30px;
 }
 .left-menu__cat .cat__list {
-  border-left: 1px solid #646464;
+  border-left: 1px solid #ccc;
   padding: 15px;
   margin-left: 15px;
 }
@@ -105,7 +142,7 @@ body {
   }
 }
 .auth .auth-form .auth-form__content {
-  background-color: #393939;
+  background-color: #adadad;
   padding: 15px;
   -webkit-border-radius: 10px;
      -moz-border-radius: 10px;
@@ -127,8 +164,30 @@ body {
   margin-bottom: 20px;
   margin-top: 0;
 }
+.form h4 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 .form textarea {
   max-width: 100%;
+}
+.form input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+.form input[type="file"] {
+  outline: none;
+}
+.form .radio_inline {
+  display: inline-block;
+  margin-right: 20px;
+}
+.form .radio_inline:last-child {
+  margin-right: 0;
 }
 .form .visit-time__item {
   display: inline-block;
@@ -195,6 +254,113 @@ body {
   .form .loaders__item {
     margin-bottom: 40px;
   }
+}
+.form .parking {
+  display: none;
+}
+.form .docparams {
+  display: none;
+}
+.notifications h3 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.notifications .nav-pills > li + li {
+  margin-left: 0;
+}
+.notifications .nav-pills > li > a {
+  display: table;
+  padding: 0;
+}
+.notifications .nav-pills > li.active > a {
+  background-color: #ccc;
+  color: #000;
+}
+.notifications__types {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .notifications__types {
+    margin-bottom: 40px;
+  }
+}
+.notifications__types a {
+  display: table;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+  height: 42px;
+  text-align: center;
+  text-decoration: none;
+}
+.notifications__types a > span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.notifications__types a:hover {
+  background-color: #ccc;
+  border-color: #adadad;
+}
+.requests h3 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.requests .nav-pills > li + li {
+  margin-left: 0;
+}
+.requests .nav-pills > li > a {
+  display: table;
+  padding: 0;
+}
+.requests .nav-pills > li.active > a {
+  background-color: #ccc;
+  color: #000;
+}
+.requests__types {
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .requests__types {
+    margin-bottom: 40px;
+  }
+}
+.requests__types a {
+  display: table;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+  height: 42px;
+  text-align: center;
+  text-decoration: none;
+}
+.requests__types a > span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.requests__types a:hover {
+  background-color: #ccc;
+  border-color: #adadad;
+}
+.requests__content .table thead th {
+  background-color: #636363;
+  color: #fff;
+  text-align: center;
+}
+.requests__content .table td {
+  text-align: center;
+}
+.requests__content .green-text {
+  color: #0ca816;
+}
+.requests__content .red-text {
+  color: #a20000;
+}
+.requests__content .blue-text {
+  color: #000097;
 }
 /*!
  * Timepicker Component for Twitter Bootstrap

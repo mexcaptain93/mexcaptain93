@@ -103,22 +103,35 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-9">
-            <a href="auth.html">Страница авторизации (auth.html)</a><br>
-            <a href="form1.html">Заказать разовый пропуск на посетителя (form1.html)</a><br>
-            <a href="form2.html">Заказать разовый пропуск на парковку для посетителя (form2.html)</a><br>
-            <a href="form3.html">Заказать пропуск для постоянного гостя (form3.html)</a><br>
-            <a href="form4.html">Добавить машину для отгрузки/погрузки на территории (form4.html)</a><br>
-            <a href="form5.html">Заказать постоянный пропуск для сотрудника (form5.html)</a><br>
-            <a href="form6.html">Заблокировать пропуск (form6.html)</a><br>
-            <a href="form7.html">Заявка в службу эксплуатации (form7.html)</a><br>
-            <a href="form8.html">Сообщение для управляющего (form8.html)</a><br>
-            <a href="form9.html">Отправить уведомление о корреспонденции (form9.html)</a><br>
-            <a href="form10.html">Регистрация нового гостя без предварительной заявки (form10.html)</a><br>
-            <a href="form11.html">Запросить бухгалтерские документы (form11.html)</a><br>
-            <a href="form12.html">Редактирование данных профиля (form12.html)</a><br><br>
-            <a href="requests.html">Страница заявок (requests.html)</a><br>
-            <a href="requests-parking.html">Страница заявок (Парковка) (requests-parking.html)</a><br>
-            <a href="notifications.html">Уведомления (notifications.html)</a><br>
+            <div class="form form_8">
+                <h3>Сообщение для управляющего</h3>
+                <form role="form" class="form-horizontal">
+                    <div class="form-group required">
+                        <label for="form8_field1" class="col-sm-3 control-label">Тема сообщения</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="form8_field1">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="form8_field2" class="col-sm-3 control-label">Текст сообщения</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" rows="3" id="form8_field2"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="form7_field3" class="col-sm-3 control-label">Прикрепить файл</label>
+                        <div class="col-sm-9">
+                            <input type="file" id="form7_field3">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-9 col-sm-offset-3">
+                            <button type="button" class="btn btn-primary btn-success">Отправить <span
+                                    class="glyphicon glyphicon-send"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

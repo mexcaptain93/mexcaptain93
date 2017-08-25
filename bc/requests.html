@@ -1,0 +1,295 @@
+<!doctype html>
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+
+    <title>Бизнес-центр</title>
+    <meta name="description" content="Sometext">
+    <meta name="author" content="Sometext">
+    <meta name="viewport" content="width=device-width">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/bootstrap-datepicker.ru.min.js"></script>
+    <script src="js/bootstrap-timepicker.min.js"></script>
+    <script src="js/typeahead.bundle.js"></script>
+    <script src="js/scripts.js"></script>
+
+</head>
+
+<body>
+
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-6">
+                <div class="header__user user">
+                    <div class="user__info">
+                        <span class="user__name">Анна Юрьевна Тополева</span> <span class="user__company">(ООО "АВТ")</span>
+                    </div>
+                    <div class="user__links">
+                        <a href="/index.html">Выйти</a> / <a href="#">Изменить профиль</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-6">
+                <div class="header__btns">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <button type="button" class="btn btn-default btn-block btn_notified">
+                                <span class="glyphicon glyphicon-envelope"></span> Корреспонденция
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <button type="button" class="btn btn-default btn-block">
+                                <span class="glyphicon glyphicon-pencil"></span> Написать управляющему
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-3">
+            <div class="left-menu">
+                <div class="left-menu__cat cat">
+                    <div class="cat__name">
+                        <a href="#">Гостевые пропуска</a>
+                    </div>
+                    <div class="cat__list">
+                        <a href="#" class="cat__item">Пропуск на посетителя</a>
+                        <a href="#" class="cat__item">Пропуск на парковку для посетителя</a>
+                        <a href="#" class="cat__item">Заказать пропуск на постоянного гостя</a>
+                    </div>
+                </div>
+                <div class="left-menu__cat cat">
+                    <div class="cat__name">
+                        <a href="#">Постоянные пропуска</a>
+                    </div>
+                    <div class="cat__list">
+                        <a href="#" class="cat__item">Постоянные пропуск на сотрудника</a>
+                        <a href="#" class="cat__item">Заблокировать пропуск</a>
+                    </div>
+                </div>
+                <div class="left-menu__cat cat">
+                    <div class="cat__name">
+                        <a href="#">Отгрузка/погрузка на территории</a>
+                    </div>
+                    <div class="cat__list"></div>
+                </div>
+                <div class="left-menu__cat cat">
+                    <div class="cat__name">
+                        <a href="#">Заявки в службу эксплуатации</a>
+                    </div>
+                    <div class="cat__list">
+                        <a href="#" class="cat__item">Добавить заявку</a>
+                    </div>
+                </div>
+                <div class="left-menu__cat cat">
+                    <div class="cat__name">
+                        <a href="#">Заказ бухгалтерских документов</a>
+                    </div>
+                    <div class="cat__list"></div><!-- Не допускать перевода строки внутри, если пустой! -->
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+            <div class="requests">
+                <ul class="requests__types row nav nav-pills">
+                    <li class="active col-xs-12 col-sm-3">
+                        <a href="#pass" data-toggle="tab"><span>Заявки на пропуск</span></a>
+                    </li>
+                    <li class="col-xs-12 col-sm-3">
+                        <a href="#parking" data-toggle="tab"><span>Заявки на парковку</span></a>
+                    </li>
+                    <li class="col-xs-12 col-sm-3">
+                        <a href="#exploitation" data-toggle="tab"><span>Заявки в службу эксплуатации</span></a>
+                    </li>
+                    <li class="col-xs-12 col-sm-3">
+                        <a href="#rework" data-toggle="tab"><span>Архив заявок</span></a>
+                    </li>
+                </ul>
+
+
+                <div class="requests__content content tab-content clearfix">
+                    <div class="content__pass tab-pane active" id="pass">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <th>Дата заявки</th>
+                                <th>Тип заявки</th>
+                                <th>ФИО</th>
+                                <th>Статус заявки</th>
+                                <th>Действие</th>
+                                </thead>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-up green-text"></span></td>
+                                    <td>Постоянный пропуск на сотрудника</td>
+                                    <td>Иван Фёдорович Крузенштерн</td>
+                                    <td><span>В ожидании</span></td>
+                                    <td><a href="#" class="red-text">Отменить</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-down red-text"></span></td>
+                                    <td>Постоянный пропуск на сотрудника</td>
+                                    <td>Иван Фёдорович Крузенштерн</td>
+                                    <td><span>В ожидании</td>
+                                    <td><a href="#" class="red-text">Отменить</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-down red-text"></span></td>
+                                    <td>Постоянный пропуск на сотрудника</td>
+                                    <td>Иван Фёдорович Крузенштерн</td>
+                                    <td><span class="green-text">Выполнена</span></td>
+                                    <td><a href="#" class="blue-text">Повторить</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-down red-text"></span></td>
+                                    <td>Постоянный пропуск на сотрудника</td>
+                                    <td>Иван Фёдорович Крузенштерн</td>
+                                    <td><span class="red-text">Просрочена</span></td>
+                                    <td><a href="#" class="blue-text">Повторить</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content__parking tab-pane" id="parking">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <th>Дата заявки</th>
+                                <th>Тип заявки</th>
+                                <th>Госномер и место на парковке</th>
+                                <th>Статус заявки</th>
+                                <th>Действие</th>
+                                </thead>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-up green-text"></span></td>
+                                    <td>Постоянный пропуск на сотрудника</td>
+                                    <td>А000АА77, АА-001</td>
+                                    <td><span>В ожидании</span></td>
+                                    <td><a href="#" class="red-text">Отменить</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-down red-text"></span></td>
+                                    <td>Постоянный пропуск на сотрудника</td>
+                                    <td>А001АА77, АА-005</td>
+                                    <td><span>В ожидании</td>
+                                    <td><a href="#" class="red-text">Отменить</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-down red-text"></span></td>
+                                    <td>Постоянный пропуск на сотрудника</td>
+                                    <td>А555АА77, АА-002</td>
+                                    <td><span class="green-text">Выполнена</span></td>
+                                    <td><a href="#" class="blue-text">Повторить</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-down red-text"></span></td>
+                                    <td>Постоянный пропуск на сотрудника</td>
+                                    <td>А101АА05, АА-004</td>
+                                    <td><span class="red-text">Просрочена</span></td>
+                                    <td><a href="#" class="blue-text">Повторить</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content__exploitation tab-pane" id="exploitation">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <th>Дата заявки</th>
+                                <th>Проблема кратко</th>
+                                <th>Компания</th>
+                                <th>Статус заявки</th>
+                                <th>Действие</th>
+                                </thead>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-up green-text"></span></td>
+                                    <td>Проблема 1</td>
+                                    <td>Компания "Акварат"</td>
+                                    <td><span>Новая</span></td>
+                                    <td><a href="#" class="blue-text">Взять в работу</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-down red-text"></span></td>
+                                    <td>Проблема 1</td>
+                                    <td>Компания "Акварат"</td>
+                                    <td><span>На рассмотрении</span></td>
+                                    <td><a href="#" class="blue-text">Взять в работу</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-up green-text"></span></td>
+                                    <td>Проблема 1</td>
+                                    <td>Компания "Акварат"</td>
+                                    <td><span>В работе</span></td>
+                                    <td><a href="#" class="blue-text">Взять в работу</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-up green-text"></span></td>
+                                    <td>Проблема 1</td>
+                                    <td>Компания "Акварат"</td>
+                                    <td><span>Выполнена</span></td>
+                                    <td><a href="#" class="green-text">Выполнить</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-up green-text"></span></td>
+                                    <td>Проблема 1</td>
+                                    <td>Компания "Акварат"</td>
+                                    <td><span>Требует доработки</span></td>
+                                    <td><a href="#" class="blue-text">Взять в работу</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="content__rework tab-pane" id="rework">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                <th>Дата заявки</th>
+                                <th>Проблема кратко</th>
+                                <th>Статус заявки</th>
+                                <th>Действие</th>
+                                </thead>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-up green-text"></span></td>
+                                    <td>Проблема 1</td>
+                                    <td><span>В ожидании</span></td>
+                                    <td><a href="#" class="red-text">На доработку</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-down red-text"></span></td>
+                                    <td>Проблема 1</td>
+                                    <td><span class="red-text">Просрочена</span></td>
+                                    <td><a href="#" class="red-text">На доработку</a></td>
+                                </tr>
+                                <tr>
+                                    <td>23.08.2017 <span class="glyphicon glyphicon-arrow-up green-text"></span></td>
+                                    <td>Проблема 1</td>
+                                    <td><span class="green-text">Выполнена</span></td>
+                                    <td><a href="#" class="red-text">На доработку</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
