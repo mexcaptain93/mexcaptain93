@@ -13,9 +13,11 @@ function getDateString(d) {
 	return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
 }
 
+var todayTime = 480;
+
 function datePickerInit() {
 	if ($(window).width() < 768) {
-		$('.datepicker input').attr({'type':'date', 'min': getDateString(new Date())});
+		$('.datepicker input').attr({'type': 'date', 'min': getDateString(new Date())});
 	}
 	else {
 		$('.datepicker').datepicker({
@@ -26,6 +28,14 @@ function datePickerInit() {
 		}).on('changeDate', function() {
 			d = $(this).datepicker('getDate');
 			dateSelected = getDateString(d);
+			todayTime = 480;
+			if (getDateString(d) == getDateString(new Date())) {
+				d = new Date();
+				if (d.getHours() * 60 + d.getMinutes() > todayTime) {
+					todayTime = d.getHours() * 60 + d.getMinutes();
+					$('.timepicker-limited').timepicker('setTime', d.getHours() + ":" + d.getMinutes())
+				}
+			}
 		});
 	}
 	$('.datepicker-multi').datepicker({
@@ -34,6 +44,18 @@ function datePickerInit() {
 		multidate: true,
 		multidateSeparator: ', ',
 		startDate: new Date()
+	});
+
+
+	$('.datepicker input').on('change', function() {
+		todayTime = 480;
+		if ($(this).val() == getDateString(new Date())) {
+			d = new Date();
+			if (d.getHours() * 60 + d.getMinutes() > todayTime) {
+				todayTime = d.getHours() * 60 + d.getMinutes();
+				$('.timepicker-limited').timepicker('setTime', d.getHours() + ":" + d.getMinutes())
+			}
+		}
 	});
 }
 
@@ -48,11 +70,15 @@ function timePickerInit() {
 		showMeridian: false,
 		minuteStep: 5,
 		showInputs: true,
+		defaultTime: '08:00'
+	}).on('show.timepicker', function() {
 	}).on('changeTime.timepicker', function(e) {
 		var h = e.time.hours;
 		var m = e.time.minutes;
-		if (h * 60 + m < 480) {
-			$(this).timepicker('setTime', '08:00');
+		if (h * 60 + m < todayTime) {
+			var hours = ('0' + Math.floor(todayTime / 60)).slice(-2);
+			var minutes = ('0' + todayTime % 60).slice(-2);
+			$(this).timepicker('setTime', hours + ':' + minutes);
 		}
 		if (h * 60 + m > 1200) {
 			$(this).timepicker('setTime', '20:00');
