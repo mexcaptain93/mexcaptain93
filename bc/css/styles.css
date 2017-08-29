@@ -261,6 +261,18 @@ body {
 .form .docparams {
   display: none;
 }
+.form .help-block:empty {
+  margin: 0;
+}
+.form .datepicker {
+  padding: 0;
+  width: 100%;
+}
+.form .datepicker input {
+  -webkit-appearance: none;
+  width: 100%;
+  padding-top: 0;
+}
 .notifications h3 {
   font-weight: 600;
   margin-bottom: 20px;

@@ -8,16 +8,32 @@ $(function() {
 	typeaheadNum();
 });
 
+
+function getDateString(d) {
+	return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+}
+
 function datePickerInit() {
-	$('.datepicker').datepicker({
-		format: "dd.mm.yyyy",
-		language: "ru"
-	});
+	if ($(window).width() < 768) {
+		$('.datepicker input').attr({'type':'date', 'min': getDateString(new Date())});
+	}
+	else {
+		$('.datepicker').datepicker({
+			format: "dd.mm.yyyy",
+			language: "ru",
+			startDate: new Date(),
+			autoclose: true
+		}).on('changeDate', function() {
+			d = $(this).datepicker('getDate');
+			dateSelected = getDateString(d);
+		});
+	}
 	$('.datepicker-multi').datepicker({
 		format: "dd.mm.yyyy",
 		language: "ru",
 		multidate: true,
-		multidateSeparator: ', '
+		multidateSeparator: ', ',
+		startDate: new Date()
 	});
 }
 
@@ -115,6 +131,7 @@ function typeaheadFirstname() {
 			source: substringMatcher(firstnames)
 		});
 }
+
 function typeaheadNum() {
 	var numbers = ['О111ОН77', 'А111МР00', 'К469ЕК123', 'В111ОР777'];
 

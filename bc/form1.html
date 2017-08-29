@@ -17,6 +17,7 @@
     <script src="js/bootstrap-datepicker.ru.min.js"></script>
     <script src="js/bootstrap-timepicker.min.js"></script>
     <script src="js/typeahead.bundle.js"></script>
+    <script src="js/validator.js"></script>
     <script src="js/scripts.js"></script>
 
 </head>
@@ -110,26 +111,28 @@
         <div class="col-xs-12 col-sm-9">
            <div class="form form_1">
                <h3>Заказать разовый пропуск на посетителя</h3>
-               <form role="form" class="form-horizontal">
+               <form role="form" class="form-horizontal" data-toggle="validator"">
                    <div class="form-group required">
                        <label for="form1_field1" class="col-sm-3 control-label">Фамилия</label>
                        <div class="col-sm-9">
                            <div class="dropdown">
-                               <input type="text" class="form-control typeahead js-typeahead-firstname" id="form1_field1">
+                               <input type="text" class="form-control typeahead js-typeahead-firstname" id="form1_field1" required>
                            </div>
-
+                           <div class="help-block with-errors"></div>
                        </div>
                    </div>
                    <div class="form-group required">
                        <label for="form1_field2" class="col-sm-3 control-label">Имя</label>
                        <div class="col-sm-9">
-                           <input type="text" class="form-control" id="form1_field2">
+                           <input type="text" class="form-control" id="form1_field2" required>
+                           <div class="help-block with-errors"></div>
                        </div>
                    </div>
                    <div class="form-group required">
                        <label for="form1_field3" class="col-sm-3 control-label">Отчество</label>
                        <div class="col-sm-9">
-                           <input type="text" class="form-control" id="form1_field3">
+                           <input type="text" class="form-control" id="form1_field3" required>
+                           <div class="help-block with-errors"></div>
                        </div>
                    </div>
                    <div class="form-group">
@@ -148,7 +151,7 @@
                    </div>
                    <div class="form-group">
                        <div class="col-sm-9 col-sm-offset-3">
-                           <button type="button" class="btn btn-primary btn-success">Отправить <span class="glyphicon glyphicon-send"></span></button>
+                           <button type="submit" class="btn btn-primary btn-success">Отправить <span class="glyphicon glyphicon-send"></span></button>
                        </div>
                    </div>
                </form>
