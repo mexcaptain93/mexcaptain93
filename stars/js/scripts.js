@@ -31,8 +31,8 @@ $(function(){
         localStorage.setItem('checked', checked)
     });
 
+    // Подсветка необходимого кол-ва звёзд
     function starsAddColor(val) {
-
         $('.js-star').removeClass('stars__item_checked');
         for (let i=0; i<=val; i++) {
             $('.js-star').eq(i).addClass('stars__item_checked');
