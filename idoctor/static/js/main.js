@@ -1,6 +1,7 @@
 $(document).ready(function () {
     toggleHeaderSearch();
     togglers();
+    diagnosis();
 });
 
 
@@ -51,6 +52,22 @@ function togglers() {
     function refreshBack(el, q) {
         var index = el.find("[data-value='" + el.attr('data-value') + "']").index();
         el.find('.toggler__back').css({'left':el.width() / q * index});
-        console.log(index)
     }
+}
+
+function diagnosis() {
+    $('.js-pain').on('click', function (e) {
+        e.preventDefault();
+        var name = '';
+        var time = '';
+        var price = '';
+
+        name = $(this).attr('data-name');
+        time = $(this).attr('data-time');
+        price = $(this).attr('data-price');
+
+        $('.js-diagnosis-name').text(name);
+        $('.js-diagnosis-time').text(time);
+        $('.js-diagnosis-price').text(price);
+    });
 }
