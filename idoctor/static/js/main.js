@@ -3,6 +3,7 @@ $(document).ready(function () {
     togglers();
     diagnosis();
     sliders();
+    showAllDefects();
 });
 
 
@@ -77,5 +78,13 @@ function sliders() {
     $('.js-action-day').slick({
         nextArrow: '<i class="action-day__arrow action-day__arrow_next"></i>',
         prevArrow: '<i class="action-day__arrow action-day__arrow_prev"></i>',
+    });
+}
+
+function showAllDefects() {
+    $('.js-show-all-defects').on('click', function (e) {
+        e.preventDefault();
+        $('.js-all-defects').slideToggle();
+        $(this).toggleClass('opened')
     });
 }
