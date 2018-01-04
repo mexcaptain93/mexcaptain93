@@ -2,6 +2,7 @@ $(document).ready(function () {
     toggleHeaderSearch();
     togglers();
     diagnosis();
+    sliders();
 });
 
 
@@ -69,5 +70,12 @@ function diagnosis() {
         $('.js-diagnosis-name').text(name);
         $('.js-diagnosis-time').text(time);
         $('.js-diagnosis-price').text(price);
+    });
+}
+
+function sliders() {
+    $('.js-action-day').slick({
+        nextArrow: '<i class="action-day__arrow action-day__arrow_next"></i>',
+        prevArrow: '<i class="action-day__arrow action-day__arrow_prev"></i>',
     });
 }
