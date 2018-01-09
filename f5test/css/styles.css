@@ -247,6 +247,7 @@ a {
   background-repeat: no-repeat;
   background-position: top right;
   margin-right: 10px;
+  margin-bottom: 5px;
 }
 @media screen and (min-width: 480px) {
   .banner {
@@ -260,6 +261,7 @@ a {
     width: calc(25% - 20px);
     padding-bottom: 31%;
     margin-right: 20px;
+    margin-bottom: 10px;
   }
 }
 .container {
