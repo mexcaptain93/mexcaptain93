@@ -4,6 +4,7 @@ $(document).ready(function () {
     diagnosis();
     sliders();
     showAllDefects();
+    scrolls();
 });
 
 
@@ -58,7 +59,7 @@ function togglers() {
 }
 
 function diagnosis() {
-    $('.js-pain').on('click', function (e) {
+    $('.js-pain').on('mouseover', function (e) {
         e.preventDefault();
         var name = '';
         var time = '';
@@ -158,4 +159,20 @@ function showAllDefects() {
         $('.js-all-defects').slideToggle();
         $(this).toggleClass('opened')
     });
+}
+
+function scrolls() {
+    function template(link, object, time) {
+        link.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: object.offset().top - 30
+            }, time);
+        });
+    }
+
+    template($('.js-how-to-drive'), $('.js-map'), 2000);
+    template($('.js-about-price'), $('.js-price'), 500);
+
+
 }
