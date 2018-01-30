@@ -5,6 +5,7 @@ $(document).ready(function () {
     sliders();
     showAllDefects();
     scrolls();
+    mobileMenu();
 });
 
 
@@ -175,4 +176,12 @@ function scrolls() {
     template($('.js-about-price'), $('.js-price'), 500);
 
 
+}
+
+function mobileMenu() {
+    $('.js-open-mobile-menu').on('click', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('header-mobile__burger_active');
+        $('.js-mobile-menu').slideToggle();
+    });
 }
