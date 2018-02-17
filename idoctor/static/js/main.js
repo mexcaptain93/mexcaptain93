@@ -103,8 +103,9 @@ function sliders() {
         '</i>',
     });
     $('.js-additional-service').slick({
-        autoplay: true,
-        nextArrow: '<i class="additional-service__arrow additional-service__arrow_next">' +
+        autoplay: false,
+        adaptiveHeight: true,
+        nextArrow: '<i class="additional-service__arrow additional-service__arrow_next slick-next">' +
         '<div class="arrow arrow_red-hover">\n' +
         '  <svg width="33.518211mm" height="26.823923mm" viewBox="0 0 33.518211 26.823923" version="1.1" id="svg21">\n' +
         '   \n' +
@@ -115,7 +116,7 @@ function sliders() {
         '\n' +
         '</div>' +
         '</i>',
-        prevArrow: '<i class="additional-service__arrow additional-service__arrow_prev">' +
+        prevArrow: '<i class="additional-service__arrow additional-service__arrow_prev slick-prev">' +
         '<div class="arrow arrow_red-hover">\n' +
         '  <svg width="33.518211mm" height="26.823923mm" viewBox="0 0 33.518211 26.823923" version="1.1" id="svg21">\n' +
         '   \n' +
@@ -151,6 +152,16 @@ function sliders() {
         '\n' +
         '</div>' +
         '</i>',
+    });
+
+    $('.js-additional-slider-prev').on('click', function (e) {
+        e.preventDefault();
+        $('.js-additional-service').find('.slick-prev').click();
+    });
+    $('.js-additional-slider-next').on('click', function (e) {
+        console.log('sdf')
+        e.preventDefault();
+        $('.js-additional-service').find('.slick-next').click();
     });
 }
 
