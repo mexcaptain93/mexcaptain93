@@ -26,8 +26,12 @@ function toggleHeaderSearch() {
 }
 
 function togglers() {
-    var selectedType = '';
     var typeToggler = $('.js-toggler-type');
+    var selectedType = typeToggler.attr('data-value');
+
+    var modelToggler = $('.js-toggler-model');
+    var selectedModel = modelToggler.attr('data-value');
+
     var typesQuantity = typeToggler.find('[data-value]').length;
     refreshBack(typeToggler, typesQuantity);
 
@@ -36,11 +40,16 @@ function togglers() {
         selectedType = $(this).attr('data-value');
         typeToggler.attr('data-value', selectedType);
         refreshBack(typeToggler, typesQuantity);
+        refreshData(selectedType, selectedModel);
+
+        if(selectedType == 'ipad') {
+            modelToggler.parent().css({opacity: 0});
+        } else {
+            modelToggler.parent().css({opacity: 1});
+        }
     });
 
 
-    var selectedModel = '';
-    var modelToggler = $('.js-toggler-model');
     var modelsQuantity = modelToggler.find('[data-value]').length;
 
     refreshBack(modelToggler, modelsQuantity);
@@ -50,6 +59,7 @@ function togglers() {
         selectedModel = $(this).attr('data-value');
         modelToggler.attr('data-value', selectedModel);
         refreshBack(modelToggler, modelsQuantity);
+        refreshData(selectedType, selectedModel);
     });
 
 
@@ -57,9 +67,34 @@ function togglers() {
         var index = el.find("[data-value='" + el.attr('data-value') + "']").index();
         el.find('.toggler__back').css({'left':el.width() / q * index});
     }
+
+
+
+    refreshData(selectedType, selectedModel);
+}
+
+function refreshData(selectedType, selectedModel) {
+
+    if (selectedType == 'iphone') {
+        var prices = price.types[selectedType][selectedModel];
+    } else
+    {
+        var prices = price.types[selectedType];
+    }
+
+    for(var i in prices) {
+        $('.js-pain').eq(i).attr('data-name', prices[i].name);
+        $('.js-pain').eq(i).attr('data-time', prices[i].time);
+        $('.js-pain').eq(i).attr('data-price', prices[i].price);
+    }
 }
 
 function diagnosis() {
+    var type = ($('.js-toggler-type').attr('data-value'));
+    var model = ($('.js-toggler-model').attr('data-value'));
+
+    refreshData(type, model);
+
     $('.js-pain').on('mouseover', function (e) {
         e.preventDefault();
         var name = '';
@@ -182,3 +217,4 @@ function mobileMenu() {
         $('.js-mobile-menu').slideToggle();
     });
 }
+
