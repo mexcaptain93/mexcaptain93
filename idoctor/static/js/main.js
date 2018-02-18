@@ -129,29 +129,7 @@ function sliders() {
         '</i>',
     });
     $('.js-reviews').slick({
-        autoplay: false,
-        nextArrow: '<i class="reviews__arrow reviews__arrow_next">' +
-        '<div class="arrow arrow_red-hover">\n' +
-        '  <svg width="33.518211mm" height="26.823923mm" viewBox="0 0 33.518211 26.823923" version="1.1" id="svg21">\n' +
-        '   \n' +
-        '    <g transform="translate(-55.812324,-107.45111)">\n' +
-        '      <path id="path20" style="fill:#e22325;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.03527778" d="m 88.808437,122.26758 c 0.726615,-0.72672 0.689293,-1.9117 -0.07758,-2.59327 L 77.344112,107.9894 c -0.684389,-0.7039 -1.810103,-0.71949 -2.513895,-0.0348 -0.703791,0.68477 -0.719314,1.81049 -0.03493,2.51428 l 8.53299,8.75559 H 57.59491 c -0.984603,0 -1.782586,0.79834 -1.782586,1.78259 0,0.9846 0.797983,1.78294 1.782586,1.78294 h 25.649057 l -8.441619,8.44161 c -0.696031,0.69674 -0.696031,1.82492 0,2.52166 0.69603,0.69568 1.824919,0.69568 2.52095,0 l 11.485139,-11.48574"></path>\n' +
-        '    </g>\n' +
-        '  </svg>\n' +
-        '\n' +
-        '</div>' +
-        '</i>',
-        prevArrow: '<i class="reviews__arrow reviews__arrow_prev">' +
-        '<div class="arrow arrow_red-hover">\n' +
-        '  <svg width="33.518211mm" height="26.823923mm" viewBox="0 0 33.518211 26.823923" version="1.1" id="svg21">\n' +
-        '   \n' +
-        '    <g transform="translate(-55.812324,-107.45111)">\n' +
-        '      <path id="path20" style="fill:#e22325;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.03527778" d="m 88.808437,122.26758 c 0.726615,-0.72672 0.689293,-1.9117 -0.07758,-2.59327 L 77.344112,107.9894 c -0.684389,-0.7039 -1.810103,-0.71949 -2.513895,-0.0348 -0.703791,0.68477 -0.719314,1.81049 -0.03493,2.51428 l 8.53299,8.75559 H 57.59491 c -0.984603,0 -1.782586,0.79834 -1.782586,1.78259 0,0.9846 0.797983,1.78294 1.782586,1.78294 h 25.649057 l -8.441619,8.44161 c -0.696031,0.69674 -0.696031,1.82492 0,2.52166 0.69603,0.69568 1.824919,0.69568 2.52095,0 l 11.485139,-11.48574"></path>\n' +
-        '    </g>\n' +
-        '  </svg>\n' +
-        '\n' +
-        '</div>' +
-        '</i>',
+        autoplay: false
     });
 
     $('.js-additional-slider-prev').on('click', function (e) {
@@ -159,9 +137,17 @@ function sliders() {
         $('.js-additional-service').find('.slick-prev').click();
     });
     $('.js-additional-slider-next').on('click', function (e) {
-        console.log('sdf')
         e.preventDefault();
         $('.js-additional-service').find('.slick-next').click();
+    });
+
+    $('.js-reviews-prev').on('click', function (e) {
+        e.preventDefault();
+        $('.js-reviews').find('.slick-prev').click();
+    });
+    $('.js-reviews-next').on('click', function (e) {
+        e.preventDefault();
+        $('.js-reviews').find('.slick-next').click();
     });
 }
 
