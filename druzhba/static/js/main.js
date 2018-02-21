@@ -22,4 +22,22 @@ function popup() {
             }
         }
     });
+
+
+    $('.js-send-mail').on('click', function () {
+        $.ajax({
+            type: "POST",
+            url: "mail.php",
+            data: "name="+ $('.js-name').val() + "&phone="+ $('.js-phone').val(),
+            success: function(msg){
+                $('.js-popup-want .popup__list').remove();
+                $('.js-popup-want .like-h3').text(msg);
+                setTimeout(function() {
+                    $('.js-popup-want').hide();
+                    $('body').removeClass('stop-scrolling')
+                }, 3000);
+
+            }
+        });
+    });
 }
