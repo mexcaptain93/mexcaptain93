@@ -6,6 +6,7 @@ $(document).ready(function () {
     showAllDefects();
     scrolls();
     mobileMenu();
+    callMe();
 });
 
 
@@ -47,6 +48,7 @@ function togglers() {
         } else {
             modelToggler.parent().css({opacity: 1});
         }
+
     });
 
 
@@ -67,26 +69,41 @@ function togglers() {
         var index = el.find("[data-value='" + el.attr('data-value') + "']").index();
         el.find('.toggler__back').css({'left':el.width() / q * index});
     }
-
-
-
-    refreshData(selectedType, selectedModel);
 }
 
 function refreshData(selectedType, selectedModel) {
+    $('.js-diagnosis-mobile-slider').not('.slick-initialized').slick();
 
     if (selectedType == 'iphone') {
         var prices = price.types[selectedType][selectedModel];
-    } else
-    {
+    } else {
         var prices = price.types[selectedType];
     }
+
+
+
 
     for(var i in prices) {
         $('.js-pain').eq(i).attr('data-name', prices[i].name);
         $('.js-pain').eq(i).attr('data-time', prices[i].time);
         $('.js-pain').eq(i).attr('data-price', prices[i].price);
+
+
+
+        $('.js-diagnosis-mobile-slider').append('<div class="diagnosis-mobile__item">\n' +
+            '                <div class="diagnosis-mobile__name"><span class="like-h3 js-diagnosis-name">' + prices[i].name +  '</span></div>\n' +
+            '                <div class="diagnosis-mobile__time-price">\n' +
+            '                  <div class="diagnosis-mobile__time"><span class="like-h6">Время ремонта от:</span><span class="like-h3 js-diagnosis-time">' + prices[i].time + '</span></div>\n' +
+            '                  <div class="diagnosis-mobile__price"><span class="like-h6">Стоимость от:</span><span class="like-h3 js-diagnosis-price">' + prices[i].price + '</span></div>\n' +
+            '                </div>\n' +
+            '              </div>' +
+            '');
+
     }
+
+
+    $('.js-diagnosis-mobile-slider').slick('refresh');
+
 }
 
 function diagnosis() {
@@ -167,6 +184,7 @@ function sliders() {
         autoplay: false
     });
 
+
     $('.js-additional-slider-prev').on('click', function (e) {
         e.preventDefault();
         $('.js-additional-service').find('.slick-prev').click();
@@ -184,6 +202,16 @@ function sliders() {
         e.preventDefault();
         $('.js-reviews').find('.slick-next').click();
     });
+
+
+    $('.js-diagnosis-prev').on('click', function (e) {
+        e.preventDefault();
+        $('.js-diagnosis-mobile-slider').find('.slick-prev').click();
+    });
+    $('.js-diagnosis-next').on('click', function (e) {
+        e.preventDefault();
+        $('.js-diagnosis-mobile-slider').find('.slick-next').click();
+    });
 }
 
 function showAllDefects() {
@@ -195,7 +223,7 @@ function showAllDefects() {
 }
 
 function scrolls() {
-    function template(link, object, time) {
+    function scroll(link, object, time) {
         link.on('click', function (e) {
             e.preventDefault();
             $('html, body').animate({
@@ -204,8 +232,13 @@ function scrolls() {
         });
     }
 
-    template($('.js-how-to-drive'), $('.js-map'), 2000);
-    template($('.js-about-price'), $('.js-price'), 500);
+    scroll($('.js-contacts'), $('.js-map'), 2000);
+    scroll($('.js-about-price'), $('.js-price'), 500);
+    scroll($('.js-action-day-btn'), $('.js-action-day-section'), 500);
+    scroll($('.js-service-btn'), $('.js-service-section'), 500);
+    scroll($('.js-additional-btn'), $('.js-additional-section'), 500);
+    scroll($('.js-reviews-btn'), $('.js-reviews-section'), 500);
+    scroll($('.js-partners-btn'), $('.js-partners-section'), 500);
 
 
 }
@@ -215,6 +248,45 @@ function mobileMenu() {
         e.preventDefault();
         $(this).toggleClass('header-mobile__burger_active');
         $('.js-mobile-menu').slideToggle();
+
+
+    });
+
+    $('.js-mobile-menu').find('a').on('click', function (e) {
+        $('.js-mobile-menu').slideUp();
+        $('.js-open-mobile-menu').removeClass('header-mobile__burger_active');
+
     });
 }
 
+function callMe() {
+    var form = $('.js-call-me-form');
+    form.find('button').on('click', function (e) {
+        e.preventDefault();
+        var phone = form.find('.js-call-me-form-phone').val();
+        var name = form.find('.js-call-me-form-name').val();
+        if (phone) {
+            var data = 'phone=' + phone;
+
+            if (name) {
+                data += '&name=' + name
+            }
+
+
+            $.ajax({
+                type: 'POST',
+                url: 'mail.php',
+                data: data,
+                success: function(msg){
+                    if (name) {
+                        form.find('.js-call-me-form-name').val('');
+                        form.find('.js-call-me-form-phone').val('');
+                        form.parent().append('<br><p>Заявка успешно отправлена! Мы ответим на нее в ближайшее время</p>');
+                    } else {
+                        form.find('.js-call-me-form-phone').val(msg);
+                    }
+                }
+            });
+        }
+    });
+}
