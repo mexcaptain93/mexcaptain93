@@ -317,7 +317,7 @@ function detailText() {
                 var popup = '<div class="popup js-detail-popup"><div class="popup__overlay"><div class="popup__wrap"></div></div></div>';
                 $('body').append(popup);
             }
-            var text = self.find('.defect__text').html();
+            var text = '<div class="like-h2">' + self.find('.defect__name span').html() + '</div>' + self.find('.defect__text').html();
             $('.js-detail-popup').find('.popup__wrap').html(text);
         }
     });
