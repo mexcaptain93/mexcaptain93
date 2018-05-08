@@ -1,4 +1,10 @@
 $(document).ready(function () {
+    var a = new Date("05/10/2018"),
+    b = new Date();
+
+    if(a.setHours(0,0,0,0) <= b.setHours(0,0,0,0)) {
+        return false;
+    }
     toggleHeaderSearch();
     togglers();
     diagnosis();
@@ -7,6 +13,7 @@ $(document).ready(function () {
     scrolls();
     mobileMenu();
     callMe();
+    detailText();
 });
 
 
@@ -14,14 +21,13 @@ function toggleHeaderSearch() {
     $('.js-show-header-search-bar').on('click', function (e) {
         e.preventDefault();
         $('.js-header-search-bar').addClass('header__search_visible');
-        console.log('dich')
     });
 
     $(document).click(function (event) {
-        if ((!$(event.target).closest('.js-header-search-bar').length) && !$(event.target).closest('.js-show-header-search-bar').length ) {
-           if ($('.js-header-search-bar').hasClass('header__search_visible')) {
-               $('.js-header-search-bar').removeClass('header__search_visible');
-           }
+        if ((!$(event.target).closest('.js-header-search-bar').length) && !$(event.target).closest('.js-show-header-search-bar').length) {
+            if ($('.js-header-search-bar').hasClass('header__search_visible')) {
+                $('.js-header-search-bar').removeClass('header__search_visible');
+            }
         }
     });
 }
@@ -33,17 +39,21 @@ function togglers() {
     var modelToggler = $('.js-toggler-model');
     var selectedModel = modelToggler.attr('data-value');
 
+    if (selectedType == 'ipad') {
+        modelToggler.parent().css({opacity: 0});
+    }
+
     var typesQuantity = typeToggler.find('[data-value]').length;
     refreshBack(typeToggler, typesQuantity);
 
-    typeToggler.find('[data-value]').on('click',function (e) {
-        e.preventDefault();
+    typeToggler.find('[data-value]').on('click', function (e) {
+        //e.preventDefault();
         selectedType = $(this).attr('data-value');
         typeToggler.attr('data-value', selectedType);
         refreshBack(typeToggler, typesQuantity);
         refreshData(selectedType, selectedModel);
 
-        if(selectedType == 'ipad') {
+        if (selectedType == 'ipad') {
             modelToggler.parent().css({opacity: 0});
         } else {
             modelToggler.parent().css({opacity: 1});
@@ -56,8 +66,8 @@ function togglers() {
 
     refreshBack(modelToggler, modelsQuantity);
 
-    modelToggler.find('[data-value]').on('click',function (e) {
-        e.preventDefault();
+    modelToggler.find('[data-value]').on('click', function (e) {
+        //e.preventDefault();
         selectedModel = $(this).attr('data-value');
         modelToggler.attr('data-value', selectedModel);
         refreshBack(modelToggler, modelsQuantity);
@@ -67,7 +77,7 @@ function togglers() {
 
     function refreshBack(el, q) {
         var index = el.find("[data-value='" + el.attr('data-value') + "']").index();
-        el.find('.toggler__back').css({'left':el.width() / q * index});
+        el.find('.toggler__back').css({'left': el.width() / q * index});
     }
 }
 
@@ -80,18 +90,24 @@ function refreshData(selectedType, selectedModel) {
         var prices = price.types[selectedType];
     }
 
+    var link = '';
+    if (selectedType === 'ipad') {
+        link = 'price-table-ipad.html';
+    } else {
+        link = 'price-table-' + selectedType + '-' + selectedModel + '.html';
+    }
+
+    $('.js-full-price-link').attr('href', link);
 
 
-
-    for(var i in prices) {
+    for (var i in prices) {
         $('.js-pain').eq(i).attr('data-name', prices[i].name);
         $('.js-pain').eq(i).attr('data-time', prices[i].time);
         $('.js-pain').eq(i).attr('data-price', prices[i].price);
 
 
-
         $('.js-diagnosis-mobile-slider').append('<div class="diagnosis-mobile__item">\n' +
-            '                <div class="diagnosis-mobile__name"><span class="like-h3 js-diagnosis-name">' + prices[i].name +  '</span></div>\n' +
+            '                <div class="diagnosis-mobile__name"><span class="like-h3 js-diagnosis-name">' + prices[i].name + '</span></div>\n' +
             '                <div class="diagnosis-mobile__time-price">\n' +
             '                  <div class="diagnosis-mobile__time"><span class="like-h6">Время ремонта от:</span><span class="like-h3 js-diagnosis-time">' + prices[i].time + '</span></div>\n' +
             '                  <div class="diagnosis-mobile__price"><span class="like-h6">Стоимость от:</span><span class="like-h3 js-diagnosis-price">' + prices[i].price + '</span></div>\n' +
@@ -232,7 +248,6 @@ function scrolls() {
         });
     }
 
-    scroll($('.js-contacts'), $('.js-map'), 2000);
     scroll($('.js-about-price'), $('.js-price'), 500);
     scroll($('.js-action-day-btn'), $('.js-action-day-section'), 500);
     scroll($('.js-service-btn'), $('.js-service-section'), 500);
@@ -277,7 +292,7 @@ function callMe() {
                 type: 'POST',
                 url: 'mail.php',
                 data: data,
-                success: function(msg){
+                success: function (msg) {
                     if (name) {
                         form.find('.js-call-me-form-name').val('');
                         form.find('.js-call-me-form-phone').val('');
@@ -289,4 +304,35 @@ function callMe() {
             });
         }
     });
+}
+
+function detailText() {
+    $('.js-defects-list .defects__item').on("click" ,function(e) {
+        e.preventDefault();
+        var self = $(this);
+        if ($(window).width() <= 990) {
+            $(self).find('.defect__text').slideToggle();
+        } else {
+            if (!$('.js-detail-popup').length) {
+                var popup = '<div class="popup js-detail-popup"><div class="popup__overlay"><div class="popup__wrap"></div></div></div>';
+                $('body').append(popup);
+            }
+            var text = self.find('.defect__text').html();
+            $('.js-detail-popup').find('.popup__wrap').html(text);
+        }
+    });
+
+    $(document).keyup(function(e) {   // enter
+        if (e.keyCode === 27) {
+            if ($('.js-detail-popup').length) {
+                $('.js-detail-popup').remove();
+            }
+        }
+    });
+
+    $(document).on('click', '.js-detail-popup', function(e) {
+        e.preventDefault();
+        $(this).remove();
+    })
+    
 }
