@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8">
+    <title>Главная страница</title><!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css"><!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+  </head>
+  <body class="index">
+    <div class="wrapper">
+      <header class="header">
+        <div class="container header__container">
+          <div class="header__logo"><img src="/static/img/svg/logo.svg"></div>
+          <div class="header__menu menu">
+            <ul class="menu__list">
+              <li class="menu__item menu__item_active"><a href="#">Приветствие</a></li>
+              <li class="menu__item"><a href="#">О задании</a></li>
+              <li class="menu__item"><a href="#">Требования</a></li>
+              <li class="menu__item"><a href="#">Форма</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="content">
+        <section class="index__hello hello">
+          <div class="hello__slider slider">
+            <div class="slider__list js-index-slider owl-carousel">
+              <div class="slider__item"><img src="/static/img/content/slide_one.jpg"></div>
+              <div class="slider__item"><img src="/static/img/content/slide_two.jpg"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="hello__text">
+              <h1 class="h1">Привет!<br>Это тестовое задание<br>на должность&nbsp;<span class="underlined">Frontend-разработчика</span><br>в компанию «Первый БИТ»</h1>
+            </div>
+          </div>
+        </section>
+        <section class="index__about about">
+          <div class="container">
+            <div class="about__heading">
+              <h2 class="h2">О задании</h2>
+            </div>
+            <div class="about__text">
+              <p class="p">Привет, мы рады что вы согласились выполнить <span class="bold">простое тестовое задание</span> на должность 
+                <nobr>Frontend-разработчика</nobr> в компании «Первый БИТ».
+              </p>
+              <p class="p">Выполнив это задание мы <span class="bold">оценим ваши навыки веб-разработчика</span>, а вы сможете понять хватает ли вам опыта для работы в нашей компании.</p>
+              <p class="p">Мы постарались <span class="bold">максимально сэкономить ваше время</span> и подготовили структуру для верстки и все необходимые изображения из данного макета в отдельной папке. Мы оцениваем это задание в 1-3 часа работы.</p>
+            </div>
+          </div>
+        </section>
+        <section class="index__requirements requirements" data-parallax="scroll" data-image-src="/static/img/content/bg_parallax.jpg">
+          <div class="requirements__content">
+            <div class="container">
+              <h2 class="h2 requirements__heading">Требования к вёрстке</h2>
+              <ol class="requirements__list">
+                <li class="requirements__item">Кроссбраузерность (IE11+, FF, Chrome, Opera, Yandex, Safari).</li>
+                <li class="requirements__item">Семантичная, валидная верстка. 
+                  <div class="check">Проверка: <a class="check__link" href="http://validator.w3.org/">http://validator.w3.org/</a> </div>
+                </li>
+                <li class="requirements__item">Скорость, страница должна загружаться очень быстро и иметь не большой размер. 
+                  <div class="check">Проверка: <a class="check__link" href="https://developers.google.com/speed/pagespeed/insights/">https://developers.google.com/speed/pagespeed/insights/</a> </div>
+                </li>
+                <li class="requirements__item">Адаптивность - страница должна коректно выглядеть на всех разрешениях (от 320px до 1920px). 
+                  <div class="check">Проверка: <a class="check__link" href="http://quirktools.com/screenfly/">http://quirktools.com/screenfly/</a> </div>
+                </li>
+                <li class="requirements__item">Можно использовать Bootstrap или любой другой фреймвок, а можно и без него :)</li>
+                <li class="requirements__item">Выложить верстку на хостинг и прислать ссылку или прислать архив с версткой.</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+        <section class="index__feedback-photo">
+          <div class="container">
+            <div class="index__feedback feedback">
+              <div class="feedback__heading">
+                <h2 class="h2">Форма обратной связи</h2>
+              </div>
+              <div class="feedback__form">
+                <form class="form" method="post">
+                  <div class="form__list">
+                    <div class="form__item">
+                      <input class="input" type="text" name="name" placeholder="Имя">
+                    </div>
+                    <div class="form__item">
+                      <input class="input" type="text" name="phone" placeholder="Телефон">
+                    </div>
+                    <div class="form__item form__item_checkboxes">
+                      <label class="checkbox" for="checkbox-1">
+                        <input class="checkbox__input" id="checkbox-1" type="checkbox"><span class="checkbox__text">Клёво</span>
+                      </label>
+                      <label class="checkbox" for="checkbox-2">
+                        <input class="checkbox__input" id="checkbox-2" type="checkbox"><span class="checkbox__text">Не очень</span>
+                      </label>
+                    </div>
+                    <div class="form__item">
+                      <button class="button"><span class="button__text">Отправить в бездну</span><i class="button__icon"></i></button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="index__photo photo">
+              <div class="photo__heading">
+                <h2 class="h2">Фотографии нашего офиса</h2>
+              </div>
+              <div class="photo__list">
+                <div class="photo__item"><a href="/static/img/content/office/photo_01.jpg" data-fancybox="office"><img class="img" src="/static/img/content/office/mini_01.jpg"></a></div>
+                <div class="photo__item"><a href="/static/img/content/office/photo_02.jpg" data-fancybox="office"><img class="img" src="/static/img/content/office/mini_02.jpg"></a></div>
+                <div class="photo__item"><a href="/static/img/content/office/photo_03.jpg" data-fancybox="office"><img class="img" src="/static/img/content/office/mini_03.jpg"></a></div>
+                <div class="photo__item"><a href="/static/img/content/office/photo_04.jpg" data-fancybox="office"><img class="img" src="/static/img/content/office/mini_04.jpg"></a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="footer">
+        <div class="container footer__container">
+          <div class="footer__copy">&copy; Михаил Голованов, 24.10.2018</div>
+          <div class="footer__privacy"><a class="footer__link" href="#">Политика конфиденциальности данных</a></div>
+        </div>
+      </footer>
+    </div>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/parallax.min.js"></script>
+    <script src="static/js/jquery.fancybox.min.js"></script>
+    <script src="static/js/libs.min.js"></script>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
