@@ -1,5 +1,6 @@
 $(function () {
     slider();
+    phoneMask();
 });
 
 function slider() {
@@ -19,4 +20,11 @@ function slider() {
             dots: false
         });
     }
+}
+
+function phoneMask() {
+   var mask = new IMask($("[name='phone']")[0], {
+       mask: '+{7}(000) 000-00-00'
+   });
+   mask.rawValue = '999-12-12-123';
 }

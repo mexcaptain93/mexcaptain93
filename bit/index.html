@@ -78,7 +78,7 @@
                 <h2 class="h2">Форма обратной связи</h2>
               </div>
               <div class="feedback__form">
-                <form class="form" method="post">
+                <form class="form" method="post" action="">
                   <div class="form__list">
                     <div class="form__item">
                       <input class="input" type="text" name="name" placeholder="Имя">
@@ -87,11 +87,11 @@
                       <input class="input" type="text" name="phone" placeholder="Телефон">
                     </div>
                     <div class="form__item form__item_checkboxes">
-                      <label class="checkbox" for="checkbox-1">
-                        <input class="checkbox__input" id="checkbox-1" type="checkbox"><span class="checkbox__text">Клёво</span>
+                      <label class="checkbox" for="radio-1">
+                        <input class="checkbox__input" id="radio-1" type="radio" name="mark"><span class="checkbox__text">Клёво</span>
                       </label>
-                      <label class="checkbox" for="checkbox-2">
-                        <input class="checkbox__input" id="checkbox-2" type="checkbox"><span class="checkbox__text">Не очень</span>
+                      <label class="checkbox" for="radio-2">
+                        <input class="checkbox__input" id="radio-2" type="radio" name="mark"><span class="checkbox__text">Не очень</span>
                       </label>
                     </div>
                     <div class="form__item">
@@ -126,6 +126,7 @@
     <script src="static/js/owl.carousel.min.js"></script>
     <script src="static/js/parallax.min.js"></script>
     <script src="static/js/jquery.fancybox.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
     <script src="static/js/libs.min.js"></script>
     <script src="static/js/main.js"></script>
   </body>
