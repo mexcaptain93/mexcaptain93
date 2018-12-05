@@ -1,5 +1,6 @@
 $(document).ready(function () {
     indexVideos();
+    mobileMenu();
 });
 
 function indexVideos() {
@@ -9,7 +10,23 @@ function indexVideos() {
     if (videos.length) {
         videos.slick({
             slidesToShow: 2,
-            slidesToScroll: 2
+            slidesToScroll: 2,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: true
+                    }
+                }
+            ]
         });
 
         prev.on('click', function (e)  {
@@ -22,5 +39,24 @@ function indexVideos() {
            videos.slick('slickNext');
         });
     }
+}
 
+function mobileMenu() {
+
+
+    var burger = $('.js-burger'),
+        dropdown = $('.js-dropdown'),
+        item = $('.js-mobile-menu-has-sub').find('> a'),
+        submenu = $('.js-mobile-menu-submenu');
+    
+    item.on('click', function (e) {
+        e.preventDefault();
+        $(this).siblings(submenu).slideToggle();
+    })
+
+    burger.on('click', function(e) {
+        e.preventDefault();
+        $(this).toggleClass('burger_opened');
+        dropdown.toggle();
+    })
 }
