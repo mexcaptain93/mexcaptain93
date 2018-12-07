@@ -60,7 +60,7 @@ function mobileMenu() {
         dropdown.toggle();
 
         $('body').toggleClass('stop-scrolling');
-        if ($(body).hasClass('stop-scrolling')) {
+        if ($('body').hasClass('stop-scrolling')) {
             console.log('1')
             $('body').bind('touchmove', function(e){e.preventDefault()})
         } else {
