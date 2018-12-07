@@ -58,5 +58,9 @@ function mobileMenu() {
         e.preventDefault();
         $(this).toggleClass('burger_opened');
         dropdown.toggle();
+
+        $('body').toggleClass('stop-scrolling');
     })
+
+
 }
