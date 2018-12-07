@@ -54,32 +54,37 @@ function mobileMenu() {
         $(this).siblings(submenu).slideToggle();
     })
 
+    var disableScroll = false;
+    var scrollPos = 0;
+    function stopScroll() {
+        disableScroll = true;
+        scrollPos = $(window).scrollTop();
+    }
+    function enableScroll() {
+        disableScroll = false;
+    }
+    $(window).bind('scroll', function(){
+        if(disableScroll) $(window).scrollTop(scrollPos);
+    });
+    $(window).bind('touchmove', function(){
+        $(window).trigger('scroll');
+    });
+
+
     burger.on('click', function(e) {
         e.preventDefault();
         $(this).toggleClass('burger_opened');
         dropdown.toggle();
 
         $('body').toggleClass('stop-scrolling');
+
         if ($('body').hasClass('stop-scrolling')) {
-            console.log('1')
-            stopBodyScrolling(true);
+            stopScroll();
         } else {
-            console.log(2)
-            stopBodyScrolling(false);
+            enableScroll();
         }
+
 
     })
 
 }
-
-function stopBodyScrolling (bool) {
-    if (bool === true) {
-        document.body.addEventListener("touchmove", freezeVp, false);
-    } else {
-        document.body.removeEventListener("touchmove", freezeVp, false);
-    }
-}
-
-var freezeVp = function(e) {
-    e.preventDefault();
-};
