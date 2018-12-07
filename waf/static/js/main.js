@@ -62,13 +62,24 @@ function mobileMenu() {
         $('body').toggleClass('stop-scrolling');
         if ($('body').hasClass('stop-scrolling')) {
             console.log('1')
-            $('body').bind('touchmove', function(e){e.preventDefault()})
+            stopBodyScrolling(true);
         } else {
             console.log(2)
-            $('body').unbind('touchmove')
+            stopBodyScrolling(false);
         }
 
     })
 
-
 }
+
+function stopBodyScrolling (bool) {
+    if (bool === true) {
+        document.body.addEventListener("touchmove", freezeVp, false);
+    } else {
+        document.body.removeEventListener("touchmove", freezeVp, false);
+    }
+}
+
+var freezeVp = function(e) {
+    e.preventDefault();
+};
