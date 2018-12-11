@@ -7,6 +7,7 @@ $(document).ready(function () {
     quantityElement();
     instaSlider();
     suggestSlider();
+    zoomProductImg();
 });
 
 function indexVideos() {
@@ -220,6 +221,22 @@ function suggestSlider() {
                 next.addClass('suggest__arrow_inactive');
             }
 
+        });
+    }
+}
+
+function zoomProductImg() {
+    var img = $('.js-product-photos img');
+
+    if (img.length) {
+        img.okzoom({
+            width: 300,
+            height: 300,
+            round: false,
+            background: "#fff",
+            backgroundRepeat: "no-repeat",
+            shadow: "0 5px 30px rgba(0,0,0,.2)",
+            border: "none"
         });
     }
 }
