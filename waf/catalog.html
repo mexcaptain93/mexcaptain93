@@ -244,20 +244,6 @@
                 <li class="value__item"><a href="#">По ещё чему-нибудь</a></li>
               </ul>
             </div>
-            <div class="filters__result-pagination">
-              <div class="filters__result result">
-                <div class="result__wrap"><span class="result__text">Выбрано</span><a class="result__item" href="#">Значки</a><a class="result__item" href="#">Хиты продаж</a><a class="result__clear" href="#">Очистить фильтры</a></div>
-              </div>
-              <div class="pagination">
-                <ul class="pagination__list">
-                  <li class="pagination__item"><a href="#">< Предыдущая</a></li>
-                  <li class="pagination__item"><a href="#">1</a></li>
-                  <li class="pagination__item pagination__item_active"><a href="#">2</a></li>
-                  <li class="pagination__item"><a href="#">3</a></li>
-                  <li class="pagination__item"><a href="#">Следующая ></a></li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
         <div class="filters-sort-mobile">
@@ -272,7 +258,7 @@
             </label>
             <div class="tabs__content" id="mobile-filters">
               <div class="filters-sort-mobile__list">
-                <div class="filters-sort-mobile__item filters-sort-mobile__item_opened">
+                <div class="filters-sort-mobile__item">
                   <div class="filters-sort-mobile__name js-mobile-filter js-mobile-filter"><span>Цвет</span></div>
                   <div class="filters-sort-mobile__value value js-mobile-filter-value js-mobile-filter-value">
                     <ul class="value__list value__list_color">
@@ -353,6 +339,25 @@
               </div>
             </div>
           </form>
+        </div>
+        <div class="filters__result-pagination">
+          <div class="container">
+            <div class="filters__result result">
+              <div class="result__wrap"><span class="result__text">Выбрано</span>
+                <div class="result__item"><a href="#">Значки</a><a class="result__remove" href="#"></a></div>
+                <div class="result__item"><a href="#">Хиты продаж</a><a class="result__remove" href="#"></a></div><a class="result__clear" href="#">Очистить фильтры</a>
+              </div>
+            </div>
+            <div class="pagination">
+              <ul class="pagination__list">
+                <li class="pagination__item pagination__item_prev"><a href="#"></a></li>
+                <li class="pagination__item"><a href="#">1</a></li>
+                <li class="pagination__item pagination__item_active"><a href="#">2</a></li>
+                <li class="pagination__item"><a href="#">3</a></li>
+                <li class="pagination__item pagination__item_next"><a href="#"></a></li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="products">
           <div class="container">

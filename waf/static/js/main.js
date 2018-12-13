@@ -8,6 +8,7 @@ $(document).ready(function () {
     instaSlider();
     suggestSlider();
     zoomProductImg();
+    productTabs();
 });
 
 function indexVideos() {
@@ -185,50 +186,65 @@ function suggestSlider() {
     var suggestSlider =  $('.js-suggest-slider'),
         next = $('.js-suggest-slider-next'),
         prev = $('.js-suggest-slider-prev');
-    if (suggestSlider.length) {
-        suggestSlider.slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            responsive: [
-                {
-                    breakpoint: 481,
-                    settings: {
-                        slidesToShow: 1,
-                        infinite: false
+
+    $(window).resize(function () {
+
+        if ($(window).width() < 481) {
+
+            if (suggestSlider.length && !suggestSlider.hasClass('slick-initialized')) {
+
+                suggestSlider.slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    responsive: [
+                        {
+                            breakpoint: 481,
+                            settings: {
+                                slidesToShow: 1,
+                                infinite: false
+                            }
+                        },
+                    ]
+                });
+
+                prev.on('click', function (e) {
+                    e.preventDefault();
+                    suggestSlider.slick('slickPrev');
+                });
+
+                next.on('click', function (e) {
+                    e.preventDefault();
+                    suggestSlider.slick('slickNext');
+                });
+
+                suggestSlider.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+                    $('.suggest__arrow_inactive').removeClass('suggest__arrow_inactive');
+
+                    if ($('.slick-prev').hasClass('slick-disabled')) {
+                        prev.addClass('suggest__arrow_inactive');
                     }
-                },
-            ]
-        });
 
-        prev.on('click', function (e)  {
-            e.preventDefault();
-            suggestSlider.slick('slickPrev');
-        });
+                    if ($('.slick-next').hasClass('slick-disabled')) {
+                        next.addClass('suggest__arrow_inactive');
+                    }
 
-        next.on('click', function (e)  {
-            e.preventDefault();
-            suggestSlider.slick('slickNext');
-        });
-
-        suggestSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
-            $('.suggest__arrow_inactive').removeClass('suggest__arrow_inactive');
-
-            if ($('.slick-prev').hasClass('slick-disabled')) {
-                prev.addClass('suggest__arrow_inactive');
+                });
             }
 
-            if ($('.slick-next').hasClass('slick-disabled')) {
-                next.addClass('suggest__arrow_inactive');
+        } else {
+            if (suggestSlider.hasClass('slick-initialized')) {
+                suggestSlider.slick('destroy');
             }
+        }
 
-        });
-    }
+
+    });
 }
 
 function zoomProductImg() {
     var img = $('.js-product-photos img');
 
-    if (img.length) {
+    if (img.length && $.fn.okzoom && $(window).width() > 480) {
         img.okzoom({
             width: 300,
             height: 300,
@@ -237,6 +253,29 @@ function zoomProductImg() {
             backgroundRepeat: "no-repeat",
             shadow: "0 5px 30px rgba(0,0,0,.2)",
             border: "none"
+        });
+    }
+}
+
+function productTabs() {
+    var tabs = $('.js-product-tabs');
+
+    if (tabs) {
+        tabs.find('label').on('click', function (e) {
+           if ($(window).width() < 769 ) {
+               e.preventDefault();
+               var f = $(this).attr('for');
+               var inp = $('#' + f);
+
+               console.log(inp.prop('checked'))
+               if (inp.prop('checked')) {
+                   inp.removeAttr("checked");
+               } else {
+                   inp.prop('checked', true);
+               }
+
+
+           }
         });
     }
 }
