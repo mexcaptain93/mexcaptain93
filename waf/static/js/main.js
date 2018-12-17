@@ -190,8 +190,12 @@ function suggestSlider() {
         next = $('.js-suggest-slider-next'),
         prev = $('.js-suggest-slider-prev');
 
+    init();
     $(window).resize(function () {
+        init();
+    });
 
+    function init() {
         if ($(window).width() < 481) {
 
             if (suggestSlider.length && !suggestSlider.hasClass('slick-initialized')) {
@@ -222,12 +226,11 @@ function suggestSlider() {
 
                 suggestSlider.on('afterChange', function (event, slick, currentSlide, nextSlide) {
                     $('.suggest__arrow_inactive').removeClass('suggest__arrow_inactive');
-
-                    if ($('.slick-prev').hasClass('slick-disabled')) {
+                    if (suggestSlider.find('.slick-prev').hasClass('slick-disabled')) {
                         prev.addClass('suggest__arrow_inactive');
                     }
 
-                    if ($('.slick-next').hasClass('slick-disabled')) {
+                    if (suggestSlider.find('.slick-next').hasClass('slick-disabled')) {
                         next.addClass('suggest__arrow_inactive');
                     }
 
@@ -239,9 +242,7 @@ function suggestSlider() {
                 suggestSlider.slick('destroy');
             }
         }
-
-
-    });
+    }
 }
 
 function zoomProductImg() {
