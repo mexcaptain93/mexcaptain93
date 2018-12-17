@@ -9,6 +9,9 @@ $(document).ready(function () {
     suggestSlider();
     zoomProductImg();
     productTabs();
+    phoneMask();
+    orderPage();
+    popupCart();
 });
 
 function indexVideos() {
@@ -59,7 +62,7 @@ function mobileMenu() {
     item.on('click', function (e) {
         e.preventDefault();
         $(this).siblings(submenu).slideToggle();
-    })
+    });
 
     burger.on('click', function(e) {
         e.preventDefault();
@@ -278,4 +281,46 @@ function productTabs() {
            }
         });
     }
+}
+
+function phoneMask() {
+
+    $('.js-phone-input').each(function (index, elem) {
+        new IMask(elem, {
+            mask: '+{7}(000)000-00-00'
+        });
+    });
+}
+
+function orderPage() {
+    var details = $('.js-order-details');
+
+    details.find('.details__head').on('click', function (e) {
+        e.preventDefault();
+        $(this).siblings('.details__content').slideToggle();
+        $(this).siblings('.details__summary').toggle();
+    })
+
+}
+
+function popupCart() {
+    var cartPopup = $('.js-cart-popup'),
+        cartClose = $('.js-cart-popup-close'),
+        cartOpen = $('.js-cart-popup-open');
+
+    cartOpen.on('click', function (e) {
+        e.preventDefault();
+
+        if(cartPopup.length) {
+            cartPopup.show();
+        }
+    });
+
+    cartClose.on('click', function (e) {
+        e.preventDefault();
+
+       if(cartPopup.length) {
+           cartPopup.hide();
+       }
+    })
 }

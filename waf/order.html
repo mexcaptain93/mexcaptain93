@@ -23,9 +23,9 @@
                   <li class="links__item"><a href="#">Вход</a></li>
                 </ul>
               </div>
-              <div class="header__cart cart"><a class="cart__link" href="#">
-                  <div class="cart__text"><span>Корзина</span></div>
-                  <div class="cart__counter"><span>0</span></div></a></div>
+              <div class="header__cart header-cart"><a class="header-cart__link js-cart-popup-open" href="cart.html">
+                  <div class="header-cart__text"><span>Корзина</span></div>
+                  <div class="header-cart__counter"><span>0</span></div></a></div>
             </div>
             <div class="top__categories categories">
               <ul class="categories__list">
@@ -110,9 +110,9 @@
             <div class="container">
               <div class="mobile__burger js-burger"><a class="burger" href="#"><span></span></a></div>
               <div class="mobile__logo"><a href="/"><img src="static/img/general/logo.png"></a></div>
-              <div class="mobile__cart cart"><a class="cart__wrap" href="#">
-                  <div class="cart__icon"></div>
-                  <div class="cart__text"><span>2</span></div></a></div>
+              <div class="mobile__cart header-cart"><a class="header-cart__wrap js-cart-popup-open" href="#">
+                  <div class="header-cart__icon"></div>
+                  <div class="header-cart__text"><span>2</span></div></a></div>
             </div>
           </div>
           <div class="mobile__dropdown js-dropdown">
@@ -178,10 +178,10 @@
           </ul>
         </div>
         <h1 class="like-h1">Оформление заказа</h1>
-        <div class="order-page__wrap">
-          <div class="container">
-            <div class="order-page__details details">
-              <div class="details__block">
+        <div class="order-page__wrap container">
+          <div class="order-page__details details js-order-details">
+            <form>
+              <div class="details__block details__block_opened">
                 <div class="details__head head">
                   <div class="head__count">1</div>
                   <div class="head__name"><span>Товары в заказе</span></div>
@@ -213,14 +213,15 @@
                   <div class="details__promo promo">
                     <div class="promo__title title"><span>Применить купон</span></div>
                     <div class="promo__elem">
-                      <input class="promo__input" type="text">
+                      <input class="textfield" type="text">
                       <button class="promo__btn"></button>
                     </div>
                   </div>
+                  <div class="details__btns">
+                    <div class="btn btn_big">Далее</div>
+                  </div>
                 </div>
-                <div class="details__btns">
-                  <div class="btn btn_big">Далее</div>
-                </div>
+                <div class="details__summary">Выбрано <span>3 товара</span></div>
               </div>
               <div class="details__block">
                 <div class="details__head head">
@@ -230,24 +231,201 @@
                 </div>
                 <div class="details__content">
                   <div class="title title_required">Местоположение</div>
+                  <div class="details__location location">
+                    <div class="location__input">
+                      <input class="textfield textfield_wide" type="text" autocomplete="nope"><a class="location__clear" href="#"></a>
+                      <div class="location__dropdown">
+                        <div class="location__list">
+                          <div class="location__item"><span>Москва</span>, Центр, Россия</div>
+                          <div class="location__item"><span>Москва</span>, Центр, Россия</div>
+                          <div class="location__item"><span>Москва</span>, Центр, Россия</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="details__hint"><span>Выберите свой город в списке</span></div>
+                  </div>
+                  <div class="details__btns details__btns_both"><a class="btn btn_big btn_mono" href="#">Назад</a><a class="btn btn_big" href="#">Далее</a></div>
                 </div>
-                <div class="details__btns details__btns_both"><a class="btn btn_big btn_mono" href="#">Назад</a><a class="btn btn_big" href="#">Далее</a></div>
+                <div class="details__summary">Местоположение <span>Москва</span>, Центр, Россия</div>
               </div>
-            </div>
-            <div class="order-page__summary summary">
-              <div class="summary__table table">
-                <div class="table__row summary__head">
-                  <div class="table__td"><span>Товаров на:</span></div>
-                  <div class="table__td"><span>897 ₽</span></div>
+              <div class="details__block">
+                <div class="details__head head">
+                  <div class="head__count">3</div>
+                  <div class="head__name"><span>Доставка</span></div>
+                  <div class="head__change-link"><a href="#">изменить</a></div>
                 </div>
-                <div class="table__row">
-                  <div class="table__td"><span>Доставка:</span></div>
-                  <div class="table__td"><span>0 ₽</span></div>
+                <div class="details__content">
+                  <div class="details__delivery delivery">
+                    <div class="delivery__list">
+                      <div class="delivery__item">
+                        <input type="radio" id="delivery-1" name="order-delivery" checked>
+                        <label for="delivery-1">
+                          <div class="delivery__top">
+                            <div class="delivery__img" style="background-image: url(&quot;static/img/content/delivery-1.jpg&quot;);"></div>
+                            <div class="delivery__price"><span>0 ₽</span></div>
+                          </div>
+                          <div class="delivery__name"><span>Самовывоз со склада</span></div>
+                        </label>
+                      </div>
+                      <div class="delivery__item">
+                        <input type="radio" id="delivery-2" name="order-delivery">
+                        <label for="delivery-2">
+                          <div class="delivery__top">
+                            <div class="delivery__img" style="background-image: url(&quot;static/img/content/delivery-2.jpg&quot;);"></div>
+                            <div class="delivery__price"><span>310 ₽</span></div>
+                          </div>
+                          <div class="delivery__name"><span>СДЭК (доставка курьером)</span></div>
+                        </label>
+                      </div>
+                      <div class="delivery__item">
+                        <input type="radio" id="delivery-3" name="order-delivery">
+                        <label for="delivery-3">
+                          <div class="delivery__top">
+                            <div class="delivery__img" style="background-image: url(&quot;static/img/content/delivery-2.jpg&quot;);"></div>
+                            <div class="delivery__price"><span>170 ₽</span></div>
+                          </div>
+                          <div class="delivery__name"><span>СДЭК (самовывоз)</span></div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="delivery__result result">
+                      <div class="result__name"><span>Самовывоз со склада</span></div>
+                      <div class="result__img"><img src="static/img/content/delivery-1.jpg" alt="Самовывоз со склада"></div>
+                      <div class="result__hint"><span>Вы можете самостоятельно забрать заказ из нашего магазина</span></div>
+                      <div class="result__price"><span>Стоимость 0 ₽</span></div>
+                      <div class="result__time"><span>Срок доставки: от 3 до 10 дней</span></div>
+                    </div>
+                  </div>
+                  <div class="details__btns details__btns_both"><a class="btn btn_big btn_mono" href="#">Назад</a><a class="btn btn_big" href="#">Далее</a></div>
                 </div>
-                <div class="table__row summary__total">
-                  <div class="table__td"><span>Итого</span></div>
-                  <div class="table__td"><span>897 ₽</span></div>
+                <div class="details__summary">Доставка <span>Самовывоз со склада</span></div>
+              </div>
+              <div class="details__block">
+                <div class="details__head head">
+                  <div class="head__count">4</div>
+                  <div class="head__name"><span>Оплата</span></div>
+                  <div class="head__change-link"><a href="#">изменить</a></div>
                 </div>
+                <div class="details__content">
+                  <div class="details__payment payment">
+                    <div class="payment__list">
+                      <div class="payment__item">
+                        <input type="radio" id="payment-1" name="order-payment" checked>
+                        <label for="payment-1">
+                          <div class="payment__img" style="background-image: url(&quot;static/img/content/payment-1.jpg&quot;);"></div>
+                          <div class="payment__name"><span>Банковская карта</span></div>
+                        </label>
+                      </div>
+                      <div class="payment__item">
+                        <input type="radio" id="payment-2" name="order-payment">
+                        <label for="payment-2">
+                          <div class="payment__img" style="background-image: url(&quot;static/img/content/payment-2.jpg&quot;);"></div>
+                          <div class="payment__name"><span>Сбербанк Онлайн</span></div>
+                        </label>
+                      </div>
+                      <div class="payment__item">
+                        <input type="radio" id="payment-3" name="order-payment">
+                        <label for="payment-3">
+                          <div class="payment__img" style="background-image: url(&quot;static/img/content/payment-3.jpg&quot;);"></div>
+                          <div class="payment__name"><span>Альфа-клик</span></div>
+                        </label>
+                      </div>
+                      <div class="payment__item">
+                        <input type="radio" id="payment-4" name="order-payment">
+                        <label for="payment-4">
+                          <div class="payment__img" style="background-image: url(&quot;static/img/content/payment-4.jpg&quot;);"></div>
+                          <div class="payment__name"><span>Яндекс.деньги</span></div>
+                        </label>
+                      </div>
+                      <div class="payment__item">
+                        <input type="radio" id="payment-5" name="order-payment">
+                        <label for="payment-5">
+                          <div class="payment__img" style="background-image: url(&quot;static/img/content/payment-5.jpg&quot;);"></div>
+                          <div class="payment__name"><span>Оплата при получении</span></div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="payment__result result">
+                      <div class="result__name"><span>Банковская карта</span></div>
+                      <div class="result__img"><img src="static/img/content/payment-1.jpg" alt="Банковская карта"></div>
+                      <div class="result__hint"><span>Сразу после оформления заказа Вы увидите ссылку для его оплаты. Не забудьте оплатить заказ</span></div>
+                    </div>
+                  </div>
+                  <div class="details__btns details__btns_both"><a class="btn btn_big btn_mono" href="#">Назад</a><a class="btn btn_big" href="#">Далее</a></div>
+                </div>
+                <div class="details__summary">Оплата <span>Банковская карта</span></div>
+              </div>
+              <div class="details__block">
+                <div class="details__head head">
+                  <div class="head__count">5</div>
+                  <div class="head__name"><span>Контактные данные</span></div>
+                  <div class="head__change-link"><a href="#">изменить</a></div>
+                </div>
+                <div class="details__content">
+                  <div class="details__contacts contacts">
+                    <div class="contacts__item">
+                      <div class="title title_required">Ваши фамилия, имя, отчество</div>
+                      <input class="textfield textfield_wide" type="text">
+                    </div>
+                    <div class="contacts__item">
+                      <div class="title title_required">Контактный телефон</div>
+                      <input class="textfield textfield_wide js-phone-input" type="text" placeholder="+7 (___)___-__-__">
+                    </div>
+                    <div class="contacts__item">
+                      <div class="title title_required">Электронная почта (E-mail)</div>
+                      <input class="textfield textfield_wide" type="text" placeholder="например, вашапочта@домен.рф">
+                    </div>
+                    <div class="contacts__item">
+                      <div class="title title_required">Адрес формата: индекс, город, улица, дом, квартира</div>
+                      <input class="textfield textfield_wide" type="text">
+                    </div>
+                    <div class="contacts__item">
+                      <div class="title title_required">Почтовый индекс</div>
+                      <input class="textfield textfield_wide" type="text">
+                    </div>
+                    <div class="contacts__item contacts__item_textarea">
+                      <div class="title">Комментарий к заказу</div>
+                      <textarea class="textarea"></textarea>
+                    </div>
+                  </div>
+                  <div class="details__btns details__btns_both"><a class="btn btn_big btn_mono" href="#">Назад</a><a class="btn btn_big" href="#">Далее</a></div>
+                </div>
+                <div class="details__summary"><span>Свойства заказа</span></div>
+              </div>
+              <div class="order-page__summary summary summary_mobile">
+                <div class="summary__table table">
+                  <div class="table__row summary__head">
+                    <div class="table__td"><span>Товаров на:</span></div>
+                    <div class="table__td"><span>897 ₽</span></div>
+                  </div>
+                  <div class="table__row">
+                    <div class="table__td"><span>Доставка:</span></div>
+                    <div class="table__td"><span>0 ₽</span></div>
+                  </div>
+                  <div class="table__row summary__total">
+                    <div class="table__td"><span>Итого</span></div>
+                    <div class="table__td"><span>897 ₽</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="details__btn">
+                <button class="btn btn_big">Оформить заказ</button>
+              </div>
+            </form>
+          </div>
+          <div class="order-page__summary summary">
+            <div class="summary__table table">
+              <div class="table__row summary__head">
+                <div class="table__td"><span>Товаров на:</span></div>
+                <div class="table__td"><span>897 ₽</span></div>
+              </div>
+              <div class="table__row">
+                <div class="table__td"><span>Доставка:</span></div>
+                <div class="table__td"><span>0 ₽</span></div>
+              </div>
+              <div class="table__row summary__total">
+                <div class="table__td"><span>Итого</span></div>
+                <div class="table__td"><span>897 ₽</span></div>
               </div>
             </div>
           </div>
@@ -368,8 +546,132 @@
     <!--                                span WAF-wAF   //   ИНСТАГРАМ   //    2 НОЯБРЯ 2018-->
     <!---->
     <!---->
+    <div class="cart-popup js-cart-popup">
+      <div class="cart-popup__overlay">
+        <div class="cart-popup__wrap">
+          <div class="cart-popup__head">
+            <div class="cart-popup__icon-cart"></div>
+            <div class="cart-popup__heading"><span>Корзина</span></div>
+            <div class="cart-popup__close js-cart-popup-close"><a href="#"></a></div>
+          </div>
+          <div class="cart-popup__content">
+            <div class="cart-popup__message message">
+              <div class="message__copy">&copy;</div>
+              <div class="message__text">
+                <!--span Упс! Твоя корзина выглядит немного пустой!--><span>Добавь товаров для бесплатной доставки на сумму 999 ₽</span>
+              </div>
+            </div>
+            <div class="cart-popup__with-products with-products">
+              <div class="cart-popup__products products">
+                <div class="products__list table">
+                  <div class="products__item table__row">
+                    <div class="products__img table__td"><a href="product.html"><img src="static/img/content/product-1.jpg" alt="Браслет Dream"></a></div>
+                    <div class="products__name table__td"><a href="product.html">Браслет Dream</a>
+                      <div class="products__price"><span>299 ₽</span></div>
+                      <div class="products__delete"><a href="#">Убрать из корзины</a></div>
+                    </div>
+                    <div class="products__quantity table__td">
+                      <div class="quantity quantity_round js-quantity"><a class="quantity__minus js-quantity-minus" href="#">-</a>
+                        <input class="quantity__value js-quantity-value input" type="text" value="1"><a class="quantity__plus js-quantity-plus" href="#">+</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="products__item table__row">
+                    <div class="products__img table__td"><a href="product.html"><img src="static/img/content/product-2.jpg" alt="Браслет Листик"></a></div>
+                    <div class="products__name table__td"><a href="product.html">Браслет Листик</a>
+                      <div class="products__price"><span>299 ₽</span></div>
+                      <div class="products__delete"><a href="#">Убрать из корзины</a></div>
+                    </div>
+                    <div class="products__quantity table__td">
+                      <div class="quantity quantity_round js-quantity"><a class="quantity__minus js-quantity-minus" href="#">-</a>
+                        <input class="quantity__value js-quantity-value input" type="text" value="1"><a class="quantity__plus js-quantity-plus" href="#">+</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="products__item table__row">
+                    <div class="products__img table__td"><a href="product.html"><img src="static/img/content/product-3.jpg" alt="Браслет Create"></a></div>
+                    <div class="products__name table__td"><a href="product.html">Браслет Create</a>
+                      <div class="products__price"><span>299 ₽</span></div>
+                      <div class="products__delete"><a href="#">Убрать из корзины</a></div>
+                    </div>
+                    <div class="products__quantity table__td">
+                      <div class="quantity quantity_round js-quantity"><a class="quantity__minus js-quantity-minus" href="#">-</a>
+                        <input class="quantity__value js-quantity-value input" type="text" value="1"><a class="quantity__plus js-quantity-plus" href="#">+</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-popup__actions">
+                <div class="cart-popup__action action">
+                  <div class="action__img"><img src="static/img/content/cart-action-1.png" alt="Таинственный браслет"></div>
+                  <div class="action__text">
+                    <div class="action__name"><span>Таинственный браслет</span></div>
+                    <div class="action__info"><span>Только сегодня за 230 ₽</span></div>
+                  </div>
+                  <div class="action__btn"><a class="btn" href="#">+</a><a class="btn btn_tablet" href="#">Добавить</a></div>
+                </div>
+                <div class="cart-popup__action action">
+                  <div class="action__img"><img src="static/img/content/cart-action-2.png" alt="Таинственный значок"></div>
+                  <div class="action__text">
+                    <div class="action__name"><span>Таинственный значок</span></div>
+                    <div class="action__info"><span>Только сегодня за 170 ₽</span></div>
+                  </div>
+                  <div class="action__btn"><a class="btn" href="#">+</a><a class="btn btn_tablet" href="#">Добавить</a></div>
+                </div>
+              </div>
+              <div class="cart-popup__sum"><span>Итого:</span><span>897 ₽</span></div>
+              <div class="cart-popup__btns"><a class="btn btn_big btn_blue" href="cart.html">Перейти в мою корзину</a><a class="btn btn_big" href="order.html">Оформление заказа</a></div>
+              <div class="cart-popup__gift gift"><a href="#">
+                  <div class="gift__heading"><span>Бесплатные стикеры к каждому заказу</span></div>
+                  <div class="gift__img"><img src="static/img/content/gift.jpg" alt="Бесплатные стикеры к каждому заказу"></div></a></div>
+            </div>
+            <!--.cart-popup__empty.empty-->
+            <!--    .empty__heading-->
+            <!--        span Начни выбор здесь...-->
+            <!--    .empty__categories.categories-->
+            <!--        ul.categories__list-->
+            <!--            li.categories__item-->
+            <!--                a(href='#')-->
+            <!--                    .categories__img-->
+            <!--                        img(src='static/img/content/submenu-1.jpg' alt='Значки')-->
+            <!--                    .categories__text-->
+            <!--                        span Значки-->
+            <!--            li.categories__item-->
+            <!--                a(href='#')-->
+            <!--                    .categories__img-->
+            <!--                        img(src='static/img/content/submenu-2.jpg' alt='Пины')-->
+            <!--                    .categories__text-->
+            <!--                        span Пины-->
+            <!--            li.categories__item-->
+            <!--                a(href='#')-->
+            <!--                    .categories__img-->
+            <!--                        img(src='static/img/content/submenu-3.jpg' alt='Браслеты')-->
+            <!--                    .categories__text-->
+            <!--                        span Браслеты-->
+            <!--            li.categories__item-->
+            <!--                a(href='#')-->
+            <!--                    .categories__img-->
+            <!--                        img(src='static/img/content/submenu-4.jpg' alt='Хиты продаж')-->
+            <!--                    .categories__text-->
+            <!--                        span Хиты продаж-->
+            <!--    .empty__product-->
+            <!--        .product.product_new-->
+            <!--            .product__image-->
+            <!--                a(href='#')-->
+            <!--                    img(src='static/img/content/product-2.jpg' alt='Браслет Dream')-->
+            <!--            .product__text-->
+            <!--                .product__name-->
+            <!--                    a(href='#') Браслет Dream-->
+            <!--            .product__btn-->
+            <!--                a(href='#').btn.btn_mono Купить сейчас-->
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="static/js/jquery.js"></script>
     <script src="static/js/libs.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
     <script src="static/js/main.js"></script>
   </body>
 </html>
