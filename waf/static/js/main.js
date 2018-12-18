@@ -175,8 +175,7 @@ function instaSlider() {
         instaSlider.slick({
             slidesToShow: 5,
             slidesToScroll: 1,
-            variableWidth: true,
-            touchThreshold: 450
+            variableWidth: true
         });
 
         next.on('click', function (e)  {
