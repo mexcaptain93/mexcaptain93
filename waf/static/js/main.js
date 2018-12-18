@@ -12,6 +12,7 @@ $(document).ready(function () {
     phoneMask();
     orderPage();
     popupCart();
+    whereBuyMap();
 });
 
 function indexVideos() {
@@ -324,4 +325,22 @@ function popupCart() {
            cartPopup.hide();
        }
     })
+}
+
+function whereBuyMap() {
+
+    if ($('#map-wherebuy').length && $(window).width() > 767) {
+        ymaps.ready(function () {
+
+            var myMap = new ymaps.Map('map-wherebuy', {
+                center: [59.930150, 30.374750],
+                zoom: 17,
+                behaviors: ['default', 'scrollZoom'],
+                controls: ['zoomControl']
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+        });
+    }
+
 }
