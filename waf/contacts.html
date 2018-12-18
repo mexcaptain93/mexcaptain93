@@ -210,7 +210,7 @@
                       <div class="hours__item">Пн-Пт: <span>с 10:00 до 20:30</span></div>
                       <div class="hours__item">Сб-Вс: <span>с 12:00 до 18:00</span></div>
                     </div>
-                    <div class="shop__show"><a href="#">Посмотреть на карте</a></div>
+                    <div class="shop__show"><a class="js-map-show-shop" href="#" data-shop-id="1">Посмотреть на карте</a></div>
                   </div>
                 </div>
                 <div class="contacts__item shop">
@@ -219,7 +219,7 @@
                     <div class="shop__name"><span>Мир кино</span></div>
                     <div class="shop__address"><span>Москва, ул. Маросейка 6/8 (м. Китай-Город)</span></div>
                     <div class="shop__phone">Тел <a href="tel:+78005553535">8 800 555-35-35</a></div>
-                    <div class="shop__show"><a href="#">Посмотреть на карте</a></div>
+                    <div class="shop__show"><a class="js-map-show-shop" href="#" data-shop-id="2">Посмотреть на карте</a></div>
                   </div>
                 </div>
                 <div class="contacts__item shop">
@@ -231,7 +231,7 @@
                       <div class="hours__item">Ежедневно: <span>с 12:00 до 21:00</span></div>
                     </div>
                     <div class="shop__phone">Тел <a href="tel:+78005553535">8 800 555-35-35</a></div>
-                    <div class="shop__show"><a href="#">Посмотреть на карте</a></div>
+                    <div class="shop__show"><a class="js-map-show-shop" href="#">Посмотреть на карте</a></div>
                   </div>
                 </div>
                 <div class="contacts__item shop">
@@ -243,7 +243,7 @@
                       <div class="hours__item">Пн-Пт: <span>с 10:00 до 20:30</span></div>
                       <div class="hours__item">Сб-Вс: <span>с 12:00 до 18:00</span></div>
                     </div>
-                    <div class="shop__show"><a href="#">Посмотреть на карте</a></div>
+                    <div class="shop__show"><a class="js-map-show-shop" href="#">Посмотреть на карте</a></div>
                   </div>
                 </div>
                 <div class="contacts__item shop">
@@ -252,7 +252,7 @@
                     <div class="shop__name"><span>Мир кино</span></div>
                     <div class="shop__address"><span>Москва, ул. Маросейка 6/8 (м. Китай-Город)</span></div>
                     <div class="shop__phone">Тел <a href="tel:+78005553535">8 800 555-35-35</a></div>
-                    <div class="shop__show"><a href="#">Посмотреть на карте</a></div>
+                    <div class="shop__show"><a class="js-map-show-shop" href="#">Посмотреть на карте</a></div>
                   </div>
                 </div>
                 <div class="contacts__item shop">
@@ -264,7 +264,7 @@
                       <div class="hours__item">Ежедневно: <span>с 12:00 до 21:00</span></div>
                     </div>
                     <div class="shop__phone">Тел <a href="tel:+78005553535">8 800 555-35-35</a></div>
-                    <div class="shop__show"><a href="#">Посмотреть на карте</a></div>
+                    <div class="shop__show"><a class="js-map-show-shop" href="#">Посмотреть на карте</a></div>
                   </div>
                 </div>
                 <div class="contacts__item shop">
@@ -276,7 +276,7 @@
                       <div class="hours__item">Пн-Пт: <span>с 10:00 до 20:30</span></div>
                       <div class="hours__item">Сб-Вс: <span>с 12:00 до 18:00</span></div>
                     </div>
-                    <div class="shop__show"><a href="#">Посмотреть на карте</a></div>
+                    <div class="shop__show"><a class="js-map-show-shop" href="#">Посмотреть на карте</a></div>
                   </div>
                 </div>
                 <div class="contacts__item shop">
@@ -285,7 +285,7 @@
                     <div class="shop__name"><span>Мир кино</span></div>
                     <div class="shop__address"><span>Москва, ул. Маросейка 6/8 (м. Китай-Город)</span></div>
                     <div class="shop__phone">Тел <a href="tel:+78005553535">8 800 555-35-35</a></div>
-                    <div class="shop__show"><a href="#">Посмотреть на карте</a></div>
+                    <div class="shop__show"><a class="js-map-show-shop" href="#">Посмотреть на карте</a></div>
                   </div>
                 </div>
                 <div class="contacts__item shop">
@@ -297,13 +297,37 @@
                       <div class="hours__item">Ежедневно: <span>с 12:00 до 21:00</span></div>
                     </div>
                     <div class="shop__phone">Тел <a href="tel:+78005553535">8 800 555-35-35</a></div>
-                    <div class="shop__show"><a href="#">Посмотреть на карте</a></div>
+                    <div class="shop__show"><a class="js-map-show-shop" href="#">Посмотреть на карте</a></div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="contacts__map">
               <div class="contacts__map-elem" id="map-wherebuy"></div>
+              <script>
+                var dataMap = {
+                    "center": [59.930150, 30.374750],
+                    "zoom": "12",
+                    "items": [
+                        {
+                            "id": 1,
+                            "coordinates": [59.930150, 30.374750],
+                            "name": "Magicmag",
+                            "address": "ул. Васильевская, 3",
+                            "phone": "<a href='+78005553535'>8 800 555-35-35</a>"
+                
+                        },
+                        {
+                            "id": 2,
+                            "coordinates": [59.939150, 30.304750],
+                            "name": "Мир кино",
+                            "address": "Москва, ул. Маросейка 6/8 (м. Китай-Город) Москва, ул. Маросейка 6/8 (м. Китай-Город)",
+                            "phone": "<a href='+78005553535'>8 800 555-35-35</a>"
+                
+                        }
+                    ]
+                }
+              </script>
             </div>
           </div>
         </div>
