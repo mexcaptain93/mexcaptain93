@@ -177,7 +177,8 @@ function instaSlider() {
         instaSlider.slick({
             slidesToShow: 5,
             slidesToScroll: 1,
-            variableWidth: true
+            variableWidth: true,
+            touchThreshold: 450
         });
 
         next.on('click', function (e)  {
@@ -398,7 +399,14 @@ function whereBuyMap() {
 
                     places.forEach(function (shop) {
                         clusterer.add(shop);
-                    })
+
+                        // ymaps.Events.observe(shop, shop.Events.Click, function (shop) {
+                        //     console.log(shop);
+                        //
+                        // });
+                    });
+
+
 
                 }
             }
@@ -446,5 +454,10 @@ function wholesalePage() {
         $(this).closest('.js-wholesale-reason').removeClass('reason_opened');
     });
 
+    $('.js-wholesale-reason .more__text').each(function (index, elem) {
+        new SimpleBar(elem,  {
+            autoHide: false
+        });
+    });
 
 }
