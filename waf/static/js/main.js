@@ -9,12 +9,13 @@ $(document).ready(function () {
     suggestSlider();
     zoomProductImg();
     productTabs();
-    phoneMask();
+    masks();
     orderPage();
     popupCart();
     whereBuyMap();
+    selects();
+    wholesalePage();
 });
-var places = [];
 function indexVideos() {
     var videos =  $('.js-index-videos'),
         prev = $('.js-index-videos-prev'),
@@ -285,11 +286,17 @@ function productTabs() {
     }
 }
 
-function phoneMask() {
+function masks() {
 
     $('.js-phone-input').each(function (index, elem) {
         new IMask(elem, {
             mask: '+{7}(000)000-00-00'
+        });
+    });
+
+    $('.js-email-input').each(function (index, elem) {
+        new IMask(elem, {
+            mask: /^\S*@?\S*$/
         });
     });
 }
@@ -329,6 +336,7 @@ function popupCart() {
 
 function whereBuyMap() {
 
+    var places = [];
     var myMap = false;
 
     if ($('#map-wherebuy').length && $(window).width() > 767) {
@@ -336,7 +344,7 @@ function whereBuyMap() {
     }
 
     $(window).on('resize', function () {
-        if (!myMap && $(window).width() > 767) {
+        if (!myMap && $(window).width() > 767 && $('#map-wherebuy').length) {
             initMap();
         }
     });
@@ -348,7 +356,7 @@ function whereBuyMap() {
                     center: dataMap.center,
                     zoom: dataMap.zoom,
                     behaviors: ['default', 'scrollZoom'],
-                    controls: ['zoomControl']
+                    controls: ['zoomControl', 'fullscreenControl']
                 }, {
                     searchControlProvider: 'yandex#search'
                 });
@@ -356,13 +364,25 @@ function whereBuyMap() {
                 myMap.geoObjects.add(clusterer)
                 if (dataMap.items.length > 0) {
                     dataMap.items.forEach(function (item) {
+                        var custom_html = '';
+                        if (item.custom) {
+                            custom_html = '<div class=\"shop__custom\">' + item.custom + '</div>';
+                        }
+                        var hours = '';
+                        if (item.hours) {
+                            hours = item.hours;
+                        }
+
                         myPlacemark = new ymaps.Placemark(item.coordinates,
+
+
+
 
                             {balloonContentBody: "<div class=\"shop\">\n" +
                                     "                  <div class=\"shop__info\">\n" +
                                     "                    <div class=\"shop__name\"><span>" + item.name + "</span></div>\n" +
-                                    "                    <div class=\"shop__address\"><span>" + item.address + "</span></div>\n" +
-                                    "                    <div class=\"shop__phone\">Тел: " + item.phone + "</div>" +
+                                    custom_html + "                    <div class=\"shop__address\"><span>" + item.address + "</span></div>\n" +
+                                    hours + "                    <div class=\"shop__phone\">Тел: " + item.phone + "</div>" +
                                     "                  </div>\n" +
                                     "                </div>"},
 
@@ -392,5 +412,39 @@ function whereBuyMap() {
             places[id_shop].balloon.open()
         }
     });
+
+}
+
+function selects() {
+    function init() {
+
+        if ($('.js-select2').length) {
+
+            $('.js-select').select2({
+                minimumResultsForSearch: -1
+            });
+        }
+    }
+
+    init();
+
+    $(window).on('resize', function () {
+        init();
+    })
+}
+
+function wholesalePage() {
+    $('.js-wholesale-reason').find('.reason__btn').on('click', function (e) {
+        e.preventDefault();
+        $('.reason_opened').removeClass('reason_opened');
+
+        $(this).closest('.js-wholesale-reason').addClass('reason_opened');
+    });
+
+    $('.js-wholesale-reason').find('.more__close').on('click', function (e) {
+        e.preventDefault();
+        $(this).closest('.js-wholesale-reason').removeClass('reason_opened');
+    });
+
 
 }
