@@ -397,13 +397,15 @@ function whereBuyMap() {
 
                     });
 
-                    places.forEach(function (shop) {
+                    places.forEach(function (shop, index) {
                         clusterer.add(shop);
 
-                        // ymaps.Events.observe(shop, shop.Events.Click, function (shop) {
-                        //     console.log(shop);
-                        //
-                        // });
+                        shop.events.add('click', function (e) {
+                            if (index) {
+                                $('.shop_bordered').removeClass('shop_bordered');
+                                $('[data-shop-id=' + index +']').closest('.shop').addClass('shop_bordered');
+                            }
+                        })
                     });
 
 
@@ -417,7 +419,9 @@ function whereBuyMap() {
         e.preventDefault();
         if ($(this).data('shop-id') && myMap) {
             var id_shop = $(this).data('shop-id');
-            places[id_shop].balloon.open()
+            places[id_shop].balloon.open();
+            $('.shop_bordered').removeClass('shop_bordered');
+            $(this).closest('.shop').addClass('shop_bordered');
         }
     });
 
