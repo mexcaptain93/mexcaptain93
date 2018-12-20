@@ -431,7 +431,7 @@ function whereBuyMap() {
 function selects() {
     function init() {
 
-        if ($('.js-select2').length) {
+        if ($('.js-select').length) {
 
             $('.js-select').select2({
                 minimumResultsForSearch: -1
