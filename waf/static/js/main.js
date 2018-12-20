@@ -15,6 +15,7 @@ $(document).ready(function () {
     whereBuyMap();
     selects();
     wholesalePage();
+    textPagePopup();
 });
 function indexVideos() {
     var videos =  $('.js-index-videos'),
@@ -464,4 +465,16 @@ function wholesalePage() {
         });
     });
 
+}
+
+function textPagePopup() {
+    $('.js-text-page-btn').on('click', function (e) {
+        e.preventDefault();
+        $(this).parent().siblings('.js-text-page-popup').show();
+    });
+
+    $('.js-text-page-popup-close').on('click', function (e) {
+       e.preventDefault();
+       $(this).parent().hide();
+    });
 }
