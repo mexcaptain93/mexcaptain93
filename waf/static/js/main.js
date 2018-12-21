@@ -502,7 +502,7 @@ function instaPopup() {
         }
     });
 
-    $('.instagram__btn, .insta-slider__item, .instagram__item').on('click', function (e) {
+    $('.instagram__btn, .insta-slider__item').on('click', function (e) {
         e.preventDefault();
         if ($('.js-insta-popup').length) {
             $('.js-insta-popup').show();
