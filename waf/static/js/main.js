@@ -16,9 +16,11 @@ $(document).ready(function () {
     selects();
     wholesalePage();
     textPagePopup();
+    instaPopup();
 });
+
 function indexVideos() {
-    var videos =  $('.js-index-videos'),
+    var videos = $('.js-index-videos'),
         prev = $('.js-index-videos-prev'),
         next = $('.js-index-videos-next');
     if (videos.length) {
@@ -43,14 +45,14 @@ function indexVideos() {
             ]
         });
 
-        prev.on('click', function (e)  {
+        prev.on('click', function (e) {
             e.preventDefault();
-           videos.slick('slickPrev');
+            videos.slick('slickPrev');
         });
 
-        next.on('click', function (e)  {
+        next.on('click', function (e) {
             e.preventDefault();
-           videos.slick('slickNext');
+            videos.slick('slickNext');
         });
     }
 }
@@ -61,13 +63,13 @@ function mobileMenu() {
         dropdown = $('.js-dropdown'),
         item = $('.js-mobile-menu-has-sub').find('> a'),
         submenu = $('.js-mobile-menu-submenu');
-    
+
     item.on('click', function (e) {
         e.preventDefault();
         $(this).siblings(submenu).slideToggle();
     });
 
-    burger.on('click', function(e) {
+    burger.on('click', function (e) {
         e.preventDefault();
         $(this).toggleClass('burger_opened');
         dropdown.toggle();
@@ -118,7 +120,7 @@ function mobileFilter() {
 }
 
 function productPhotos() {
-    var photos =  $('.js-product-photos'),
+    var photos = $('.js-product-photos'),
         prev = $('.js-product-photos-prev'),
         next = $('.js-product-photos-next');
     if (photos.length) {
@@ -127,17 +129,17 @@ function productPhotos() {
             infinite: false
         });
 
-        prev.on('click', function (e)  {
+        prev.on('click', function (e) {
             e.preventDefault();
             photos.slick('slickPrev');
         });
 
-        next.on('click', function (e)  {
+        next.on('click', function (e) {
             e.preventDefault();
             photos.slick('slickNext');
         });
 
-        photos.on('afterChange', function(event, slick, currentSlide, nextSlide){
+        photos.on('afterChange', function (event, slick, currentSlide, nextSlide) {
             $('.photos__arrow_inactive').removeClass('photos__arrow_inactive');
 
             if ($('.slick-prev').hasClass('slick-disabled')) {
@@ -172,7 +174,7 @@ function quantityElement() {
 }
 
 function instaSlider() {
-    var instaSlider =  $('.js-insta-slider'),
+    var instaSlider = $('.js-insta-slider'),
         next = $('.js-insta-slider-next');
     if (instaSlider.length) {
         instaSlider.slick({
@@ -182,7 +184,7 @@ function instaSlider() {
             touchThreshold: 450
         });
 
-        next.on('click', function (e)  {
+        next.on('click', function (e) {
             e.preventDefault();
             instaSlider.slick('slickNext');
         });
@@ -190,7 +192,7 @@ function instaSlider() {
 }
 
 function suggestSlider() {
-    var suggestSlider =  $('.js-suggest-slider'),
+    var suggestSlider = $('.js-suggest-slider'),
         next = $('.js-suggest-slider-next'),
         prev = $('.js-suggest-slider-prev');
 
@@ -270,20 +272,20 @@ function productTabs() {
 
     if (tabs) {
         tabs.find('label').on('click', function (e) {
-           if ($(window).width() < 769 ) {
-               e.preventDefault();
-               var f = $(this).attr('for');
-               var inp = $('#' + f);
+            if ($(window).width() < 769) {
+                e.preventDefault();
+                var f = $(this).attr('for');
+                var inp = $('#' + f);
 
-               console.log(inp.prop('checked'))
-               if (inp.prop('checked')) {
-                   inp.removeAttr("checked");
-               } else {
-                   inp.prop('checked', true);
-               }
+                console.log(inp.prop('checked'))
+                if (inp.prop('checked')) {
+                    inp.removeAttr("checked");
+                } else {
+                    inp.prop('checked', true);
+                }
 
 
-           }
+            }
         });
     }
 }
@@ -322,7 +324,7 @@ function popupCart() {
     cartOpen.on('click', function (e) {
         e.preventDefault();
 
-        if(cartPopup.length) {
+        if (cartPopup.length) {
             cartPopup.show();
         }
     });
@@ -330,9 +332,9 @@ function popupCart() {
     cartClose.on('click', function (e) {
         e.preventDefault();
 
-       if(cartPopup.length) {
-           cartPopup.hide();
-       }
+        if (cartPopup.length) {
+            cartPopup.hide();
+        }
     })
 }
 
@@ -378,15 +380,15 @@ function whereBuyMap() {
                         myPlacemark = new ymaps.Placemark(item.coordinates,
 
 
-
-
-                            {balloonContentBody: "<div class=\"shop\">\n" +
+                            {
+                                balloonContentBody: "<div class=\"shop\">\n" +
                                     "                  <div class=\"shop__info\">\n" +
                                     "                    <div class=\"shop__name\"><span>" + item.name + "</span></div>\n" +
                                     custom_html + "                    <div class=\"shop__address\"><span>" + item.address + "</span></div>\n" +
                                     hours + "                    <div class=\"shop__phone\">Тел: " + item.phone + "</div>" +
                                     "                  </div>\n" +
-                                    "                </div>"},
+                                    "                </div>"
+                            },
 
                             {
 
@@ -404,11 +406,10 @@ function whereBuyMap() {
                         shop.events.add('click', function (e) {
                             if (index) {
                                 $('.shop_bordered').removeClass('shop_bordered');
-                                $('[data-shop-id=' + index +']').closest('.shop').addClass('shop_bordered');
+                                $('[data-shop-id=' + index + ']').closest('.shop').addClass('shop_bordered');
                             }
                         })
                     });
-
 
 
                 }
@@ -460,7 +461,7 @@ function wholesalePage() {
     });
 
     $('.js-wholesale-reason .more__text').each(function (index, elem) {
-        new SimpleBar(elem,  {
+        new SimpleBar(elem, {
             autoHide: false
         });
     });
@@ -474,7 +475,72 @@ function textPagePopup() {
     });
 
     $('.js-text-page-popup-close').on('click', function (e) {
-       e.preventDefault();
-       $(this).parent().hide();
+        e.preventDefault();
+        $(this).parent().hide();
     });
 }
+
+function instaPopup() {
+    var instaPopupSlider = $('.js-insta-popup-slick');
+
+
+
+    $('.js-insta-popup-close').on('click', function (e) {
+        e.preventDefault();
+        $('.js-insta-popup').hide();
+        if (instaPopupSlider) {
+            instaPopupSlider.slick('unslick');
+        }
+    });
+
+    $('.js-insta-popup').find('.insta-popup__overlay').on('click', function (e) {
+        if (e.target == this) {
+            $('.js-insta-popup').hide();
+            if (instaPopupSlider) {
+                instaPopupSlider.slick('unslick');
+            }
+        }
+    });
+
+    $('.instagram__btn, .insta-slider__item').on('click', function (e) {
+        e.preventDefault();
+        if ($('.js-insta-popup').length) {
+            $('.js-insta-popup').show();
+
+            if (instaPopupSlider) {
+                instaPopupSlider.slick({
+                    infinite: false
+                });
+
+                var prev = instaPopupSlider.find('.product__arrow_prev'),
+                    next = instaPopupSlider.find('.product__arrow_next')
+
+                prev.on('click', function (e) {
+                    e.preventDefault();
+                    instaPopupSlider.slick('slickPrev');
+                });
+
+                next.on('click', function (e) {
+                    e.preventDefault();
+                    instaPopupSlider.slick('slickNext');
+                });
+
+                instaPopupSlider.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+                    $('.product__arrow_inactive').removeClass('product__arrow_inactive');
+                    if (instaPopupSlider.find('.slick-prev').hasClass('slick-disabled')) {
+                        prev.addClass('product__arrow_inactive');
+                    }
+
+                    if (instaPopupSlider.find('.slick-next').hasClass('slick-disabled')) {
+                        next.addClass('product__arrow_inactive');
+                    }
+
+                });
+
+            }
+
+        }
+
+    })
+}
+
