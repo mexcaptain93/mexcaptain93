@@ -566,9 +566,20 @@ function headerSearch() {
 
     });
 
-    if ($(window).width() > 1024) {
-        if (search.length) {
+    var searchInputMobile = $('.js-search-input-mobile'),
+        searchInputPopup = $('.js-search-popup-mobile');
 
-        }
-    }
+    searchInputMobile.on('focus', function (e) {
+        searchInputMobile.attr('placeholder', 'Введите поисковую фразу...');
+        searchInputPopup.show();
+    });
+
+
+    searchInputMobile.on('blur', function (e) {
+        setTimeout(function () {
+            searchInputMobile.attr('placeholder', 'Поиск...');
+            searchInputPopup.hide();
+        }, 100);
+
+    });
 }
