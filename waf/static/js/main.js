@@ -366,7 +366,7 @@ function whereBuyMap() {
                     searchControlProvider: 'yandex#search'
                 });
                 clusterer = new ymaps.Clusterer();
-                myMap.geoObjects.add(clusterer)
+                myMap.geoObjects.add(clusterer);
                 if (dataMap.items.length > 0) {
                     dataMap.items.forEach(function (item) {
                         var custom_html = '';
@@ -422,9 +422,11 @@ function whereBuyMap() {
         e.preventDefault();
         if ($(this).data('shop-id') && myMap) {
             var id_shop = $(this).data('shop-id');
-            places[id_shop].balloon.open();
-            $('.shop_bordered').removeClass('shop_bordered');
-            $(this).closest('.shop').addClass('shop_bordered');
+            if (places[id_shop]) {
+                places[id_shop].balloon.open();
+                $('.shop_bordered').removeClass('shop_bordered');
+                $(this).closest('.shop').addClass('shop_bordered');
+            }
         }
     });
 
@@ -503,15 +505,23 @@ function instaPopup() {
         }
     });
 
-    $('.instagram__btn, .insta-slider__item, .instagram__item').on('click', function (e) {
+    $('.insta-slider__item, .instagram__item').on('click', function (e) {
         e.preventDefault();
+
+        var index = $(this).index();
+
         if ($('.js-insta-popup').length) {
             $('.js-insta-popup').show();
 
             if (instaPopupSlider) {
+
                 instaPopupSlider.slick({
                     infinite: false
                 });
+
+                if (index) {
+                    instaPopupSlider.slick('slickGoTo', index);
+                }
 
                 var prev = instaPopupSlider.find('.product__arrow_prev'),
                     next = instaPopupSlider.find('.product__arrow_next')
