@@ -54,8 +54,57 @@
           </div>
           <div class="header__logo"><a href="#"><img src="static/img/general/logo.png" alt="Культурное наследие"></a></div>
           <div class="header__burger-search">
-            <div class="header__burger"><a class="burger" href="#"><span></span></a></div>
-            <div class="header__search"><a href="#"><img src="static/img/general/search.png" alt="Поиск"></a></div>
+            <div class="header__burger"><a class="burger js-header-dropdown-open" href="#"><span></span></a></div>
+            <div class="header__search"><a class="js-header-search-open" href="#"><img src="static/img/general/search.png" alt="Поиск"></a>
+              <div class="header__search-form search-form js-header-search">
+                <form class="search-form__form">
+                  <div class="search-form__input">
+                    <input type="text" placeholder="Я ищу...">
+                  </div><a class="search-form__close js-header-search-close" href="#"></a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__dropdown dropdown js-header-dropdown">
+          <div class="dropdown__wrap container">
+            <div class="dropdown__columns">
+              <div class="dropdown__col">
+                <div class="dropdown__group group"><a class="group__name" href="#"><span>Наследие</span></a>
+                  <ul class="group__links group__links_arrow">
+                    <div class="group__col">
+                      <li class="group__link"><a href="#">Фольклор, литература</a></li>
+                      <li class="group__link"><a href="#">Художественные промыслы</a></li>
+                      <li class="group__link"><a href="#">Изобразительное искусство</a></li>
+                    </div>
+                    <div class="group__col">
+                      <li class="group__link"><a href="#">Музыка</a></li>
+                      <li class="group__link"><a href="#">Театр</a></li>
+                      <li class="group__link"><a href="#">Зодчество</a></li>
+                      <li class="group__link"><a href="#">Традиции и быт поморов</a></li>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+              <div class="dropdown__col">
+                <div class="dropdown__group group"><a class="group__name" href="#"><span>Персоны</span></a></div>
+                <div class="dropdown__group group"><a class="group__name" href="#"><span>Библиотека</span></a>
+                  <ul class="group__links">
+                    <li class="group__link"><a href="#">Статьи</a></li>
+                    <li class="group__link"><a href="#">Надо почитать</a></li>
+                    <li class="group__link"><a href="#">Библиография</a></li>
+                    <li class="group__link"><a href="#">Интернет-путеводители</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="dropdown__col">
+                <div class="dropdown__group group"><a class="group__name" href="#"><span>Истории в картинках</span></a></div>
+                <div class="dropdown__group group"><a class="group__name" href="#"><span>Викторины</span></a></div>
+                <div class="dropdown__group group"><a class="group__name" href="#"><span>Конкурсы</span></a></div>
+                <div class="dropdown__group group"><a class="group__name" href="#"><span>Фестивали и праздники</span></a></div>
+                <div class="dropdown__group group"><a class="group__name" href="#"><span>Узелки на память</span></a></div>
+              </div>
+            </div><a class="dropdown__close js-header-dropdown-close" href="#"></a>
           </div>
         </div>
       </header>

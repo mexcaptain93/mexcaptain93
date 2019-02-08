@@ -2,14 +2,14 @@
 <html lang="ru-RU">
   <head>
     <meta charset="utf-8">
-    <title>UI kit</title><!--[if IE]>
+    <title>Статьи</title><!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="">
     <link rel="stylesheet" type="text/css" href="static/css/main.css"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
-  <body class="index-page">
+  <body class="articles-page">
     <div class="wrapper">
       <header class="header">
         <div class="header__wrap container">
@@ -109,45 +109,87 @@
         </div>
       </header>
       <div class="content">
-        <div class="container">
-          <h1 class="like-h1">Поморские праздники</h1><br>
-          <h2 class="like-h2">Русская народная культура Поморья в ХIX-<br>начале XX века</h2><br>
-          <p>
-            <u>Праздничной культуре</u> <a href="#">также</a> отводилось большое место в жизни поморов. На протяжении столетий праздничная культура, пронизанная архаическими верованиями народа, передаваясь из поколения в поколение, постоянно трансформировалась, дополняясь новыми элементами, и с течением времени всё больше сливаясь с православной верой. Иногда происходило огосударствление праздника, превращение его в официально-парадное торжество (интересно, что в совокупности русский праздничный календарь составлял в среднем 100 дней, а в некоторых областях Русского Севера - от 120 до 150).
-          </p><span class="subtext">Отправление поморов на промыслы в конце 19 века</span><br><span class="small_text">Международный фестиваль «Сметанинские встречи» 2016,<br>выступление участников</span><br>
-          <div class="pagination">
-            <ul class="pagination__list">
-              <li class="pagination__item"><a href="#">1</a></li>
-              <li class="pagination__item"><a href="#">2</a></li>
-              <li class="pagination__item"><a href="#">3</a></li>
-              <li class="pagination__item"><a href="#">4</a></li>
-              <li class="pagination__item"><a href="#">5</a></li>
-              <li class="pagination__item"><a href="#">6</a></li>
-              <li class="pagination__item"><a href="#">7</a></li>
-            </ul>
-          </div>
-          <div class="breadcrumbs">
+        <div class="breadcrumbs">
+          <div class="container container_small">
             <ul class="breadcrumbs__list">
               <li class="breadcrumbs__item"><a href="/"><img src="static/img/general/home.png" alt="Главная"></a></li>
-              <li class="breadcrumbs__item"><a href="#">Узелки на память</a></li>
-              <li class="breadcrumbs__item"><span>Поморские праздники</span></li>
+              <li class="breadcrumbs__item"><a href="#">Статьи</a></li>
             </ul>
           </div>
-          <div class="file">
-            <div class="file__icon"><img src="static/img/general/pdf.png" alt="Культура Русского Севера: традиции и современность"></div>
-            <div class="file__text">
-              <div class="file__name"><span>Культура Русского Севера: традиции и современность</span></div>
-              <div class="file__bottom">
-                <div class="file__download"><a href="#">Скачать</a></div>
-                <div class="file__meta"><span>&mdash; 11,5Mb, pdf</span></div>
+        </div>
+        <div class="container container_small">
+          <h1 class="like-h1">Статьи</h1>
+        </div>
+        <div class="articles-page__filter-add container">
+          <div class="articles-page__top-line">
+            <div class="articles-page__filter filter">
+              <div class="filter__list">
+                <div class="filter__item">
+                  <select class="select">
+                    <option value="Автор статьи">Автор статьи</option>
+                    <option value="Пётр Иванов">Петр Иванов</option>
+                  </select>
+                </div>
+                <div class="filter__item">
+                  <select class="select">
+                    <option value="Тема статьи">Тема статьи</option>
+                    <option value="История">История</option>
+                  </select>
+                </div>
               </div>
             </div>
+            <div class="articles-page__add"><a class="button button_color" href="#">Добавить статью</a></div>
           </div>
-          <div class="list-block">
-            <div class="list-block__title"><a href="#">Борис Пастернак</a></div>
-            <div class="list-block__sub"><span>10 февраля, 1890 — 30 мая, 1960</span></div>
-            <div class="list-block__text"><span>Русский поэт и прозаик Борис Леонидович Пастернак родился в известной в Москве еврейской семье. Отец поэта, Леонид Пастернак, был академиком живописи, преподавателем Училища живописи, ваяния и зодчества, специализировался на портретной живописи, писал портреты многих известных людей, в т.ч. и Толстого.</span></div>
-          </div><a class="button" href="#">Из новых поступлений</a><br><a class="button button_color" href="#">Из новых поступлений</a><br><a class="button button_icon" href="#"><i class="prev"></i> Предыдущая заметка</a><br><a class="button button_icon button_color" href="#"><i class="prev"></i> Предыдущая заметка</a><br><a class="button button_icon button_serif" href="#">Перейти к вопросам викторины <i class="next-bold"></i></a><br><a class="button button_icon button_serif-big" href="#">Узнать подробнее <i class="next-bold"></i></a>
+        </div>
+        <div class="articles-page__list container">
+          <div class="articles-page__item article">
+            <div class="article__title"><a href="#">История о знаменитом уроженце Емецкой земли композиторе Александре</a></div>
+            <div class="article__author"><a href="#">Белоусов П.</a></div>
+            <div class="article__date"><span>20 марта 2018</span></div>
+            <div class="article__preview"><span>С XII века началось проникновение русскоязычного населения сначала с Новгородчины, затем с Верхневолжья в более северные районы. К концу XV века это проникновение становится миграцией в целях постоянного заселения нового ...</span></div>
+          </div>
+          <div class="articles-page__item article">
+            <div class="article__title"><a href="#">Сарафан: от находки к исследованию</a></div>
+            <div class="article__author"><a href="#">Бурянина М.</a></div>
+            <div class="article__date"><span>20 марта 2018</span></div>
+            <div class="article__preview"><span>В итоге в национально-географическое, а затем и политическое понятие «Русь» начинает входить неотъемлемой частью понятие «Русский Север». В процессе освоения обширных регионов Севера пришлым русским...</span></div>
+          </div>
+          <div class="articles-page__item article">
+            <div class="article__title"><a href="#">Мой край, мое поморье - сокровищница народной культуры и творчества</a></div>
+            <div class="article__author"><a href="#">Воробьёва П.</a></div>
+            <div class="article__date"><span>20 марта 2018</span></div>
+            <div class="article__preview"><span>В процессе освоения обширных регионов Севера пришлым русским населением сложилась новая симбиотическая поморская культура на основе взаимодействия разных культурных компонентов, сложившихся...</span></div>
+          </div>
+          <div class="articles-page__item article">
+            <div class="article__title"><a href="#">История о знаменитом уроженце Емецкой земли композиторе Александре</a></div>
+            <div class="article__author"><a href="#">Белоусов П.</a></div>
+            <div class="article__date"><span>20 марта 2018</span></div>
+            <div class="article__preview"><span>С XII века началось проникновение русскоязычного населения сначала с Новгородчины, затем с Верхневолжья в более северные районы. К концу XV века это проникновение становится миграцией в целях постоянного заселения нового ...</span></div>
+          </div>
+          <div class="articles-page__item article">
+            <div class="article__title"><a href="#">Сарафан: от находки к исследованию</a></div>
+            <div class="article__author"><a href="#">Бурянина М.</a></div>
+            <div class="article__date"><span>20 марта 2018</span></div>
+            <div class="article__preview"><span>В итоге в национально-географическое, а затем и политическое понятие «Русь» начинает входить неотъемлемой частью понятие «Русский Север». В процессе освоения обширных регионов Севера пришлым русским...</span></div>
+          </div>
+          <div class="articles-page__item article">
+            <div class="article__title"><a href="#">Мой край, мое поморье - сокровищница народной культуры и творчества</a></div>
+            <div class="article__author"><a href="#">Воробьёва П.</a></div>
+            <div class="article__date"><span>20 марта 2018</span></div>
+            <div class="article__preview"><span>В процессе освоения обширных регионов Севера пришлым русским населением сложилась новая симбиотическая поморская культура на основе взаимодействия разных культурных компонентов, сложившихся...</span></div>
+          </div>
+          <div class="articles-page__item article">
+            <div class="article__title"><a href="#">История о знаменитом уроженце Емецкой земли композиторе Александре</a></div>
+            <div class="article__author"><a href="#">Белоусов П.</a></div>
+            <div class="article__date"><span>20 марта 2018</span></div>
+            <div class="article__preview"><span>С XII века началось проникновение русскоязычного населения сначала с Новгородчины, затем с Верхневолжья в более северные районы. К концу XV века это проникновение становится миграцией в целях постоянного заселения нового ...</span></div>
+          </div>
+          <div class="articles-page__item article">
+            <div class="article__title"><a href="#">Сарафан: от находки к исследованию</a></div>
+            <div class="article__author"><a href="#">Бурянина М.</a></div>
+            <div class="article__date"><span>20 марта 2018</span></div>
+            <div class="article__preview"><span>В итоге в национально-географическое, а затем и политическое понятие «Русь» начинает входить неотъемлемой частью понятие «Русский Север». В процессе освоения обширных регионов Севера пришлым русским...</span></div>
+          </div>
         </div>
       </div>
       <footer class="footer">
@@ -216,5 +258,6 @@
     <script src="static/js/jquery.js"></script>
     <script src="static/js/libs.min.js"></script>
     <script src="static/js/main.js"></script>
+    <script src="static/js/select2.min.js"></script>
   </body>
 </html>

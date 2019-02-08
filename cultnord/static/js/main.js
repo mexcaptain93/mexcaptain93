@@ -2,6 +2,9 @@ $(function () {
     indexSliders();
     categoryDropdown();
     paginationNoline();
+    headerSearch();
+    headerDropdown();
+    selects();
 });
 
 $(window).resize(function () {
@@ -146,5 +149,42 @@ function paginationNoline() {
                 topLast = top;
             }
         });
+    }
+}
+
+function headerSearch() {
+    var opener = $('.js-header-search-open'),
+        closer = $('.js-header-search-close'),
+        form = $('.js-header-search');
+
+    opener.on('click', function () {
+       form.addClass('search-form_opened');
+       console.log()
+    });
+
+    closer.on('click', function () {
+       form.removeClass('search-form_opened');
+    });
+}
+
+function headerDropdown() {
+    var opener = $('.js-header-dropdown-open'),
+        closer = $('.js-header-dropdown-close'),
+        dd = $('.js-header-dropdown');
+
+    opener.on('click', function () {
+        dd.addClass('dropdown_opened');
+        $('body').addClass('stop-scroll');
+    });
+
+    closer.on('click', function () {
+        dd.removeClass('dropdown_opened');
+        $('body').removeClass('stop-scroll');
+    });
+}
+
+function selects() {
+    if($().select2) {
+        $('.select').select2();
     }
 }
