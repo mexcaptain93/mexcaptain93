@@ -5,6 +5,8 @@ $(function () {
     headerSearch();
     headerDropdown();
     selects();
+    calendarShowMore();
+    dragndrop()
 });
 
 $(window).resize(function () {
@@ -185,6 +187,30 @@ function headerDropdown() {
 
 function selects() {
     if($().select2) {
-        $('.select').select2();
+        $('.select').select2({ dropdownAutoWidth: true });
     }
+}
+
+function calendarShowMore() {
+    var btn = $('.js-calendar-showmore-btn');
+
+    btn.on('click', function (e) {
+        e.preventDefault();
+        $(this).parents('.festival').toggleClass('festival_opened');
+    });
+}
+
+function dragndrop() {
+    $( ".js-drag-img .images__item img" ).draggable();
+    $( ".js-drag-img .boxes__container" ).droppable({
+
+    });
+    $( ".js-drag-text .drag-text__item span" ).draggable();
+    $( ".js-drag-text .boxes__container" ).droppable({
+
+    });
+    $( ".js-drag-text-groups .drag-text-groups__item span" ).draggable();
+    $( ".js-drag-text-groups .boxes__container" ).droppable({
+
+    });
 }
