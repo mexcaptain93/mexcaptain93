@@ -183,6 +183,16 @@ function headerDropdown() {
         dd.removeClass('dropdown_opened');
         $('body').removeClass('stop-scroll');
     });
+
+    var submenuBlock = $('.js-header-with-submenu');
+
+    submenuBlock.find('> a').on('click', function (e) {
+        e.preventDefault();
+        $(this).siblings('ul').slideToggle();
+        $(this).parent().toggleClass('group__link_opened');
+    })
+
+
 }
 
 function selects() {
