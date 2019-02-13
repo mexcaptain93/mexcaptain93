@@ -211,16 +211,13 @@ function calendarShowMore() {
 }
 
 function dragndrop() {
-    $( ".js-drag-img .images__item img" ).draggable();
-    $( ".js-drag-img .boxes__container" ).droppable({
 
-    });
-    $( ".js-drag-text .drag-text__item span" ).draggable();
-    $( ".js-drag-text .boxes__container" ).droppable({
-
-    });
-    $( ".js-drag-text-groups .drag-text-groups__item span" ).draggable();
-    $( ".js-drag-text-groups .boxes__container" ).droppable({
-
-    });
+    if ($().draggable && $().droppable) {
+        $(".js-drag-img .images__item img").draggable();
+        $(".js-drag-img .boxes__container").droppable({});
+        $(".js-drag-text .drag-text__item span").draggable();
+        $(".js-drag-text .boxes__container").droppable({});
+        $(".js-drag-text-groups .drag-text-groups__item span").draggable();
+        $(".js-drag-text-groups .boxes__container").droppable({});
+    }
 }

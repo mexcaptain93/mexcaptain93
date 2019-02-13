@@ -2,14 +2,14 @@
 <html lang="ru-RU">
   <head>
     <meta charset="utf-8">
-    <title>Список всех страниц</title><!--[if IE]>
+    <title>Викторины</title><!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="">
     <link rel="stylesheet" type="text/css" href="static/css/main.css"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
-  <body>
+  <body class="viktorine-list-page">
     <div class="wrapper">
       <header class="header">
         <div class="header__wrap container">
@@ -73,14 +73,44 @@
                 <div class="dropdown__group group"><a class="group__name" href="#"><span>Наследие</span></a>
                   <ul class="group__links group__links_arrow">
                     <div class="group__col">
-                      <li class="group__link"><a href="#">Фольклор, литература</a></li>
-                      <li class="group__link"><a href="#">Художественные промыслы</a></li>
-                      <li class="group__link"><a href="#">Изобразительное искусство</a></li>
+                      <li class="group__link js-header-with-submenu"><a href="#">Фольклор, литература</a>
+                        <ul class="group__submenu">
+                          <li><a href="#">Ссылка 1</a></li>
+                          <li><a href="#">Ссылка 2</a></li>
+                        </ul>
+                      </li>
+                      <li class="group__link js-header-with-submenu"><a href="#">Художественные промыслы</a>
+                        <ul class="group__submenu">
+                          <li><a href="#">Ссылка 1</a></li>
+                          <li><a href="#">Ссылка 2</a></li>
+                        </ul>
+                      </li>
+                      <li class="group__link js-header-with-submenu"><a href="#">Изобразительное искусство</a>
+                        <ul class="group__submenu">
+                          <li><a href="#">Ссылка 1</a></li>
+                          <li><a href="#">Ссылка 2</a></li>
+                        </ul>
+                      </li>
                     </div>
                     <div class="group__col">
-                      <li class="group__link"><a href="#">Музыка</a></li>
-                      <li class="group__link"><a href="#">Театр</a></li>
-                      <li class="group__link"><a href="#">Зодчество</a></li>
+                      <li class="group__link js-header-with-submenu"><a href="#">Музыка</a>
+                        <ul class="group__submenu">
+                          <li><a href="#">Ссылка 1</a></li>
+                          <li><a href="#">Ссылка 2</a></li>
+                        </ul>
+                      </li>
+                      <li class="group__link js-header-with-submenu"><a href="#">Театр</a>
+                        <ul class="group__submenu">
+                          <li><a href="#">Ссылка 1</a></li>
+                          <li><a href="#">Ссылка 2</a></li>
+                        </ul>
+                      </li>
+                      <li class="group__link js-header-with-submenu"><a href="#">Зодчество</a>
+                        <ul class="group__submenu">
+                          <li><a href="#">Ссылка 1</a></li>
+                          <li><a href="#">Ссылка 2</a></li>
+                        </ul>
+                      </li>
                       <li class="group__link"><a href="#">Традиции и быт поморов</a></li>
                     </div>
                   </ul>
@@ -111,13 +141,59 @@
       <div class="content">
         <div class="breadcrumbs">
           <div class="container container_small">
-            <div class="breadcrumbs__list"><span class="breadcrumbs__item"><a href="/"><img src="static/img/general/home.png" alt="Главная"></a></span><span class="breadcrumbs__item"><span>Список всех страниц</span></span></div>
+            <div class="breadcrumbs__list"><span class="breadcrumbs__item"><a href="/"><img src="static/img/general/home.png" alt="Главная"></a></span><span class="breadcrumbs__item"><span>Викторины</span></span></div>
           </div>
         </div>
         <div class="container container_small">
-          <h1 class="like-h1">Резьба и роспись по дереву</h1>
+          <h1 class="like-h1">Викторины</h1>
         </div>
-        <div class="container container_small"><a href="articles.html">Статьи</a><br><a href="calendar.html">Календарь</a><br><a href="category.html">Категория</a><br><a href="contests.html">Конкурсы</a><br><a href="event.html">Мероприятие</a><br><a href="index.html">Главная</a><br><a href="list-1.html">Список 1</a><br><a href="list-2.html">Список 2</a><br><a href="material.html">Материал</a><br><a href="node.html">Заметка</a><br><a href="person.html">Персона</a><br><a href="toread.html">Надо почитать</a><br><a href="stories.html">Истории в картинках</a><br><a href="viktorine.html">Викторина</a><br><a href="viktorine-answers.html">Викторина ответы</a></div>
+        <div class="viktorine-list-page__list container container_small">
+          <div class="viktorine-list-page__item viktorine">
+            <div class="viktorine__image"><img src="static/img/content/viktorine-other-1.jpg" alt="Северные народные сказания и сказки"></div>
+            <div class="viktorine__title"><a href="#">Северные народные <br> сказания и сказки</a></div>
+            <div class="viktorine__btn"><a class="button" href="#">Перейти к вопросам</a></div>
+          </div>
+          <div class="viktorine-list-page__item viktorine">
+            <div class="viktorine__image"><img src="static/img/content/viktorine-other-1.jpg" alt="Северные народные сказания и сказки"></div>
+            <div class="viktorine__title"><a href="#">Северные народные <br> сказания и сказки</a></div>
+            <div class="viktorine__btn"><a class="button" href="#">Перейти к вопросам</a></div>
+          </div>
+          <div class="viktorine-list-page__item viktorine">
+            <div class="viktorine__image"><img src="static/img/content/viktorine-other-1.jpg" alt="Северные народные сказания и сказки"></div>
+            <div class="viktorine__title"><a href="#">Северные народные <br> сказания и сказки</a></div>
+            <div class="viktorine__btn"><a class="button" href="#">Перейти к вопросам</a></div>
+          </div>
+          <div class="viktorine-list-page__item viktorina">
+            <div class="viktorina__wrap" style="background-image: url(&quot;static/img/content/viktorina-banner.jpg&quot;);">
+              <div class="viktorina__img"><img src="static/img/content/viktorina.jpg" alt="Викторина"></div>
+              <div class="viktorina__text">
+                <div class="viktorina__title"><span>Этап 1. Поморский быт</span></div>
+                <div class="viktorina__descr"><span>Как был устроен поморский быт, какие семейные традиции сохранились до наших дней. <br> Ответь на 5 вопрос о поморском быте, традициях....</span></div>
+                <div class="viktorina__btn"><a class="button button_icon button_serif" href="#">Перейти к вопросам викторины <i class="next-bold"></i></a></div>
+              </div>
+            </div>
+          </div>
+          <div class="viktorine-list-page__item viktorine">
+            <div class="viktorine__image"><img src="static/img/content/viktorine-other-1.jpg" alt="Северные народные сказания и сказки"></div>
+            <div class="viktorine__title"><a href="#">Северные народные <br> сказания и сказки</a></div>
+            <div class="viktorine__btn"><a class="button" href="#">Перейти к вопросам</a></div>
+          </div>
+          <div class="viktorine-list-page__item viktorine">
+            <div class="viktorine__image"><img src="static/img/content/viktorine-other-1.jpg" alt="Северные народные сказания и сказки"></div>
+            <div class="viktorine__title"><a href="#">Северные народные <br> сказания и сказки</a></div>
+            <div class="viktorine__btn"><a class="button" href="#">Перейти к вопросам</a></div>
+          </div>
+          <div class="viktorine-list-page__item viktorine">
+            <div class="viktorine__image"><img src="static/img/content/viktorine-other-1.jpg" alt="Северные народные сказания и сказки"></div>
+            <div class="viktorine__title"><a href="#">Северные народные <br> сказания и сказки</a></div>
+            <div class="viktorine__btn"><a class="button" href="#">Перейти к вопросам</a></div>
+          </div>
+          <div class="viktorine-list-page__item viktorine">
+            <div class="viktorine__image"><img src="static/img/content/viktorine-other-1.jpg" alt="Северные народные сказания и сказки"></div>
+            <div class="viktorine__title"><a href="#">Северные народные <br> сказания и сказки</a></div>
+            <div class="viktorine__btn"><a class="button" href="#">Перейти к вопросам</a></div>
+          </div>
+        </div>
       </div>
       <footer class="footer">
         <div class="footer__wrap container">
