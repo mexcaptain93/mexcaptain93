@@ -8,6 +8,7 @@ $(function () {
     calendarShowMore();
     dragndrop();
     storyPopup();
+    addArticlePopup();
 });
 
 $(window).resize(function () {
@@ -321,4 +322,21 @@ function storyPopup() {
             })
         }
     }
+}
+
+function addArticlePopup() {
+
+    $('.js-popup-add-article-close').on('click', function (e) {
+        e.preventDefault();
+        $('body').removeClass('stop-scroll');
+        $(this).parents('.popup-add-article').hide();
+    });
+
+    $('.js-popup-add-article-open').on('click', function (e) {
+        e.preventDefault();
+        $('body').addClass('stop-scroll');
+        $('.popup-add-article').show();
+    });
+
+
 }
