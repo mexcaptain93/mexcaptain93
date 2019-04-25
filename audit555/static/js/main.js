@@ -1,6 +1,11 @@
 $(function () {
-   checklist();
-   problems();
+    checklist();
+    problems();
+    services();
+    selects();
+    steps();
+    reviews();
+    map();
 });
 
 function checklist() {
@@ -12,7 +17,8 @@ function checklist() {
         amount = slider.find('> *').length,
         currentSlide,
         prev = $('.js-checklist-slider-prev'),
-        next = $('.js-checklist-slider-next');
+        next = $('.js-checklist-slider-next'),
+        problems = $('.js-problems-slider');
 
     if (slider.length && $.fn.slick) {
         slider.slick({
@@ -27,8 +33,20 @@ function checklist() {
     total.text(amount);
 
 
-    slider.on('afterChange', function(event, slick, currentSlide, nextSlide){
-        console.log(currentSlide);
+    slider.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+        problems.removeClass('problems__list_visible');
+        ;
+        problems.eq(currentSlide).addClass('problems__list_visible');
+
+        problems.each(function (index, e) {
+            if ($(e).hasClass('slick-initialized')) {
+                $(e).slick('unslick')
+            }
+        });
+
+        initProblemsSlider(problems, currentSlide);
+
+
         if (currentSlide++ < 9) {
             currentSlide = '0' + currentSlide;
         }
@@ -58,37 +76,359 @@ function checklist() {
     })
 
 
-
-
-
 }
 
 function problems() {
     var slider = $('.js-problems-slider');
-    
-    function initProblemsSlider() {
-        if ($(window).width() < 768) {
-            if (slider.length && $.fn.slick) {
-                slider.slick({
-                    arrows: false,
-                    dots: true,
-                    adaptiveHeight: true
-                });
-            }
-        }
-    }
 
-    $(window).on('resize',function() {
+    slider.eq(0).addClass('problems__list_visible');
+
+    $(window).on('resize', function () {
         if ($(window).width() < 768) {
-            if (!slider.hasClass('slick-initialized')) {
-                initProblemsSlider();
+            if (!$('.problems__list_visible').hasClass('slick-initialized')) {
+                initProblemsSlider(slider, $('.problems__list_visible').index() - 1);
             }
         } else {
-            slider.slick('unslick');
+            if ($('.problems__list_visible.slick-initialized').length) {
+                $('.problems__list_visible').slick('unslick');
+            }
         }
     });
 
-    initProblemsSlider();
+    initProblemsSlider(slider, 0);
+
+
+}
+
+function initProblemsSlider(slider, num) {
+    if ($(window).width() < 768) {
+        if (slider.eq(num).length && $.fn.slick) {
+            slider.eq(num).slick({
+                arrows: false,
+                dots: true,
+                adaptiveHeight: true
+            });
+        }
+    }
+}
+
+function services() {
+    var slider = $('.js-services-list');
+
+    if (slider.length && $.fn.slick) {
+        slider.slick({
+            arrows: false,
+            dots: true,
+            adaptiveHeight: true,
+            slidesToScroll: 3,
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        adaptiveHeight: true
+                    },
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    },
+                }
+            ]
+        });
+    }
+}
+
+function selects() {
+    var select = $('.js-select');
+
+    if (select.length && $.fn.select2) {
+        select.select2({
+            width: '100%',
+            minimumResultsForSearch: -1
+        });
+    }
+}
+
+function steps() {
+    var slider = $('.js-steps-slider');
+
+    function initStepsSlider() {
+        if (slider.length && $.fn.slick && !slider.hasClass('slick-initialized') && $(window).width() < 1024) {
+            slider.slick({
+                arrows: false,
+                dots: false,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                infinite: false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        },
+                    }
+                ]
+            });
+        }
+    }
+
+    initStepsSlider();
+
+    $(window).on('resize', function () {
+        if ($(window).width() < 1024) {
+            initStepsSlider();
+        } else {
+            if (slider.length && slider.hasClass('slick-initialized')) {
+                slider.slick('unslick');
+            }
+        }
+    });
+
+
+}
+
+function reviews() {
+    var slider = $('.js-reviews-slider'),
+        prev = $('.js-reviews-prev'),
+        next = $('.js-reviews-next');
+
+    if (slider.length && $.fn.slick) {
+        slider.slick({
+            arrows: false,
+            dots: false,
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            variableWidth: true,
+            adaptiveHeight: true,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        dots: true,
+                        variableWidth: false
+                    }
+                },
+            ]
+        });
+
+        prev.on('click', function (e) {
+            e.preventDefault();
+            slider.slick('slickPrev');
+        });
+        next.on('click', function (e) {
+            e.preventDefault();
+            slider.slick('slickNext');
+        });
+    }
+}
+
+function map() {
+
+    center = {lat: 64.544696, lng: 40.51629066};
+
+    if ($(window).width() < 1024) {
+        center = {lat: 64.54464989, lng: 40.51231119};
+    }
+
+    if ($(window).width() < 768) {
+        center = {lat: 64.54564989, lng: 40.51629066};
+    }
+
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: center,
+        zoom: 16,
+        disableDefaultUI: true,
+        styles: [
+            {
+                "featureType": "water",
+                "stylers": [
+                    {
+                        "color": "#a73cff"
+                    }
+                ]
+            }
+        ]
+    });
+
+    var marker = new google.maps.Marker({
+        position: {lat: 64.544696, lng: 40.51629066},
+        map: map,
+        title: 'Аудитавто',
+        icon: {
+            url: 'static/img/general/pin.png',
+            scaledSize: new google.maps.Size(63, 90)
+        },
+    });
+
+    var styles = [
+        {
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#f5f5f5"
+                }
+            ]
+        },
+        {
+            "elementType": "labels.icon",
+            "stylers": [
+                {
+                    "visibility": "off"
+                }
+            ]
+        },
+        {
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#616161"
+                }
+            ]
+        },
+        {
+            "elementType": "labels.text.stroke",
+            "stylers": [
+                {
+                    "color": "#f5f5f5"
+                }
+            ]
+        },
+        {
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#bdbdbd"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#eeeeee"
+                }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#757575"
+                }
+            ]
+        },
+        {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#e5e5e5"
+                }
+            ]
+        },
+        {
+            "featureType": "poi.park",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#9e9e9e"
+                }
+            ]
+        },
+        {
+            "featureType": "road",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#ffffff"
+                }
+            ]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#757575"
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#dadada"
+                }
+            ]
+        },
+        {
+            "featureType": "road.highway",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#616161"
+                }
+            ]
+        },
+        {
+            "featureType": "road.local",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#9e9e9e"
+                }
+            ]
+        },
+        {
+            "featureType": "transit.line",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#e5e5e5"
+                }
+            ]
+        },
+        {
+            "featureType": "transit.station",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#eeeeee"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [
+                {
+                    "color": "#c9c9c9"
+                }
+            ]
+        },
+        {
+            "featureType": "water",
+            "elementType": "labels.text.fill",
+            "stylers": [
+                {
+                    "color": "#9e9e9e"
+                }
+            ]
+        }
+    ]
+
+    map.setOptions({styles: styles});
 
 
 }
