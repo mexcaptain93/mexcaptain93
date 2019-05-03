@@ -27,7 +27,7 @@
                 <h1 class="like-h1">Поможем найти лучший автомобиль с&nbsp;пробегом в&nbsp;Архангельске и&nbsp;области</h1>
               </div>
               <div class="welcome__subheading"><span>Проверим все компоненты и&nbsp;поможем сэкономить до&nbsp;120% от&nbsp;стоимости наших услуг благодаря торгу с&nbsp;продавцом</span></div>
-              <div class="welcome__button"><a class="btn" href="#">Оставить заявку</a></div>
+              <div class="welcome__button js-popup-request-opener"><a class="btn" href="#">Оставить заявку</a></div>
             </div>
             <div class="welcome__mouse"><a href="#"><img src="static/img/svg/mouse.svg" alt="Прокрути!"></a></div>
           </div>
@@ -621,7 +621,7 @@
           <div class="footer__left"><span>Подбор автомобилей с&nbsp;пробегом <br> в&nbsp;Архангельске и&nbsp;области</span></div>
           <div class="footer__center">
             <ul class="footer__socials">
-              <li class="footer__social"><a href="#"><img src="static/img/svg/vk.svg" alt="VK"></a></li>
+              <li class="footer__social footer__social_vk"><a href="#"><img src="static/img/svg/vk.svg" alt="VK"></a></li>
               <li class="footer__social"><a href="#"><img src="static/img/svg/instagram.svg" alt="Instagram"></a></li>
               <li class="footer__social"><a href="#"><img src="static/img/svg/whatsapp.svg" alt="WhatsApp"></a></li>
             </ul>
@@ -630,8 +630,52 @@
         </div>
       </footer>
     </div>
+    <div class="popup popup_request js-popup-request">
+      <div class="popup__overlay">
+        <div class="popup__block">
+          <div class="popup__wrap">
+            <div class="popup__close js-popup-request-close"></div>
+            <div class="popup__heading"><span>Наш автоэкперт перезвонит Вам в&nbsp;ближайшее время</span></div>
+            <form class="popup__form form">
+              <div class="form__list">
+                <div class="form__item">
+                  <input type="text" placeholder="Ваше имя">
+                </div>
+                <div class="form__item">
+                  <input type="text" placeholder="Номер телефона">
+                </div>
+                <div class="form__item">
+                  <select class="js-select">
+                    <option value="0">Выберите время</option>
+                    <option value="14 января, 10:30">14 января, 10:30</option>
+                    <option value="14 января, 10:30">14 января, 11:00</option>
+                    <option value="14 января, 10:30">14 января, 11:30</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form__right">
+                <div class="form__privacy"><span>Нажимая на кнопку, Вы соглашаетесь с&nbsp;условиями <a href="#">пользовательского соглашения</a></span></div>
+                <div class="form__btn"><a class="btn" href="#">Отправить</a></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_request-ok js-popup-request-ok">
+      <div class="popup__overlay">
+        <div class="popup__block">
+          <div class="popup__wrap">
+            <div class="popup__close js-popup-request-ok-close"></div>
+            <div class="popup__icon"></div>
+            <div class="popup__heading"><span>Заявка успешно отправлена</span></div>
+            <div class="popup__subheading"><span>Наш специалист перезвонит Вам&nbsp;в&nbsp;ближайшее время</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="static/js/jquery.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh6u1BC-P85f6tn-bDx1CIPmPf3v7Ox7c"></script>
     <script src="static/js/libs.min.js"></script>
     <script src="static/js/select2.min.js"></script>
     <script src="static/js/slick.min.js"></script>
