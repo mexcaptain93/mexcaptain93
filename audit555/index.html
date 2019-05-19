@@ -20,7 +20,7 @@
                 <div class="welcome__time"><span>Работаем с 9 до 21</span></div>
                 <div class="welcome__phone"><a href="tel:+79657679009">+7 (965) 767-90-09</a></div>
               </div>
-              <div class="welcome__burger"><span></span></div>
+              <div class="welcome__burger js-burger"><span></span></div>
             </div>
             <div class="welcome__text">
               <div class="welcome__heading">
@@ -30,9 +30,21 @@
               <div class="welcome__button js-popup-request-opener"><a class="btn" href="#">Оставить заявку</a></div>
             </div>
             <div class="welcome__mouse"><a href="#"><img src="static/img/svg/mouse.svg" alt="Прокрути!"></a></div>
+            <div class="welcome__menu menu js-menu">
+              <ul class="menu__list">
+                <li class="menu__item"><a href="#checklist">Что проверяем?</a></li>
+                <li class="menu__item"><a href="#services">Наши услуги</a></li>
+                <li class="menu__item"><a href="#request">Оставить заявку</a></li>
+                <li class="menu__item"><a href="#reviews">Отзывы клиентов</a></li>
+                <li class="menu__item"><a href="#map">Контакты</a></li>
+                <li class="menu__item"><a href="#map">Контакты</a></li>
+              </ul>
+              <div class="menu__time"><span>Работаем с 9 до 21</span></div>
+              <div class="menu__phone"><a href="tel:+79657679009">+7 (965) 767-90-09</a></div>
+            </div>
           </div>
         </section>
-        <section class="checklist">
+        <section class="checklist" id="checklist">
           <div class="container">
             <div class="checklist__heading">
               <h2 class="like-h1 like-h1_black">Что мы проверяем и с какими проблемами сталкиваемся?</h2>
@@ -359,7 +371,7 @@
             </div>
           </div>
         </section>
-        <section class="services">
+        <section class="services" id="services">
           <div class="container">
             <div class="services__heading">
               <h2 class="like-h1">Наши услуги</h2>
@@ -373,7 +385,7 @@
                     <div class="service__descr">
                       <p>Все опции «стандартной» разовой проверки авто перед покупкой. Советы при выборе объявлений. Просмотр любого количества авто в течение дня</p>
                     </div>
-                    <div class="service__btn"><a class="btn" href="#">10 000 руб</a></div>
+                    <div class="service__btn js-popup-service-btn" data-img="static/img/content/service-1.jpg" data-title="Эксперт на день" data-descr="Все опции «стандартной» разовой проверки авто перед покупкой. Советы при выборе объявлений. Просмотр любого количества авто в течение дня" data-last-text="Фить-ха!"><a class="btn" href="#">10 000 руб</a></div>
                   </div>
                 </div>
               </div>
@@ -385,7 +397,7 @@
                     <div class="service__descr">
                       <p>Поиск требуемого автомобиля, проведение осмотра, комплексной технической и юридической проверки подходящих вариантов. Сопровождение на всех этапах сделки. Помощь в оформлении и постановке на учёт в ГиБДД</p>
                     </div>
-                    <div class="service__btn"><a class="btn" href="#">20 000 руб</a></div>
+                    <div class="service__btn js-popup-service-btn" data-img="static/img/content/service-2.jpg" data-title="Подбор автомобиля под ключ" data-descr="Поиск требуемого автомобиля, проведение осмотра, комплексной технической и юридической проверки подходящих вариантов. Сопровождение на всех этапах сделки. Помощь в оформлении и постановке на учёт в ГиБДД" data-last-text="Фить-ха!"><a class="btn" href="#">20 000 руб</a></div>
                   </div>
                 </div>
               </div>
@@ -461,7 +473,7 @@
             </div>
           </div>
         </section>
-        <section class="request">
+        <section class="request" id="request">
           <div class="container">
             <div class="request__heading">
               <h2 class="like-h1 like-h1_black">Оставить заявку на консультацию</h2>
@@ -551,7 +563,7 @@
             </div>
           </div>
         </section>
-        <section class="reviews">
+        <section class="reviews" id="reviews">
           <div class="container">
             <div class="reviews__heading">
               <h2 class="like-h1 like-h1_black">Отзывы наших клиентов</h2>
@@ -635,7 +647,7 @@
         <div class="popup__block">
           <div class="popup__wrap">
             <div class="popup__close js-popup-request-close"></div>
-            <div class="popup__heading"><span>Наш автоэкперт перезвонит Вам в&nbsp;ближайшее время</span></div>
+            <div class="popup__heading"><span>Наш автоэксперт перезвонит Вам в&nbsp;ближайшее время</span></div>
             <form class="popup__form form">
               <div class="form__list">
                 <div class="form__item">
@@ -670,6 +682,55 @@
             <div class="popup__icon"></div>
             <div class="popup__heading"><span>Заявка успешно отправлена</span></div>
             <div class="popup__subheading"><span>Наш специалист перезвонит Вам&nbsp;в&nbsp;ближайшее время</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup_service js-popup-service">
+      <div class="popup__overlay">
+        <div class="popup__block">
+          <div class="popup__wrap">
+            <div class="popup__close js-popup-service-close"></div>
+            <div class="service-popup">
+              <div class="service-popup__top">
+                <div class="service-popup__img js-service-popup-img"></div>
+                <div class="service-popup__text">
+                  <div class="service-popup__title popup__heading"><span class="js-service-popup-title"></span></div>
+                  <div class="service-popup__descr">
+                    <p class="js-service-popup-descr"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="service-popup__bottom">
+                <p class="js-service-popup-lastText"></p>
+              </div>
+              <div class="service-popup__form">
+                <form class="popup__form form">
+                  <div class="form__list">
+                    <div class="form__item">
+                      <input type="text" placeholder="Ваше имя">
+                    </div>
+                    <div class="form__item">
+                      <input type="text" placeholder="Номер телефона">
+                    </div>
+                    <div class="form__item">
+                      <select class="js-select">
+                        <option value="0">Удобное время</option>
+                        <option value="14 января, 10:30">14 января, 10:30</option>
+                        <option value="14 января, 10:30">14 января, 11:00</option>
+                        <option value="14 января, 10:30">14 января, 11:30</option>
+                      </select>
+                    </div>
+                    <div class="form__item">
+                      <div class="form__privacy"><span>Нажимая на кнопку, Вы соглашаетесь с&nbsp;условиями <a href="#">пользовательского соглашения</a></span></div>
+                    </div>
+                    <div class="form__item">
+                      <div class="form__btn"><a class="btn" href="#"><span class="price">3 000 руб.</span> <span class="delimiter">/</span> <span class="text">Заказать</span></a></div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>

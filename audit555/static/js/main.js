@@ -457,4 +457,54 @@ function popups() {
             $('body').removeClass('stop-scroll');
         });
     }
+
+    var popupService = $('.js-popup-service'),
+        popupServiceClose = $('.js-popup-service-close'),
+        popupServiceOpener = $('.js-popup-service-btn'),
+        popupServiceImg = $('.js-service-popup-img'),
+        popupServiceTitle = $('.js-service-popup-title'),
+        popupServiceDescr = $('.js-service-popup-descr'),
+        popupServiceLastText = $('.js-service-popup-lastText');
+
+    popupServiceClose.on('click', function (e) {
+        e.preventDefault();
+        popupService.hide();
+        $('body').removeClass('stop-scroll');
+    });
+
+    popupServiceOpener.on('click', function (e) {
+        e.preventDefault();
+
+        if ($(this).data('title')) {
+            var title = $(this).data('title');
+        }
+        if ($(this).data('descr')) {
+            var descr = $(this).data('descr');
+        }
+        if ($(this).data('title')) {
+            var lastText = $(this).data('lastText');
+        }
+        if ($(this).data('img')) {
+            var img = $(this).data('img');
+        }
+
+        if (title && descr) {
+            popupService.show();
+            $('body').addClass('stop-scroll');
+            popupServiceImg.css('background-image', 'url("' + img + '")');
+            popupServiceTitle.html(title);
+            popupServiceDescr.html(descr);
+            popupServiceLastText.html(lastText);
+        }
+    });
+
+    var burger = $('.js-burger'),
+        menu = $('.js-menu');
+
+    burger.on('click', function (e) {
+        e.preventDefault();
+        menu.toggle();
+        burger.toggleClass('welcome__burger_opened');
+    });
 }
+
