@@ -1,0 +1,10 @@
+/* *******************
+	[ All Css Plugins]
+	******************* */
+/* == bootstrap == */
+@import url(../libs/bootstrap/css/bootstrap.min.css);
+/* == fontawesome icon font == */
+@import url(../libs/fontawesome/css/all.min.css);
+/* == slick-slider == */
+@import url(../libs/slick/slick.css);
+@import url(../libs/slick/slick-theme.css);

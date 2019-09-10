@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="40" viewBox="0 0 32 40">
+	<linearGradient id="linear-gradient" gradientTransform="rotate(129, 0.27, 0)">
+    	<stop offset="0%" stop-color="#04ffa3"/>
+    	<stop offset="100%" stop-color="#1286fc"/>
+  	</linearGradient>
+
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#424867" d="M0 0h9.02L32 33.196V40H0z"/>
+        <path fill="url(#linear-gradient)" d="M9 0c3.581.05 23 5.426 23 33.08v.03C18.922 30.751 9 19.311 9 5.554V0z"/>
+    </g>
+</svg>

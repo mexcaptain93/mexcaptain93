@@ -1,0 +1,18 @@
+﻿User-agent: *
+Disallow: /textolite/
+Disallow: /libs/
+
+Sitemap: https://voicetaglab.com/sitemap.xml
+Sitemap: https://voicetaglab.com/images_sitemap.xml
+
+User-agent: Yandex
+Disallow: /textolite/
+Disallow: /libs/
+Disallow: /*js
+Disallow: /css/
+
+Sitemap: https://voicetaglab.com/sitemap.xml
+Sitemap: https://voicetaglab.com/images_sitemap.xml
+
+
+

@@ -1,0 +1,13 @@
+#SetEnvIf X-HTTPS 1 HTTPS
+#
+#RewriteEngine On
+#RewriteBase /
+#RewriteCond %{HTTP:X-HTTPS} !1
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+#
+#<IfModule mod_rewrite.c>
+#Options +FollowSymLinks
+#RewriteEngine on
+#RewriteCond %{HTTP_HOST} ^www\.voicetaglab\.com$ [NC]
+#RewriteRule ^(.*)$ http://voicetaglab.com/$1 [R=301,L]
+#</IfModule>
