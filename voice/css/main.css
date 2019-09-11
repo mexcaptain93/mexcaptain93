@@ -1862,6 +1862,12 @@ jdiv.header_2f .headerBox_3s, jdiv.label_39._bottom_3v {
 
   .reviews__item {
     padding: 0 30px;
+    min-height: 605px;
+    display: flex !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    
   }
 
   .reviews__item.slick-active {

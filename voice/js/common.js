@@ -181,7 +181,7 @@ $(function() {
         variableWidth: true,
         touchThreshold: 450,
 		dots: true,
-		autoPlay: false,
+		autoPlay: true,
         autoPlaySpeed: 5000,
         responsive: [
             {
@@ -189,6 +189,7 @@ $(function() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    adaptiveHeight: false
                 }
             }
         ]
