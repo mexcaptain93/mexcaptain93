@@ -1787,31 +1787,21 @@ jdiv.header_2f .headerBox_3s, jdiv.label_39._bottom_3v {
 
 .reviews__item {
   padding: 0 60px;
-}
-
-.reviews__item.slick-active {
-  padding: 0 50px;
-}
-
-.reviews__item.slick-active .reviews__img{
   width: 340px;
-}
-
-.reviews__item.slick-active:last-child {
-  padding-left: 60px;
+  box-sizing: content-box;
 }
 
 .reviews__img {
   width: 320px;
-  padding-bottom: 177.7%;
-  height: 0;
-  -webkit-background-size: contain;
-  background-size: contain;
-  background-repeat: no-repeat;
   border-radius: 12px;
   -webkit-transition: 0.8s;
   -o-transition: 0.8s;
   transition: 0.8s;
+  margin: 0 auto;
+}
+
+.reviews__item.slick-active .reviews__img{
+  width: 340px;
 }
 
 .reviews .slick-dots li {
@@ -1826,7 +1816,7 @@ jdiv.header_2f .headerBox_3s, jdiv.label_39._bottom_3v {
 }
 
 .reviews .slick-track {
-  display: flex;
+  display: flex !important;
   align-items: center;
 }
 
@@ -1834,10 +1824,7 @@ jdiv.header_2f .headerBox_3s, jdiv.label_39._bottom_3v {
 
   .reviews__item {
     padding: 0 40px;
-  }
-
-  .reviews__item.slick-active {
-    padding: 0 35px;
+    width: 300px;
   }
 
   .reviews__img {
@@ -1856,39 +1843,21 @@ jdiv.header_2f .headerBox_3s, jdiv.label_39._bottom_3v {
 
 @media screen and (max-width: 1280px) {
 
-  .reviews__slider::before, .reviews__slider::after {
-    width: 140px;
-  }
-
   .reviews__item {
     padding: 0 30px;
-    min-height: 605px;
-    display: flex !important;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    
-  }
-
-  .reviews__item.slick-active {
-    padding: 0 25px;
+    width: 320px;
   }
 
   .reviews__img {
-    width: 320px;
+    width: 300px;
   }
 
   .reviews__item.slick-active .reviews__img{
     width: 340px;
   }
 
-}
-
-
-@media screen and (max-width: 1024px) {
-
-  .reviews__img {
-    margin: 0 auto;
+  .reviews__slider::before, .reviews__slider::after {
+    width: 140px;
   }
 
 }
@@ -1900,11 +1869,11 @@ jdiv.header_2f .headerBox_3s, jdiv.label_39._bottom_3v {
   }
 
   .reviews__item {
-    padding: 0 10px;
-  }
-
-  .reviews__item.slick-active {
-    padding: 0 15px;
+    padding: 0;
+    width: 210px;
+    height: 375px;
+    display: flex !important;
+    align-items: center;
   }
 
   .reviews__img {
@@ -1917,8 +1886,8 @@ jdiv.header_2f .headerBox_3s, jdiv.label_39._bottom_3v {
 
   .reviews__slider {
     padding-bottom: 41px !important;
+    margin-bottom: 16px !important;
   }
-
 
   .block_reviews {
     padding-bottom: 20px;
