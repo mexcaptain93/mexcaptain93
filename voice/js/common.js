@@ -171,11 +171,16 @@ $(function() {
 	//  slide_works end
 
 	// reviews_slider start
-	$('.js-reviews-slider').slick({
+
+
+	var reviewsSlider = $('.js-reviews-slider')
+
+    reviewsSlider.slick({
         infinite: true,
 		arrows: false,
         centerMode: true,
-        focusOnSelect: true,
+        focusOnSelect: false,
+        swipe: false,
         slidesToShow: 3,
         slidesToScroll: 3,
         variableWidth: true,
@@ -189,10 +194,58 @@ $(function() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
+                    focusOnSelect: true,
+                    swipe: true
                 }
             }
         ]
 	});
+
+	function ReviewsSliderHeight () {
+        reviewsSlider.each(function(){
+            var highestSlide = 0;
+
+            $(this).find('.reviews__item').each(function(){
+                if($(this).height() > highestSlide){
+                    highestSlide = $(this).height();
+                }
+            })
+            $(this).find('.slick-track').height(highestSlide);
+        });
+	}
+
+	ReviewsSliderHeight();
+
+	$(window).on('resize', function (e) {
+		ReviewsSliderHeight();
+    });
+
+    reviewsSlider.on( 'beforeChange', function( event, slick, currentSlide, nextSlide ) {
+
+    	if ($(window).width() < 1281) {
+            if (nextSlide == 0) {
+                var cls = 'slick-current slick-active slick-center';
+
+                setTimeout(function () {
+                    $('[data-slick-index="' + slick.$slides.length + '"]').addClass(cls).siblings().removeClass(cls);
+                    for (var i = slick.options.slidesToShow - 1; i >= 0; i--) {
+                        $('[data-slick-index="' + i + '"]').addClass(cls);
+                    }
+                }, 10);
+            }
+
+            if (nextSlide === slick.$slides.length - 1) {
+                var cls = 'slick-current slick-active slick-center';
+                setTimeout(function () {
+                    $('[data-slick-index="' + nextSlide + '"]').addClass(cls).siblings().removeClass(cls);
+                    for (var i = -1; i >= -1 * slick.options.slidesToShow; i--) {
+                        $('[data-slick-index="' + i + '"]').addClass(cls);
+                    }
+                }, 10);
+            }
+        }
+    });
+
 	// reviews_slider end
 
 
