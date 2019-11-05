@@ -1,10 +1,4 @@
 $(document).ready(function () {
-    var a = new Date("05/10/2018"),
-    b = new Date();
-
-    if(a.setHours(0,0,0,0) <= b.setHours(0,0,0,0)) {
-        return false;
-    }
     toggleHeaderSearch();
     togglers();
     diagnosis();
